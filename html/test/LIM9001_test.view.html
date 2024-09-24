@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://mtest.smartbank.co.kr:8010/LIM9001.view -->
+<html lang="ko" class=" overthrow-enabled" style="overflow: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+
+
+
+
+
+
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta name="format-detection" content="telephone=yes">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no , target-densitydpi=medium-dpi">
+
+<link rel="stylesheet" href="./LIM9001.view_files/common.css">
+<link rel="stylesheet" href="./LIM9001.view_files/contents.css">
+<link rel="stylesheet" href="./LIM9001.view_files/font.css">
+<link rel="stylesheet" href="./LIM9001.view_files/intro.css">
+<link rel="stylesheet" href="./LIM9001.view_files/jquery-ui-1.10.4.custom.css">
+<link rel="stylesheet" href="./LIM9001.view_files/main.css">
+<link rel="stylesheet" href="./LIM9001.view_files/menu.css">
+<link rel="stylesheet" href="./LIM9001.view_files/swiper.min.css">
+
+
+<script type="text/javascript" src="./LIM9001.view_files/jquery-1.11.2.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/jquery.form.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/jquery.cookie.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/jquery.validate.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/jquery.validate_add.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/jquery.easing.1.3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/jquery.plugin.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/swiper.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/StringUtil.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/common_ui.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/common_tab.js" charset="utf-8"></script><!-- test -->
+<script type="text/javascript" src="./LIM9001.view_files/ft_common.js" charset="utf-8" id="ft_common" data-system_mode="L" data-authresult="B" data-servicecd="LIM9001" data-pushnotiyn="" data-custnm="" data-rbrno1="" data-sexcd="" data-mno="" data-mptscodvcd="" data-servertime="20220929164955" data-usrid="" data-secumedidvcd="" data-indvcorpdstccd="" data-otpvndrcd="" data-otpsrnoval="" data-indvbusidvcd="" data-dpmacntyn="" data-dpmdmnacntyn="" data-dpmrtacntyn="" data-frstpswdregyn="" data-loginprcsyn="" data-idcddetailcheckyn="Y" data-idcdmaskingyn="Y" data-frsreqyn=""></script>
+<script type="text/javascript" src="./LIM9001.view_files/ft_biz_common.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/ft_utils.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="./LIM9001.view_files/LIM9001.js" charset="utf-8"></script>
+
+
+<script type="text/javascript" src="./LIM9001.view_files/ft_bridge_test.js" charset="utf-8"></script>
+
+
+
+
+<script type="text/javascript" src="./LIM9001.view_files/native_test.js" charset="utf-8"></script>
+
+
+
+<!-- 금융인증서 스크립트추가 -->
+<script type="text/javascript" src="./LIM9001.view_files/fin_cert.js"></script>
+<!-- 사설인증서 스크립트추가 -->
+<script type="text/javascript" src="./LIM9001.view_files/pri_cert.js"></script>
+
+<script>
+var RES_JSON_DATA = {};	// 응답데이터
+var REQ_JSON_DATA = {}; // 요청 데이터
+var CUST_DATA = {};		// 고객 데이터
+
+//응답 Data JSON Data SETTING
+    
+RES_JSON_DATA = {"decData":"","APP_HEADER":{"respCd":"N00000","respMsg":""},"rbrno":"","authResult":"B","rnmNo":"","NRID":"","RNNO":"","user_number":""};
+
+    
+REQ_JSON_DATA = {"decData":"","rbrno":"","rnmNo":"","NRID":"","RNNO":""};
+
+    
+CUST_DATA = {};
+
+
+</script>
+
+<style>
+	#certCloseBtn{ display:none; }
+	#certCloseBtn.popok{ display:table;  }
+</style>
+
+</head>
+
+<body>
+<header>
+	<a class="btn-prev"><span></span><span></span><span></span>뒤로가기</a>
+	<h1><span>본인인증</span></h1>
+	<a class="btn-menu"><span></span><span></span><span></span>전체보기</a>
+</header>
+
+ 
+
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#uuidInqBtn").click(function(){
+		if(checkCustStats()){	// 고객상태 (요구불계좌 및 인터넷뱅킹ID 유무) 체크
+			checkLoginView(function(){
+				authFDS(function(resFdsDs){
+					var com20053Form = makeForm("com20053Form");
+					addFormData(com20053Form, "txGbnCd", "S");
+					addFormData(com20053Form, "data", resFdsDs.data);
+					addFormData(com20053Form, "key", resFdsDs.key);
+					addFormData(com20053Form, "uuid", resFdsDs.uuid);
+					doActionView("COM2005_3", com20053Form);
+				})
+			});
+		}
+	});
+	
+	if (CUST_NM != "") {
+		$("#menuBarCustNm").html(CUST_NM + " 님!");
+	} 
+	
+	// 공동인증서 관리
+	$("#signManager").click(function(){
+		var reqData = {
+				"serviceCd":"SIGN_CERT_MANAGE"
+			  , "params" : {}
+		};
+		ftBridgeExcutor.postMessage(reqData, signCallSuccFunc, signCallFailFunc);
+	});
+	// 공동인증서 가져오기
+	$("#signReg").click(function(){
+		var reqData = {
+				"serviceCd":"SIGN_CERT_REG"
+			  , "params" : {}
+		};
+		ftBridgeExcutor.postMessage(reqData, signCallSuccFunc, signCallFailFunc);
+		
+	});
+	// 타기관인증서 등록
+	$("#signOtherA").click(function(){
+		var cus3000Form = makeForm("cus3000Form");
+		addFormData(cus3000Form, "trnDvcd", "A");
+		doActionView("CUS0000", cus3000Form);
+	});
+	// 타기관인증서 해지
+	$("#signOtherB").click(function(){
+		var cus3000Form = makeForm("cus3000Form");
+		addFormData(cus3000Form, "trnDvcd", "B");
+		doActionView("CUS0000", cus3000Form);
+	});
+	
+	// mOTP 설정버튼
+	$("#regMotpBtn").click(function(){
+		checkLoginView(regMOTP);
+	});
+	// mOTP 해지버튼
+	$("#terminateMotpBtn").click(function(){
+		checkLoginView(terminateMOTP);
+	});
+	
+	$("#btnAuthReg").click(function(){
+		checkLoginView(authRegProcess);
+	});
+	
+	
+	$(".depth3>li").click(function() {
+		$(".depth3>li").css("color","#333");
+		$(this).css("color","#f28e34;")
+	});
+	 
+	$(".depth4>li").click(function() {
+		$(".depth4>li").css("color","#333");
+		$(this).css("color","#f28e34;")
+	});
+	
+});
+
+function signCallSuccFunc(resData) {
+	// 공동인증모듈 호출 성공
+}
+function signCallFailFunc(resData) {
+	messageErrorView("공동인증모듈 호출 중 오류가 발생하였습니다.");
+}
+function doLogout() {
+	var reqData = {
+			"serviceCd" : "APP_DATA",
+			"params":{"gubun":"C", "reqData":{"authorization":""} }
+	};
+	ftBridgeExcutor.postMessage(reqData);
+	setCookie("authorization", "");
+	doActionURL("main.view");
+}
+
+function resultInq() {
+	var actionForm = makeForm("actionForm");
+	addFormData(actionForm, "custNo", "");
+	addFormData(actionForm, "totalCnt", "0");
+	
+	doAction("loginFtApp", actionForm, 
+			function(resData){
+				
+				var resAuth = resData.authorization;
+				addFormData(actionForm, "token", resAuth);
+				doActionView('DEP0006_8',actionForm);
+			},
+			function(resData){
+				 messageErrorView("토큰 생성처리 중 오류가 발생하였습니다.")
+			});
+}
+
+</script>
+<!-- 퍼블 스크립트 -->
+<script>
+$(document).ready(function(){
+	
+	gnb();	
+	$(".btn-menu").click(function(){
+		
+	});
+
+	$(".btnBack").click(function(){
+		if (checkMobile()=="ios") {
+			
+			if (document.referrer) {
+				
+				history.back();
+					
+			} else {
+				window.open(document.referrer,'_self');
+			}
+				
+		} else {
+			history.back();	
+		}
+	});
+	
+	$(".menu_quick4").click(function(){
+		$('.menu_pop').show();
+	});
+	
+	$(".menu_pop .btn_close").click(function(){
+		$('.menu_pop').hide();
+	}); 
+});
+
+var gnbScroll;
+function gnb(dep1,dep2,dep3){
+    //gnb 
+    $(".btn-menu").on("click",function(){
+        gnbScroll = $(window).scrollTop();
+        $(".wrap").addClass("blockScroll").css("top",-gnbScroll);
+        console.log(0);
+        $(".gnbOpenWrap").addClass("open");
+    });
+    $(".btnGnbClose").on("click",function(){
+        $(".wrap").removeClass("blockScroll").css("top","auto");
+        $(window).scrollTop(gnbScroll);
+        $(".gnbOpenWrap").removeClass("open");
+    });
+    
+    $(".btnHome").click(function(){
+    	goMainPage();
+    });
+
+    //gnb 
+    //depth2 
+    $(".gnbOpenWrap .menuArea .btnGo").on("click", function () {
+        var target = $(this).attr("data-focus");
+        var targetTop = $(".gnbScrollArea .listArea li."+target).position().top + $(".gnbScrollArea .listArea").scrollTop()+1;
+        $(".gnbScrollArea .listArea").animate({scrollTop : targetTop},300);
+    });
+    //depth3 
+    $(".gnbOpenWrap .depth2 .btnOpen").on("click", function () {
+        if (!$(this).hasClass("on")) {
+            $(this).addClass("on")
+            $(this).closest("li").find(".depth3").slideDown();
+        } else {
+            $(this).removeClass("on");
+            $(this).closest("li").find(".depth3").slideUp();
+        }
+    });
+    //depth4 
+   $(".gnbOpenWrap .depth3 .btnOpen2").on("click", function () {
+        if (!$(this).hasClass("on")) {
+            $(this).addClass("on")
+            $(this).closest("li").find(".depth4").slideDown();
+        } else {
+            $(this).removeClass("on");
+            $(this).closest("li").find(".depth4").slideUp();
+        }
+    });
+    //scroll 
+    $(".gnbScrollArea .listArea").on("scroll",function () {
+        var top = $(this).scrollTop();
+        var target;
+        $(".gnbScrollArea .listArea > li").each(function(){
+            if($(this).position().top <= 0){
+                target = $(this).attr("class");
+                $(".btnGo").removeClass("on");
+                $(".btnGo[data-focus="+target+"]").addClass("on");
+            }
+        })
+    });
+    if(dep1 != undefined){
+        $(".gnbOpenWrap .menuArea .btnGo").eq(dep1).click();
+        if(dep2 != undefined){
+            $(".gnbScrollArea .listArea > li").eq(dep1).find(".depth2 > li").eq(dep2).find(".btnOpen").click();
+        }
+    };
+    
+    if(dep2 != undefined){
+        $(".gnbOpenWrap .menuArea .btnGo").eq(dep2).click();
+        if(dep3 != undefined){
+            $(".gnbScrollArea .listArea > li").eq(dep1).find(".depth3 > li").eq(dep2).find(".btnOpen").click();
+        }
+    };
+    
+    if(dep3 != undefined){
+        $(".gnbOpenWrap .menuArea .btnGo").eq(dep3).click();
+        if(dep3 != undefined){
+            $(".gnbScrollArea .listArea > li").eq(dep1).find(".depth4 > li").eq(dep2).find(".btnOpen2").click();
+        }
+    };
+}
+
+</script>
+<!-- 퍼블 스크립트 끝-->
+<!--메뉴부분-->
+
+<script>
+$("a").on("click",function(){
+	$(".btnGnbClose").click();
+});
+</script>
+		<div class="gnbOpenWrap" style="backround:#fff;">
+			<div class="topInfo">
+				<div class="title">
+					
+					<p class="logout_name">부자되세요</p>
+					 
+				</div>
+				<!-- TODO 210716. App 심사 미완료로 해당 메뉴 막음 -->
+<!-- 				<a class="btnalam">푸시알람</a> --> 
+				<a class="btnHome">홈으로</a>
+				<button class="btnGnbClose">닫기</button>
+					<ul>
+					<!-- li onclick="doActionURL('COM1001.view', true);"><a>본인인증</a></li -->
+					<li onclick="doActionURL(&#39;LIM9000.view?gubn=05&#39;, true);"><a>본인인증</a></li>
+					<li onclick="doActionURL(&#39;COM1002.view&#39;, true);"><a>고객센터</a></li>
+					<li class="menu_quick4"><a>인증보안</a></li>
+					<li onclick="doActionURL(&#39;COM1000.view&#39;, true);"><a>환경설정</a></li>
+				</ul>
+			</div>	
+			
+			<div class="gnbScrollArea">
+				<ul class="menuArea">
+					<li><button data-focus="baking" class="btnGo on">뱅킹</button></li>
+					<li><button data-focus="deposit" class="btnGo">금융상품</button></li>
+					<!-- <li><button data-focus="customer" class="btnGo">고객센터</button></li> -->
+					<li><button data-focus="mypage" class="btnGo">마이페이지</button></li>
+					<!-- <li><button data-focus="certicenter" class="btnGo">인증센터</button></li> -->
+					
+					
+					
+						<li><button data-focus="testtab" class="btnGo">테스트</button></li>
+					
+				</ul>
+			
+				
+				<ul class="listArea">
+					<li class="baking">
+						<div class="title">모바일 뱅킹</div>
+						<ul class="depth2">
+							<li>
+								<button class="btnOpen" title="하위 메뉴 열기">조회</button>
+								<ul class="depth3">
+									<li onclick="doActionURL(&#39;DEP1000.view?srchTxInqCd=01&#39;, true);"><a>전계좌조회</a></li>
+									<li onclick="doActionURL(&#39;DEP2100.view&#39;, true);"><a>거래내역조회</a></li>
+								</ul>
+							</li>
+							<li>
+								<button class="btnOpen" title="하위 메뉴 열기">이체</button>
+								<ul class="depth3">
+									<li>
+										<button class="btnOpen2" title="하위 메뉴 열기">즉시이체</button>
+										<ul class="depth4" style="display:none;">
+											<li onclick="doActionURL(&#39;DEP2101_1.view&#39;, true);">즉시이체</li>
+											<li onclick="doActionURL(&#39;DEP2103_1.view&#39;, true);">이체결과조회</li>
+										</ul>
+									</li>							
+									<li>
+										<button class="btnOpen2" title="하위 메뉴 열기">자동이체</button>
+										<ul class="depth4" style="display:none;">
+											<li onclick="doActionURL(&#39;DEP2201_1.view&#39;, true);"><a>자동이체 등록</a></li>
+											<li onclick="doActionURL(&#39;DEP2201_5.view&#39;, true);"><a>자동이체 조회/변경/해지</a></li>
+											<li onclick="doActionURL(&#39;DEP2201_8.view&#39;, true);"><a>자동이체 거래내역</a></li>
+										</ul>
+									</li>
+									<li>
+										<button class="btnOpen2" title="하위 메뉴 열기">지연이체</button>
+										<ul class="depth4" style="display:none;">
+											<li onclick="doActionURL(&#39;DEP2102_1.view&#39;, true);"><a>지연이체</a></li>
+											<li onclick="doActionURL(&#39;DEP2103_2.view?txGbnCd=D&#39;, true);"><a>지연이체내역조회/취소</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<button class="btnOpen" title="하위 메뉴 열기">인터넷예금관리</button>
+								<ul class="depth3">
+									<li>
+										<button class="btnOpen2" title="하위 메뉴 열기">이체한도관리</button>
+										<ul class="depth4" style="display:none;">
+											<li onclick="doActionURL(&#39;DEP2501_1.view&#39;, true);"><a>이체한도 조회 및 감액</a></li>
+											<li onclick="doActionURL(&#39;DEP2501_6.view&#39;, true);"><a>이체한도 증액</a></li>
+										</ul>
+									</li>
+									<li onclick="doActionURL(&#39;DEP2502.view&#39;, true);"><a>지연이체서비스등록/해지</a></li>
+									<li onclick="doActionURL(&#39;DEP2503_1.view?txGbnCd=A&#39;, true);"><a>계좌비밀번호변경</a></li>
+									<li onclick="doActionURL(&#39;DEP2504.view&#39;, true);"><a>계좌비밀번호오류해제</a></li>
+									<li onclick="doActionURL(&#39;DEP2513_1.view?txGbnCd=AS&#39;, true);"><a>출금계좌등록/해제</a></li>
+									<li onclick="doActionURL(&#39;DEP2505_1.view?txGbnCd=DI&#39;, true);"><a>입금지정계좌 등록/해제</a></li>									
+									<li>
+										<button class="btnOpen2" title="하위 메뉴 열기">전자금융관리</button>
+										<ul class="depth4" style="display:none;">
+											<li onclick="doActionURL(&#39;DEP2506_1.view&#39;, true);"><a>최초사용자비밀번호등록</a></li>
+											<li onclick="doActionURL(&#39;DEP2509_1.view&#39;, true);"><a>사용자비밀번호변경</a></li>
+											<li onclick="doActionURL(&#39;DEP2507_1.view&#39;, true);"><a>비밀번호분실재등록</a></li>
+											<li onclick="doActionURL(&#39;DEP2508_1.view&#39;, true);"><a>비밀번호5회오류해제</a></li>
+											<li onclick="doActionURL(&#39;DEP2510_1.view?txGbnCd=S01&#39;, true);"><a>자주쓰는계좌관리</a></li>
+										</ul>
+									</li> 
+								</ul>
+							</li>
+							<li onclick="doActionURL(&#39;DEP3000.view&#39;, true);"><a>장기미접속해제</a></li>
+							<li>
+								<button class="btnOpen" title="하위 메뉴 열기">거래중지계좌관리</button>
+								<ul class="depth3" style="display:none;">
+									<li onclick="doActionURL(&#39;DEP3100.view?txGbnCd=RT&#39;, true);"><a>거래중지계좌재개</a></li>
+									<li onclick="doActionURL(&#39;DEP3200.view?txGbnCd=TSI&#39;, true);"><a>거래중지계좌해지</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="deposit">
+						<div class="title">금융상품 안내</div>
+						<ul class="depth2">							
+							<li>
+								<button class="btnOpen" title="하위 메뉴 열기">예적금</button>
+								<ul class="depth3">
+									<li>
+										<button class="btnOpen2" title="하위 메뉴 열기">예적금 상품안내</button>
+										<ul class="depth4" style="display:none;">
+											<li onclick="doActionURL(&#39;DEP9999.view?prdctTypeCd=91&#39;, true);"><a>예적금상품</a></li>
+										</ul>
+									</li>
+									<li>
+										<button class="btnOpen2" title="하위 메뉴 열기">예적금 관리</button>
+										<ul class="depth4" style="display:none;">
+											<li onclick="doActionURL(&#39;DEP2303_1.view?txGbnCd=S01&#39;);"><a>예적금해지예상조회</a></li>
+											<li onclick="doActionURL(&#39;DEP2304_1.view?txGbnCd=S01&#39;);"><a>예적금해지</a></li>
+											<li onclick="doActionURL(&#39;DEP2302_1.view?txGbnCd=S01&#39;)"><a class="btnLink">만기자동재예치 등록/해제</a></li>
+											<li onclick="doActionURL(&#39;DEP2305.view?txGbnCd=S01&#39;);"><a>예적금해지계좌조회</a></li>
+										</ul>									
+									</li>
+									<li onclick="doActionURL(&#39;DEP9999.view?prdctTypeCd=90&#39;, true);"><a>비대면계좌개설</a></li>
+									<li onclick="doActionURL(&#39;DEP0005_1.view&#39;);"><a>계좌개설내역조회/취소</a></li>
+								</ul>
+							</li>															
+							<li>
+								<button class="btnOpen" title="하위 메뉴 열기">대출</button>
+								<ul class="depth3">
+									<li onclick="doActionURL(&#39;LIM9999.view&#39;);"><a>대출상품안내</a></li>
+									<li onclick="doActionURL(&#39;LIM9999.view?test=Y&#39;);"><a>대출상품안내TEST</a></li>
+									<!--<li onclick="doActionURL('LIM9000.view?gubn=05', true);"><a >대출 이어하기</a></li>-->
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!-- <li class="customer">
+						<div class="title">고객센터</div>
+						<ul class="depth2">
+							<li onclick="">
+								<button class="btnOpen" title="하위 메뉴 열기">사고신고</button>
+								<ul class="depth3">
+									<li>
+										<button class="btnOpen2" title="하위 메뉴 열기">자기앞수표신고</button>
+										<ul class="depth4" style="display:none;">
+											<li onclick="doActionURL('DEP2403_1.view', true);"><a >자기앞수표사고신고</a></li>
+											<li onclick="doActionURL('DEP2403_3.view', true);"><a >자기앞수표신고 결과조회</a></li>									
+										</ul>
+									</li>
+									<li onclick="doActionURL('DEP2402_1.view', true);"><a >보안카드 OTP 사고신고</a></li>
+									<li onclick="doActionURL('DEP2406_1.view', true);"><a >OTP사고회복</a></li>									
+								</ul>
+							</li>
+							<li onclick="">
+								<button class="btnOpen" title="하위 메뉴 열기">고객센터</button>
+								<ul class="depth3">
+									<li onclick="doActionURL('COM003_2.view', true);"><a >스마트 APP 이용안내</a></li>
+									<li onclick="doActionURL('BBS0001_1.view', true);"><a >공지사항</a></li>
+									<li onclick="doActionURL('BBS0002.view', true);"><a >자주묻는 질문 FAQ</a></li>
+									<li onclick="doActionURL('LIM3600.view', true);"><a >대출철회</a></li>
+									<li onclick="doActionURL('LIM3700.view', true);"><a >금리인하요구권</a></li>									
+								</ul>
+							</li>
+						</ul>
+					</li> -->
+					<li class="mypage">
+						<div class="title">마이페이지</div>
+						<ul class="depth2">
+							<li onclick="doActionURL(&#39;LIM3300.view?gubn=04&#39;, true);"><a>전자약정</a></li>								
+							<li onclick="doActionURL(&#39;LIM3200.view?gubn=01&#39;, true);"><a>서류제출</a></li>						
+							<li>
+								<button class="btnOpen" title="하위 메뉴 열기">나의 대출현황</button>
+								<ul class="depth3">
+									<li onclick="doActionURL(&#39;LIM3400.view&#39;, true);"><a>나의 대출현황</a></li>
+									<li onclick="doActionURL(&#39;DOC0000.view?gubn=02&#39;, true);"><a>약정서 조회</a></li>
+								</ul>
+							</li>
+							<li onclick="doActionURL(&#39;LIM3500.view?txGbnCd=E&#39;, true);"><a>대출기한연장</a></li>
+							<li onclick="doActionURL(&#39;LIM3600.view&#39;, true);"><a>대출계약철회권</a></li>
+							<li onclick="doActionURL(&#39;LIM3700.view&#39;, true);"><a>금리인하요구권</a></li>
+							<!-- TODO App 210716. 심사 미완료로 증명서 메뉴 임시로 막음 -->
+							<li>
+								<button class="btnOpen" title="하위 메뉴 열기">증명서발급</button>
+								<ul class="depth3">
+									<li onclick="doActionURL(&#39;COM3000.view&#39;, true);"><a>증명서발급 신청</a></li>
+									<li onclick="doActionURL(&#39;COM3001.view&#39;, true);"><a>증명서발급 확인</a></li>
+								</ul>
+							</li>
+							<li>
+								<button class="btnOpen" title="하위 메뉴 열기">CMS 관리</button>
+								<ul class="depth3">
+									<li onclick="doActionURL(&#39;LIM5000.view?gubn=07&#39;, true);"><a>CMS 등록/변경</a></li>
+									<!--<li onclick="doActionURL('LIM5003.view?gubn=07', true);"><a>CMS 해지</a></li>-->
+								</ul>
+							</li>
+							<!--<li onclick="doActionURL('LIM3800.view', true);"><a >제증명신청</a></li>-->
+						</ul>
+					</li>
+					<!-- <li class="certicenter">
+						<div class="title">인증센터</div>
+						<ul class="depth2">
+							<li onclick="">
+								<button class="btnOpen" title="하위 메뉴 열기">인증센터</button>
+								<ul class="depth3">
+									<li id="signManager"><a>공동인증서관리</a></li>
+									<li id="signReg"><a >공동인증서 가져오기</a></li>
+								</ul>
+							</li>
+							<li>
+								<button class="btnOpen" title="하위 메뉴 열기">보안센터</button>
+								<ul class="depth3">
+									<li id="regMotpBtn"><a>mOPT 설정</a></li>
+									<li id="terminateMotpBtn"><a>mOTP 해지</a></li>
+									<li onclick="doActionURL('COM2003_1.view', true);"><a >타기관 OTP등록</a></li>
+									<li onclick="doActionURL('COM2004.view', true);"><a >전자금융사기예방서비스</a></li>
+									<li onclick="doActionURL('COM2005.view', true);"><a >단말기지정서비스 가입</a></li>
+									<li id="uuidInqBtn"><a>단말기지정서비스 조회/해지</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li> -->
+					
+ 					 
+						<li class="testtab">
+							<div class="title">앱 테스트</div>
+							<ul class="depth2">
+							<li onclick="custNoReReg();"><a>고객등록</a></li>
+							<li onclick="custNoReSetting();"><a>고객번호변경</a></li>
+							<!-- 
+							<li onclick="nativeTest01();"><a >FDS</a></li>
+							<li onclick="nativeTest02();"><a >핀번호 등록</a></li>
+							<li onclick="nativeTest03();"><a >핀번호 인증</a></li>
+							<li onclick="nativeTest04();"><a >지문 등록</a></li>
+							<li onclick="nativeTest05();"><a >지문 인증</a></li>
+							<li onclick="nativeTest06();"><a >패턴 등록</a></li>
+							<li onclick="nativeTest07();"><a >패턴 인증</a></li>
+							<li onclick="nativeTest10();"><a >공동인증서관리</a></li>
+							<li onclick="nativeTest13();"><a >키보드1</a></li>
+							<li onclick="nativeTest14();"><a >키보드2</a></li>
+							
+							 -->
+							<li onclick="nativeTest11();"><a>공동인증서서명</a></li>
+							<li onclick="nativeTest12();"><a>공동인증서가져오기</a></li>
+							<li onclick="nativeTest09();"><a>스크랩핑</a></li>
+							<li onclick="nativeTest08();"><a>OCR</a></li>
+							<li onclick="nativeTest15();"><a>MOTP등록</a></li>
+							<li onclick="nativeTest16();"><a>MOTP인증</a></li>
+							<li onclick="nativeTest17();"><a>스마트앱등록</a></li>
+							<li onclick="nativeTest18();"><a>스마트앱인증</a></li>
+							<li onclick="doDownloadAgree();"><a>다운로드 테스트</a></li>
+							<li onclick="nativeTest19();"><a>카메라테스트</a></li>
+							<li onclick="nativeTest20();"><a>푸쉬이력테스트</a></li>
+							<li onclick="nativeTest21();"><a>공지사항테스트</a></li>
+							<li onclick="nativeTest23();"><a>신분증진위확인테스트</a></li>
+							<li onclick="doFileDownload(&#39;COM3006&#39;, &#39;fullpayment-leejongseok.jpg&#39;, function(){messageView(resJson)});"><a>파일다운로드테스트</a></li>
+							<li onclick="nativeTest24();"><a>휴먼계정변경테스트</a></li>
+							<li onclick="nativeTest25();"><a>탈퇴테스트</a></li>
+							<li onclick="javascript:doActionURL(&#39;/FIN0001.view?gubun=sign&#39;);"><a>금융인증서 서명 테스트</a></li>
+							<li onclick="javascript:doActionURL(&#39;/FIN0001.view?gubun=scrap&#39;);"><a>금융인증서 스크랩핑 테스트</a></li>
+							<li onclick="javascript:doActionURL(&#39;/FIN0001.view?gubun=pri&#39;);"><a>사설인증서 스크랩핑 테스트</a></li>
+<!-- 							<li onclick="doActionURL('/LIM3107.view?appNumber=10883087');"><a>전자서명 페이지 테스트</a></li> -->
+							
+							</ul>
+						</li>
+ 					 
+				</ul>
+			</div>
+			
+			<dl class="menu_pop" style="display:none;">
+				<dt>
+					<a class="btn_close btn-back01"><span></span><span></span><span></span>뒤로가기</a>
+					인증 및 보안
+					<a class="btn_close bt-colsee"><span></span><span></span><span></span>닫기</a>
+				</dt>
+				<dd>
+					<ul class="mainSub">
+						<li>
+							<p class="tit">인증센터</p>
+							<ul>
+								<li id="signManager"><a>공동인증서 관리</a></li>
+								<li id="signReg"><a>공동인증서 가져오기</a></li>
+								<!--<li id="signOtherA"><a>타기관인증서 등록</a></li>-->
+								<!--<li id="signOtherB"><a>타기관인증서 해지</a></li>-->
+								<!-- <li onclick="doActionURL('LIM0030_1.view', true);"><a >전자서명</a></li>
+								<li	onclick="doActionURL('LIM0021_1.view', true);" ><a >사전조회동의</a></li> -->
+							</ul>
+						</li>
+						<li>
+							<p class="tit">보안센터</p>
+							<ul>
+								<li id="regMotpBtn"><a>MOTP 설정</a></li>
+								<li id="terminateMotpBtn"><a>MOTP 해지</a></li>
+								<li onclick="doActionURL(&#39;COM2003_1.view&#39;, true);"><a>타기관OTP등록</a></li>
+								<li onclick="doActionURL(&#39;COM2004.view&#39;, true);"><a>전자금융사기예방서비스</a></li>
+								<li onclick="doActionURL(&#39;COM2005.view&#39;, true);"><a>단말기지정서비스 가입</a></li>
+								<li id="uuidInqBtn"><a>단말기지정서비스 조회/해지</a></li>
+
+							</ul>
+						</li>
+					</ul>
+				</dd>
+			</dl><!-- //menu_pop -->
+			 
+		</div><!--//gnbOpenWrap-->
+		<!--//메뉴부분끝-->
+	
+
+<input type="hidden" id="appNumber" value="">
+<input type="hidden" id="appStatus" value="">
+
+<section id="agreeList" style="height: 100%;">
+	<ul class="topTab">
+		<li class="on"><a>신용상품</a></li>
+<!-- 		<li><a onclick="doActionURL('/LIM9001_1.view', true);">햇살론</a></li> -->
+<!-- 		<li><a onclick="doActionURL('/LIM9001_2.view', true);">전세&#183;임대론</a></li> -->
+	</ul>
+	
+		<!-- 약관 start -->
+		<input type="hidden" id="ProcodeType" value="">
+		<input type="hidden" id="bisangYn" value="">
+		<div class="subTitle01" style="margin: 15px;">
+			<b>스마트아이 본인인증 동의서 </b>를 위해<br>이용약관 동의가 필요합니다.
+		</div>
+		
+
+
+<script type="text/javascript" src="./LIM9001.view_files/LIM3000_5.js" charset="utf-8"></script>
+<!-- // 약관리스트 시작 -->
+
+<input type="hidden" name="cntl_YN" id="cntl_YN"><!-- 2022.09.20 약관동의 예, 아니오 제어위해 추가 -->
+<input type="hidden" name="view_YN" id="view_YN"><!-- 2022.09.20 약관동의 아니오 일 경우 팝업 띄우기 위해 추가 -->
+
+<article class="checkbox-allselect">
+	<div class="terms_cont">
+		<span class="all02"> <input type="checkbox" id="all_check" class="all_check" name="all_check" data-id="all_check"> <label class="c_tit" for="all_check"><em>필수 약관 전체동의</em></label>
+		</span>
+		<ul class="identification03 meta-chk agg">
+			<li>
+				<span class="agree_chk02"> 
+				<input type="checkbox" id="c_agree1" class="argee termsE_Y subCls" name="c_agree1" data-id="c_agree1" data-tab="AGG0224"> 
+				<label class="c_tit" for="c_agree1">대학생·청년층을 위한 공적지원제도</label> 
+				<a data-tab="AGG0224"></a>
+			</span></li>
+			<li><span class="agree_chk02"> <input type="checkbox" id="c_agree2" class="argee termsE_Y subCls" name="c_agree2" data-id="c_agree2" data-tab="AGG0052"> <label class="c_tit" for="c_agree2">채무조정 진행자를 위한 공적지원제도</label> <a data-tab="AGG0052"></a>
+			</span></li>
+			<li><span class="agree_chk02"> <input type="checkbox" id="c_agree21" class="argee termsE_Y subCls" name="c_agree21" data-id="c_agree21" data-tab="AGG0023"> <label class="c_tit" for="c_agree21">대출상품설명서</label> <a data-tab="AGG0023"></a>
+			</span></li>
+			<li><span class="agree_chk02"> <input type="checkbox" id="c_agree3" class="agree termsE_Y subCls" name="c_agree3" data-id="c_agree21" data-tab="AGG0022"> <label class="c_tit" for="c_agree3">개인(신용)정보 수집·이용·제공
+						동의서[여신(금융)거래]</label> <a data-tab="AGG0022"></a>
+			</span></li>
+			<li><span class="agree_chk02"> <input type="checkbox" id="c_agree4" class="agree termsE_Y subCls" name="c_agree4" data-id="c_agree4" data-tab="AGG0046"> <label class="c_tit" for="c_agree4">개인(신용)정보 수집·이용 요약
+						동의서[비여신(금융)거래]</label> <a data-tab="AGG0046"></a>
+			</span></li>
+			<li><span class="agree_chk02"> <input type="checkbox" id="c_agree5" class="agree termsE_Y subCls" name="c_agree5" data-id="c_agree5" data-tab="AGGC005"> <label class="c_tit" for="c_agree5">개인(신용)정보 수집·이용·제공·조회 요약 동의서</label> <a data-tab="AGGC005"></a>
+			</span></li>
+			
+			
+		</ul>
+
+	</div>
+</article>
+<article class="checkbox-allselect is-allselect">
+	<div class="terms_cont">
+
+		<span class="all02"> <input type="checkbox" id="all_check02" class="all_check02" name="all_check02"> <label class="c_tit" for="all_check02"><em>선택 약관 전체동의</em></label>
+		</span>
+
+		<ul class="identification03 agg">
+			<li><span class="agree_chk02"> <input type="checkbox" id="c_agree77" class="agree02 subClsT" name="c_agree77"> <label class="c_tit" for="c_agree77">개인(신용)정보 수집·이용 요약
+						동의서[비여신(금융)거래]</label> <a data-tab="AGG007A"></a>
+			</span></li>
+			<li><span class="agree_chk02"> <input type="checkbox" id="c_agree7" class="agree02 subClsT" name="c_agree7"> <label class="c_tit" for="c_agree7">개인(신용)정보 수집·이용 요약
+						동의서[여신(금융)거래]</label> <a data-tab="AGG0007"></a>
+			</span></li>
+
+			<li>
+				<ul class="identification03 choice-chk" style="border: none; padding: 0; margin: 0;">
+					<!--choice-chk 선택 -->
+					<li><span class="agree_chk02 non"> <input type="checkbox" id="identification16" class="argee02 subClsT" name="identification16"> <label class="c_tit" for="identification16">개인(신용)정보 수집·이용·제공 동의서[상품 서비스안내 등]</label>
+							<a data-tab="AGG0013"></a>
+					</span></li>
+					<li>
+						<ol class="identification03" style="border: none; padding: 0; margin: 0;">
+							<!--choice-chk-sub 선택 선택 -->
+							<li>
+								<ul class="subChk">
+									<li><span class="agree_chk03 non"> <input type="checkbox" id="c_agree8_1" class="argee02 subClsS setCntl" name="argee8_1"> <label class="c_tit" for="c_agree8_1"><em>문자</em></label>
+									</span></li>
+									<li><span class="agree_chk03 non"> <input type="checkbox" id="c_agree8_2" class="argee02 subClsS setCntl" name="argee8_2"> <label class="c_tit" for="c_agree8_2"><em>이메일</em></label>
+									</span></li>
+									<li><span class="agree_chk03 non"> <input type="checkbox" id="c_agree8_3" class="argee02 subClsS setCntl" name="argee8_3"> <label class="c_tit" for="c_agree8_3"><em>전화</em></label>
+									</span></li>
+									<li><span class="agree_chk03 non"> <input type="checkbox" id="c_agree8_4" class="argee02 subClsS setCntl" name="argee8_4"> <label class="c_tit" for="c_agree8_4"><em>DM</em></label>
+									</span></li>
+								</ul>
+							</li>
+						</ol>
+					</li>
+				</ul>
+			</li>
+
+			<li><span class="agree_chk02"> <input type="checkbox" id="c_agree10" class="agree02 subClsT" name="c_agree10"> <label class="c_tit " for="c_agree10">대출거절 사유 고지 동의</label> <a data-tab="AGG0233"></a>
+			</span></li>
+			<li><span class="agree_chk02"> <input type="checkbox" id="c_agree12" class="agree02 subClsT" name="c_agree12"> <label class="c_tit " for="c_agree12">알림톡 관련 서비스 동의사항</label> <a data-tab="AGG0034"></a>
+			</span></li>
+			
+			
+		</ul>
+
+	</div>
+</article>
+
+
+	
+</section>
+
+<section id="agreeListSA" style="display:none;">
+	<ul class="topTab">
+		<li class="on normal_cus"><a>일반금융소비자</a></li>
+		<li class="pro_cus"><a>전문금융소비자</a></li>
+	</ul>
+	<input type="hidden" id="finCsmrDvcd" value="11">
+	<input type="hidden" id="serverTime" value="20220929164955">
+	                     
+	<article>
+		<h2>대출계약자 적합성 · 적정성 확인서</h2>
+	</article>
+	
+	<article>
+		<div class="page-info" style="display:block;">
+			<h5><p><span></span>안내사항</p></h5>
+			<div>
+				<span>※</span> 본 확인서는 「금융소비자 보호에 대한 법률」<b class="font-orange">제17조 (적합성원칙) 및 제18조 (적정성원칙)</b>에 따라 귀하의 연령, 재산상황, 대출계약의 목적 등을 파악하여 대출계약자에게 가장 접합한 대출계약 체결을 권유하기 위한 기초자료로 활용됩니다. 허위 또는 불성실한 답변을 하시는 경우 부적합한 대출계약을 권휴하게 될 수 있으며, 이로인해 발생하는 모든 손해는 계약자 본인에게 귀속되오니 유념하여 주시기 바랍니다.</div>
+		</div>
+	</article>
+
+	<article class="normal_div">
+		<div class="input">
+			<p><label for="">1. 귀하의 <b class="font-orange">연령</b>은 어떻게 되십니까?</label></p>
+
+			<ul class="input-radio-list">
+				<li>
+					<span class="normal_radio non">
+						<input type="radio" id="check1_1" name="check1" value="01">
+						<label for="check1_1"><em>20대 이하</em></label>
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check1_2" name="check1" value="02">
+						<label for="check1_1"><em>30대</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check1_3" name="check1" value="03">
+						<label for="check1_1"><em>40대</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check1_4" name="check1" value="04">
+						<label for="check1_4"><em>50대</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check1_5" name="check1" value="05">
+						<label for="check1_5"><em>60대 이상</em></label>
+					</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="input">
+			<p><label for="">2. 귀하의 <b class="font-orange">대출계약 체결의 목적</b>은 무엇입니까?</label></p>
+			<ul class="input-radio-list sct-orderradio">
+				<li>
+					<span class="normal_radio non">
+						<input type="radio" id="check2_1" name="check2" value="01">
+						<label for="check1_1"><em>가계자금</em></label>
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check2_2" name="check2" value="02">
+						<label for="check1_2"><em>사업자금</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check2_3" name="check2" value="03">
+						<label for="check1_3"><em>주택자금</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check2_4" name="check2" value="04">
+						<label for="check1_4"><em>타 기관 대출금 상환</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check2_5" name="check2" value="05">
+						<label for="check1_5"><em>의료비</em></label>
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check2_6" name="check2" value="06">
+						<label for="check1_6"><em>교육비</em></label>
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check2_7" name="check2" class="sct-orderradio-bt" value="09">
+						<label for="check1_7"><em>기타</em></label>
+					</span>
+				</li>
+				<li>
+					<p class="inpTxt sct-orderradio-ac" style="display: none;">
+						<input name="" type="tel" placeholder="기타 선택 시 입력해주세요.">
+					</p>
+				</li>
+			</ul>
+		</div>
+
+		<div class="input">
+			<p><label for="">3. 귀하의 <b class="font-orange">연간소득</b>은 어느 정도입니까?</label></p>
+			<ul class="input-radio-list sct-orderradio">
+				<li>
+					<span class="normal_radio non">
+						<input type="radio" id="check3_1" name="check3" value="01">
+						<label for="check1_1"><em>6백만원 이상 5천만원 미만</em></label>
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check3_2" name="check3" value="02">
+						<label for="check1_2"><em>5천만원 이상 1억원 미만</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check3_3" name="check3" value="03">
+						<label for="check1_3"><em>1억원 이상</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check3_4" name="check3" class="sct-orderradio-bt" value="09">
+						<label for="check1_7"><em>해당없음</em></label>
+					</span>
+					<p class="inpTxt sct-orderradio-ac" style="display: none;">
+						<input name="" type="tel" placeholder="해당없음 선택 시 입력해주세요.">
+					</p>
+				</li>
+			</ul>
+		</div>
+
+		<div class="input">
+			<p><label for="">4. 귀하의 <b class="font-orange">총 자산규모(순자산)</b>는 어느 정도입니까?</label></p>
+			<ul class="input-radio-list sct-orderradio">
+				<li>
+					<span class="normal_radio non">
+						<input type="radio" id="check4_1" name="check4" value="01">
+						<label for="check1_1"><em>1억원 미만</em></label>
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check4_2" name="check4" value="02">
+						<label for="check1_2"><em>1억원 이상 5억원 미만</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check4_3" name="check4" value="03">
+						<label for="check1_3"><em>5억원 이상 10억원 미만</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check4_4" name="check4" value="04">
+						<label for="check1_7"><em>10억원 이상</em></label>
+					</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="input">
+			<p><label for="">5. 귀하의 <b class="font-orange">부채</b>는 어느 정도입니까?</label></p>
+			<ul class="input-radio-list sct-orderradio">
+				<li>
+					<span class="normal_radio non">
+						<input type="radio" id="check5_1" name="check5" value="01">
+						<label for="check1_1"><em>1천만원 미만</em></label>
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check5_2" name="check5" value="02">
+						<label for="check1_2"><em>1천만원 이상 1억원 미만</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check5_3" name="check5" value="03">
+						<label for="check1_3"><em>1억원 이상</em></label>	
+					</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="input">
+			<p><label for="">6. 귀하의 <b class="font-orange">신용점수</b>는 어떻게 되십니까?</label></p>
+			<ul class="input-radio-list sct-orderradio">
+				<li>
+					<span class="normal_radio non">
+						<input type="radio" id="check6_1" name="check6" value="01">
+						<label for="check1_1"><em>600점 이하</em></label>
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check6_2" name="check6" value="02">
+						<label for="check1_2"><em>600점 초과</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check6_3" name="check6" value="09">
+						<label for="check1_3"><em>모름</em></label>	
+					</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="input">
+			<p><label for="">7. 귀하가 <b class="font-orange">체결할 대출금의 변제방법</b>은 무엇입니까?</label></p>
+			<ul class="input-radio-list sct-orderradio">
+				<li>
+					<span class="normal_radio non">
+						<input type="radio" id="check7_1" name="check7" value="01">
+						<label for="check1_1"><em>근로소득</em></label>
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check7_2" name="check7" value="02">
+						<label for="check1_2"><em>사업소득</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check7_3" name="check7" value="03">
+						<label for="check1_3"><em>임대소득</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check7_4" name="check7" value="04">
+						<label for="check1_3"><em>연금소득</em></label>	
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check7_5" name="check7" class="sct-orderradio-bt" value="09">
+						<label for="check1_7"><em>기타</em></label>
+					</span>
+				</li>
+				<li>
+					<p class="inpTxt sct-orderradio-ac" style="display: none;">
+						<input name="" type="tel" placeholder="기타 선택 시 입력해주세요.">
+					</p>
+				</li>
+			</ul>
+		</div>
+	
+		<div class="input">
+			<p><label for="">8. 귀하의 연간소득 대비 <b class="font-orange">고정 지출비용</b>은 어느정도 입니까?</label></p>
+			<ul class="input-radio-list sct-orderradio">
+				<li>
+					<span class="normal_radio non">
+						<input type="radio" id="check9_1" name="check9" value="01">
+						<label for="check1_1"><em>연간 소득을 초과하지 않음</em></label>
+					</span>
+					<span class="normal_radio non">
+						<input type="radio" id="check9_2" name="check9" value="02">
+						<label for="check1_2"><em>연간 소득을 초과</em></label>	
+					</span>
+				</li>
+			</ul>
+		</div>
+
+		<div class="bul_inp">
+			<p>본인은 상기와 같이 제공한 정보의 내용이 정확한 것임을 확인 합니다.</p>
+		</div>
+		<div class="bul_inp">
+			<p>본인이 귀행에 제공한 적합성 · 적정성 관련 정보는 본인의 재산상황, 용도 등의 정보를 정확히 알려드린 것입니다.</p>
+		</div>
+		<div class="bul_inp">
+			<p>본인이 제공한 정보가 정확하지 않거나, 정보에 변경사항이 발생한 경우는 적합성 · 적정성 판단이 달라질 수 있으며, 이 경우 대출계약 체결이 어려울 수 있음을 설명 받았습니다.</p>
+		</div>
+		<div class="bul_inp">
+			<p>신청하신 상품이 귀하에게 부적합한 경우 '부적합 결과 안내서'를 문자메시지로 수취 하는 것에 동의합니다.</p>
+		</div>
+		<div class="usertext">
+			<p><span id="agreeDTM">2022년 09월 29일</span></p>
+			<p>대출계약자 성명 : <span></span></p>
+			<p>대리인 등 성명 : <span></span></p>
+		</div>
+	</article>
+	
+	
+		<footer style="margin-top: 50px;">
+			<a id="nextBtn2" style="position: fixed; bottom: 0px; height: 50px; z-index: 100"><span>확인</span></a>
+		</footer>
+</section>
+
+
+	<!--2023-07-05-->
+	<dl class="popup-layout-full scr-modal-agreeImg" style="display: none;"><!-- 약관 보기  -->
+		<dt>
+			<h5><span>약관동의</span></h5>
+			<!-- a href="#none" onclick="modalOff();" id="certCloseBtn"><span></span><span></span>팝업 닫기</a -->
+			<p onclick="modalOff(true);" id="certCloseBtn" class="btn-ok"><span>확 인</span></p>
+		</dt>
+		<dd class="class2" style="overflow:auto;">
+			<div class="agree-img" id="TEST">
+			 
+				 
+			</div>
+		</dd>
+		 
+		 
+		<dd>
+			<div class="zoombt">
+				<a onclick="imgMM(0.8)"><em></em><span>작게</span></a>
+				<a onclick="imgPP(1.2)"><em></em><span>크게</span></a>
+			</div>
+		</dd>
+	</dl>
+	<!--2023-07-05-->
+
+
+
+
+
+
+<script>
+
+/*
+$(".popup-layout-full>dd").scroll(function(){
+	var scrollTop = $(this).scrollTop();
+	var innerHeight = $(this).innerHeight();
+	var scrollHeight = $(this).prop("scrollHeight");
+
+	if (scrollTop + innerHeight >= scrollHeight) {
+		//$(".btn-ok").addClass("popok");
+		alert("test");
+	} else {
+	}
+});*/
+
+
+
+
+
+$(document).ready(function(){
+
+  /*if(document.getElementById(".class2").clientHeight > 0){
+    alert("Y축 스크롤바 생성");
+  }*/
+
+if(document.querySelector(".class2").scrollHeight - document.querySelector(".class2").clientHeight > 0){
+    alert("Y축 스크롤바 생성");
+  }	
+
+
+
+	   // 스크롤 여부 (true of false) 
+  $.fn.hasScrollBar = function() {
+	return (this.prop("scrollHeight") == 0 && this.prop("clientHeight") == 0) || (this.prop("scrollHeight") > this.prop("clientHeight"));
+  };
+
+  // 스크롤 존재할 경우 제일 하단으로 이동
+  if( $(" .popup-layout-full>dd").hasScrollBar() ){
+	  //$(".btn-ok").addClass("popok");
+	 // alert("test");
+		
+  }
+
+
+
+
+
+
+
+
+
+
+});
+
+
+
+</script>
+
+
+</body></html>

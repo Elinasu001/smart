@@ -1,0 +1,129 @@
+<html lang="ko" class=" overthrow-enabled" style="overflow: auto;"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no , target-densitydpi=medium-dpi"> -->
+
+    <link rel="stylesheet" href="./WEB/css/common.css?version=20240703145044">
+    <link rel="stylesheet" href="./WEB/css/contents.css?version=20240703145044">
+    </head>
+
+    <body class="non-header landing-css">
+    <!--s : 주소검색 시/도-->
+    <dl class="popup-layout-full bg-w scr-modal-AddSelect" style="display:block;"><!-- 주소 입력 팝업 -->
+        <dt>
+            <a onclick="modalOff();"><span></span><span></span>팝업 닫기</a>
+        </dt>
+        <dd>
+            <div>
+                <div class="tit">
+                    <p class="tag">주소검색</p>
+                    <p><em>시/도</em>를 <em>선택</em>해주세요</p>
+                </div>
+                <ul class="list">
+                    <li onclick="">서울특별시</li>
+                    <li onclick="">부산광역시</li>
+                    <li onclick="">대구광역시</li>
+                    <li onclick="">인천광역시</li>
+                    <li onclick="">광주광역시</li>
+                    <li onclick="">대전광역시</li>
+                    <li onclick="">울산광역시</li>
+                    <li onclick="">세종특별자치시</li>
+                    <li onclick="">경기도</li>
+                    <li onclick="">강원특별자치도</li>
+                    <li onclick="">충청북도</li>
+                    <li onclick="">충청남도</li>
+                    <li onclick="">전북특별자치도</li>
+                </ul>
+                <!--<div class="input inp-type02" style="padding-top:10px;">
+                    <p class="inpTxt" onclick="alertOn('AddSelect01')">
+                        <input name="" type="text" placeholder="선택해주세요." readonly="">
+                    </p>
+                    <p class="inpTxt" onclick="alertOn('AddSelect02')">
+                        <input name="" type="text" placeholder="선택해주세요." readonly="">
+                    </p>
+                </div>-->
+                <div class="address2-select-con" id="scrapAddrList">
+
+                </div><!--address2-select-con-->
+            </div>
+        </dd>
+        <!--<dd>
+            <a onclick="modalOff();"><span>확인</span></a>
+        </dd>-->
+    </dl>
+    <!--e : 주소검색 시/도-->
+
+    <!--s : 보안문자 -->
+    <dl class="popup-layout-full bg-w popup-captcha" style="display:block;">
+        <dt>
+            <a onclick="modalOff();"><span></span><span></span>팝업 닫기</a>
+        </dt>
+        <dd>
+            <div>
+                <div class="tit">
+                    <p class="tag">보안문자</p>
+                    <p>아래<em>이미지</em>를<br> 보이는 대로 <em>입력</em>해주세요</p>
+                </div>
+                <div class="img-captcha">
+                    <p class="img-code"><img src="./WEB/images/common/img-captcha.png" alt="보안코드" /></p>
+                    <p><button class="reset">새로고침</button></p>
+                </div>
+                <div class="input inp-type02">
+                    <p class="inpTxt">
+                        <input name="" type="text" placeholder="보안문자를 입력해주세요">
+                    </p>
+                </div>
+
+            </div>
+        </dd>
+        <dd>
+            <a onclick="modalOff();"><span>전송</span></a>
+        </dd>
+    </dl>
+
+    <!--e : 보안문자 -->
+
+    <!--s : 사설인증 인증요청 메세지-->
+    <div class="popup-layout popup-message" id="" style="display:block;">
+        <dl>
+        <dt>
+            <!--<h5></h5>
+            <a onclick="modalOff();"><span></span><span></span>팝업 닫기</a>-->
+        </dt>
+       <dd>
+          <div class="message">
+                <p class="txt">
+                    사설인증 인증요청 메세지를 보냈습니다.
+                    <span>
+                        해당 인증기관에서 인증 후<br>하단 <em>“인증”</em> 버튼을  눌러주세요
+                    </span>
+                </p>
+          </div>
+        </dd>
+        <dd>
+            <p class="bottom-btn">
+                <a id="confirm_yes2"><span>취소</span></a>
+                <a id="confirm_no2"><span>인증</span></a>
+            </p>
+        </dd>
+        </dl>
+    </div>
+    <!--e : 사설인증 인증요청 메세지-->
+    <!--s : 로딩 -->
+    <div id="progress" style="display: block;">
+        <p>로딩중</p>
+    </div>
+    <!--e : 로딩 -->
+
+    </body>
+</html>

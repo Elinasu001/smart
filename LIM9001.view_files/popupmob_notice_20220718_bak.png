@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no, email=no, address=no" />
+<title>스마트저축은행</title> 
+<link rel="stylesheet" href="./WEB/css/common.css" />
+<link rel="stylesheet" href="./WEB/css/contents.css" />
+<script type="text/javascript" src="/WEB/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="/WEB/js/jquery.form.js"></script>
+<script type="text/javascript" src="/WEB/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/WEB/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/WEB/js/jquery.validate_add.js"></script>
+<script type="text/javascript" src="/WEB/js/jquery.easing.1.3.min.js"></script>
+<script type="text/javascript" src="/WEB/js/jquery.plugin.js"></script>
+<script type="text/javascript" src="/WEB/js/swiper.min.js"></script>
+<script type="text/javascript" src="/WEB/js/StringUtil.js"></script>
+<script type="text/javascript" src="/WEB/js/ft_common.js"></script>
+<script type="text/javascript" src="/WEB/js/ft_bridge.js"></script>
+<script type="text/javascript" src="/WEB/js/ft_biz_common.js"></script>
+<script type="text/javascript" src="/WEB/js/common_ui.js"></script>
+<script type="text/javascript" src="/WEB/js/biz/${serviceCd}.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#closeApp").click(function(){
+		var reqData = {
+				"serviceCd" : "APP_CLOSE"
+				,"params" : {}
+		};
+		ftBridgeExcutor.postMessage(reqData);
+	});
+	progressBar(false);
+});
+
+
+</script>
+</head>
+<body class="non-footer">
+	<section class="errorApp">
+		<article>
+			<img src="./WEB/images/inc/error99.png" alt="스마트저축은행">
+			<p>시스템 오류입니다.</p>
+			<p>자세한 사항은 <b>1577-3800</b>으로<br /> 문의하시길 바랍니다.</p>
+			<a href="javascript:void(0);" id="closeApp">앱 닫기</a>
+		</article>
+	</section>
+</body>
+</html>

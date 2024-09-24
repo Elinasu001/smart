@@ -1,0 +1,569 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta name="format-detection" content="telephone=yes" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta name="format-detection" content="telephone=yes" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no , target-densitydpi=medium-dpi"> -->
+
+
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/WEB/css/common.css?version=20230704221328" />
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/WEB/css/contents.css?version=20230704221328" />
+<!--<link rel="stylesheet" href="https://smarti.smartbank.co.kr/WEB/css/landing_style.css?version=20230704221328" />
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/WEB/css/jquery-ui-1.10.4.custom.css?version=20230704221328" />-->
+
+
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/jquery-1.11.2.min.js" charset="utf-8"></script>
+<!--<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/jquery.form.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/jquery.cookie.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/jquery.validate.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/jquery.validate_add.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/jquery.easing.1.3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/jquery.plugin.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/swiper.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/StringUtil.js" charset="utf-8"></script>-->
+<script type="text/javascript" src="./LIM9001.view_files/common_ui_test.js?version=20230704221328" charset="utf-8"></script>
+<!--<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/ft_biz_common.js?version=20230704221328" charset="utf-8"></script>
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/ft_common.js?version=20230704221328" charset="utf-8" 
+	id="ft_common" 
+	data-system_mode="${APP.MODE}"
+	data-serviceCd="LAN0000"
+	data-serverTime="20230704221328"
+	></script>-->
+
+
+
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/transkey_mobile/transkey.css?version=20230704221328" />
+<!--<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/biz/LAN0000.js?version=20230704221328" charset="utf-8"></script>
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/transkey_mobile/transkey.js?version=20230704221328" charset="utf-8"></script>-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0VJDBTSPP"></script>
+</head>
+
+<body class="non-header landing-css">
+
+
+
+
+
+<!-----  s : 2023-07-10 팝업 --------------->
+<style>
+	.popup-layout-full.important ul.tab_menu04 li { width:calc(50% - 15px); border-radius:10px; margin:10px 5px; }
+	.popup-layout-full.important  article * { line-height:1.5; }
+	.popup-layout-full.important  article .bul_inp::before { border:2px solid #ccc; color:#ccc; }
+	.popup-layout-full.important  article { margin-bottom:30px; }
+	.popup-layout-full.important  article em { font-weight:bold; }
+	.popup-layout-full.important  article > h5 { font-size:18px; font-weight:bold; margin-bottom:10px; }
+	.popup-layout-full.important  article p.bull { padding-left:7px; font-size:0.9rem;  }
+	.popup-layout-full.important  article p.bull::before { content:"·"; display:inline; position:absolute; left:0; }
+	.popup-layout-full.important  article th { font-weight:bold; width:50%; border-left:1px #ccc solid;}
+	.popup-layout-full.important  article th:first-child,
+	.popup-layout-full.important  article td:first-child{  border-left:0; }
+	.popup-layout-full.important .pointtext { margin:30px auto; padding:20px 10px; width:95%; background:#e9f0f2; border-radius:10px; box-sizing:border-box; }
+	.popup-layout-full.important  article ul.ico { margin:20px 0; }
+	.popup-layout-full.important  article ul.ico li { padding:10px 0 20px 50px; }
+	.popup-layout-full.important  article ul.ico li:first-child::before{ content:""; position:absolute; left:0; width:50px; height:50px; display:block; background:url("../../WEB/images/common/terms_img2.png") no-repeat; background-size:100%; }
+	.popup-layout-full.important  article ul.ico li:nth-child(2)::before{ content:""; position:absolute; left:0; width:50px; height:50px; display:block; background:url("../../WEB/images/common/terms_img3.png") no-repeat; background-size:100%; }
+
+	
+</style>
+<dl class="popup-layout-full topmodal important" style="display:block;"><!--금융상품 중요사항 안내-->
+	<dt>
+		<h5><span>신용정보활용체제</span></h5>
+		<p onclick="modalOff();" id="certCloseBtn" class="btn-ok"><span>확 인</span></p>
+	</dt>
+	<dd style="overflow:auto;">
+		<div class="persnal-agree">
+			<p>『신용정보의 이용 및 보호에 관한 법률』 제31조에 의거, 스마트저축은행(이하 당행)이 관리하고 있는 신용정보의 활용체제에 대하여 다음과 같이 공시합니다.</p>
+			<dl>
+                <dt>■ 관리하는 신용정보의 이용목적 및 종류</dt>
+                <dd>
+                    <ol>
+                    <li style="font-weight: bold;"><span>1.</span>이용목적</li>
+                    <li>
+                        <ol>
+                            <li><span>-</span>신용정보 주체가 신청한 금융거래 등 상거래 설정·유지·이행·관리, 금융사고 조사, 분쟁해결, 민원처리</li>
+                            <li><span>-</span>금융거래와 관련하여 신용정보회사 또는 신용정보집중기관에 대한 개인신용정보의 조회</li>
+                            <li><span>-</span>마케팅(상품 및 서비스 홍보, 판매권유, 경품지급, 사은행사)등의 고객 편의를 제공을 위한 경우</li>
+                            <li><span>-</span>기타 동법 및 다른 법률의 규정에서 정한 경우</li>
+                            <li><span>-</span>통계작성(상업적 목적 포함), 연구(산업적 연구 포함) 공익적 기록보존 목적 등</li>
+                        </ol>
+                    </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span>2.</span>신용정보의 종류</li>
+                        <li>
+                            <ol>
+                                <li><span>1)</span>특정신용정보주체를 식별할 수 있는 정보 식별정보(식별정보)</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>개인의 성명, 주민등록번호, 외국인 또는 재외국민의 경우 등록외국인기록표에 기재된 등록번호, 바이오인증정보, 전자우편주소, 사회 관계망 서비스 (Social Network Service)주소, 성별, 국적, 그 밖에 이와 유사한 정보</li>
+                                        <li><span>-</span>개인기업 및 법인의 상호, 사업자ㆍ법인등록번호, 고유번호, 사업장주소, 업종, 대표자 성명 등</li>
+                                    </ol>
+                                </li>
+                                <li><span>2)</span>신용정보주체의 거래내용을 판단할 수 있는 정보(신용거래정보)</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>개인신용거래정보 : 대출, 채무보증 및 신용카드 현금서비스현황, 신용카드 발급 및 해지 사실, 연체정보, 대위변제‧대지급정보, 어음수표 부도정보 등 금융거래 상거래와 관련하여 그 거래의 종류, 기간, 금액, 금리 및 한도 등에 관한정보</li>
+                                        <li><span>-</span>기업신용거래정보 : 가계당좌ㆍ당좌예금 개설 및 해지사실, 신용카드 발급 및 해지사실, 연체정보, 대위변제ㆍ대지급정보, 어음ㆍ수표 부도정보, 대출ㆍ지급보증 등 신용공여현황 등 </li>
+                                    </ol>
+                                </li>
+                                <li><span>3)</span>신용정보주체의 신용도를 판단할 수 있는 정보(신용도판단정보)</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>금융거래 등 상거래와 관련하여 발생한 채무의 불이행, 연체, 부도, 대위변제, 대지급과 그 밖의 부정한 방법에 의한 신용질서 문란행위와 관련된 금액 및 발생, 해소의 시기 등에 관한 사항</li>
+                                        <li><span>-</span>신용정보주체가 법인인 경우 실제 법인의 경영에 참여하여 법인을 사실상 지배하는 자로서 대통령령으로 정하는 자에 관한 정보</li>
+                                    </ol>
+                                </li>
+                                <li><span>4)</span>신용정보주체의 신용거래능력을 판단할 수 있는 정보(신용능력정보)</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>개인의 직업ㆍ재산 ㆍ채무ㆍ소득의 총액 및 납세실적, 그 밖에 이와 유사한 정보</li>
+                                        <li><span>-</span>회사의 개황, 사업의 내용 등 일반정보, 재무상태, 재무비율 등 재무에 관한 사항, 감사인의 감사의견 및 납세실적 등 비 재무에 관한 사항 등</li>
+                                    </ol>
+                                </li>
+                                <li><span>5)</span>상기 정보 외에 신용정보주체의 신용을 판단할 때 필요한 정보(기타 신용평가를 위한 정보)</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>국세ㆍ지방세ㆍ관세ㆍ과태료ㆍ고용산재보험료의 체납, 법원의 판결에 의해 채무불이행자로 등록된 사실, 개인회생절차가 진행 중인 거래처, 신용회복지원이 확정된 거래처, 파산으로 인한 면책 결정을 받은 거래처 등</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+			</dl>
+
+			<dl>
+                <dt>■ 신용정보 제공에 대한 사항</dt>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span>1.</span>신용정보집중기관, 신용정보회사, 기타 법률에 의해 제출을 요구하는 공공기관 등</li>
+                        <li>
+                            <ol>
+                                <li><span>1)</span>제공받는 자</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>신용정보집중기관, 신용정보회사, 기타 법률에 의해 제출을 요구하는 공공기관등 </li>
+                                        <li><span>-</span>개인기업 및 법인의 상호, 사업자ㆍ법인등록번호, 고유번호, 사업장주소, 업종, 대표자 성명 등</li>
+                                    </ol>
+                                </li>
+                                <li><span>*</span>신용정보집중기관 : 한국신용정보원</li>
+                                <li><span>*</span>신용정보회사 : NICE평가정보㈜, 코리아크레딧뷰로㈜ 등</li>
+                                <li><span>2)</span>제공받는 자의 이용목적 </li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>신용을 판단하기 위한 자료로 활용하거나 공공기관에서 정책 자료로 활용</li>
+                                        <li><span>-</span>기타 동법 및 다른 법률의 규정에서 정한 사항</li>
+                                    </ol>
+                                </li>
+                                <li><span>3)</span>제공하는 신용정보의 종류 </li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>식별정보 , 신용거래정보, 신용능력정보, 신용도판단정보, 기타 신용평가를 위한 정보</li>
+                                    </ol>
+                                </li>
+                                <li><span>4)</span>제공하는 신용정보의 보유·이용 기간</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>제공한 날로부터 등록사유 발생과 관련이 있는 금융거래가 존속하는 기간 또는 목적 달성 시까지 보유·이용. 제공된 목적 달성 후에는 위에 기재된 이용 목적과 관련된 금융사고 조사, 분쟁해결, 민원처리, 법령상 의무이행을 위하여 필요한 범위 내에서만 보유·이용</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span>2.</span>신용정보 제3자 제공현황</li>
+                        <li>
+                            <ol>
+                                <li><span>1)</span>제공 대상자</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>한국신용정보원, 신용정보회사(코리아크레딧뷰로, 나이스신용평가정보 등), 은행, 카드사, 손해보험사</li>
+                                    </ol>
+                                </li>
+                                <li><span>2)</span>제공받는 자의 이용목적</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>금융기관에 대한 신용정보를 집중·수집·보관·제공</li>
+                                        <li><span>-</span>기타 동법 및 다른 법률의 규정에서 정한 경우</li>
+                                    </ol>
+                                </li>
+                                <li><span>3)</span>제공하는 신용정보의 종류</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>식별정보, 신용거래정보, 금융질서문란정보, 신용능력정보</li>
+                                    </ol>
+                                </li>
+                                <li><span>4)</span>이용 및 보유기간</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>개인(신용)정보가 제공된 날로부터 동의 철회 시까지 또는 제공된 목적을 달성할 때까지 또한 관련법령에 의하여 보유기간이 경과 할 때까지</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                    <li style="font-weight: bold;"><span>3.</span>제공하는 신용정보의 종류</li>
+                    <!-- <li style="border:1px solid; width:150px; padding-left:0;"><a href="#none">위탁제공현황 보러가기</a></li> -->
+                    </ol>
+                </dd>
+                <dd class="col-table03">
+					<caption>※ 신용정보 위탁 제공 현황 ※</caption>
+                    <table>
+                        <col style="width:30%" /><col style="width:30%" /><col style="width:*" />
+                        <tr>
+                            <th><em>위탁 업무</em></th>
+                            <th><em>위탁 업무내용</em></th>
+                            <th><em>업체명</em></th>
+                        </tr>
+                        <tr>
+                            <td><em>감정평가업무</em></td>
+                            <td><em>담보물 감정평가 업무 위탁</em></td>
+                            <td>
+                                <em>대화감정평가법인</em>
+                                <em>미래새한감정평가법인</em>
+                                <em>삼창감정평가법인</em>
+                                <em>하나감정평가법인</em>
+                                <em>가온감정평가법인</em>
+                                <em>경일감정평가법인</em>
+                                <em>나라감정평가법인</em>
+                                <em>온누리감정평가법인</em>
+                                <em>제일감정평가법인</em>
+                                <em>프라임감정평가법인</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><em>대출모집업부</em></td>
+                            <td><em>대출모집업무, 자서서류 수취대행업무 위탁</em></td>
+                            <td>
+                                <em>㈜넥서스티에스</em>
+                                <em>(주)넥서스네트웍스</em>
+                                <em>(주)라온파트너스</em>
+                                <em>(주)티에스오토컴퍼니</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>연계대출 모집업무 위탁</em></td>
+
+                            <td>
+                                <em>(주)핀다</em>
+                                <em>(주)핀크</em>
+                                <em>네이버파이낸셜</em>
+                                <em>뱅크샐러드</em>
+                                <em>비바리퍼블리카</em>
+                                <em>카카오페이</em>
+                                <em>키움증권</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>마케팅업무</em></td>
+                            <td><em>고객 모바일 쿠폰 발송</em></td>
+                            <td>
+                                <em>(주)SK앰앤서비스 </em>
+                                <em>CJ올리브네트웍스(주) </em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>법률자문업무</em></td>
+                            <td><em>법률자문 및 검토의견서 작성</em></td>
+                            <td>
+                                <em>법무법인 맥</em>
+                                <em>덴톤스 리 법률사무소</em>
+                                <em>법무법인 KR</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>법무 업무</em></td>
+                            <td><em>대출업무 관련 등기·공증·집행·공탁 및 소송사건(경매·비송사건 포함) 업무 위탁</em></td>
+                            <td>
+                                <em>이중한법무사</em>
+                                <em>서초법무사</em>
+                                <em>재경법무사</em>
+                                <em>고영민법무사 </em>
+                                <em>고지훈법무사</em>
+                                <em>법무법인 승지</em>
+                                <em>법무사 합동 기현</em>
+                                <em>선덕규법무사</em>
+                                <em>설재만법무사</em>
+                                <em>임정현법무사</em>
+                                <em>현방훈법무사</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>서류수취업무</em></td>
+                            <td>
+                                <em>여신서류 수취 업무 및 본인확인 업무 위탁</em>
+                            </td>
+                            <td>
+                                <em>나이스신용정보(주)</em>
+                                <em>다올신용정보(주)</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>세무고문업무</em></td>
+                            <td><em>세무업무자문 위탁</em></td>
+                            <td><em>한길세무회계사무소</em></td>
+                        </tr>
+                        <tr>
+                            <td><em>연계대출업무</em></td>
+                            <td><em>연계대출 모집업무 위탁</em></td>
+                            <td>
+                                <em>하나은행</em>
+                                <em>광주은행</em>
+                                <em>대구은행</em>
+                                <em>수협은행</em>
+                                <em>우리은행</em>
+                                <em>전북은행</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>외부감사 및 세무조정 업무</em></td>
+                            <td><em>외부감사인 선임 및 세무조정업무 위탁</em></td>
+                            <td><em>진일회계법인</em></td>
+                        </tr>
+                        <tr>
+                            <td><em>채권추심업무</em></td>
+                            <td><em>채권관리업무 위탁</em></td>
+                            <td>
+                                <em>SM신용정보(주)</em>
+                                <em>고려신용정보</em>
+                                <em>중앙신용정보</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><em>채권평가 및 매각업무</em></td>
+                            <td><em>채권매각 관련 자문</em></td>
+                            <td><em>예교지성회계법인 </em></td>
+                        </tr>
+                        <tr>
+                            <td><em>홍보업무위탁계약</em></td>
+                            <td><em>온라인 홍보, 카페, 페이스북 운영등</em></td>
+                            <td><em>나이스평가정보㈜</em></td>
+                        </tr>
+                    </table>
+                </dd>
+			</dl>
+
+			<dl>
+			    <dt>■ 신용정보주체의 권리 및 행사방법</dt>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span>1.</span>신용정보주체의 권리</li>
+                        <li>
+                            <ol>
+                                <li><span>1)</span>개인신용정보 열람·정정청구권</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>­정보주체는 자신의 개인신용정보를 열람하거나 제공해줄 것을 청구할 수 있으며, 자신의 개인신용정보가 사실과 다를 경우 정정을 청구할 수 있습니다.</li>
+                                    </ol>
+                                </li>
+                                <li><span>2)</span>개인신용정보 제공·이용 동의 철회권</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>­정보주체는‘신용정보회사 또는 신용정보집중기관에 제공하여 개인의 신용도 등을 평가하기 위한 목적 외의 목적으로 행한 개인신용정보 제공 동의’를 철회할 수 있습니다.</li>
+                                    </ol>
+                                </li>
+                                <li><span>3)</span>연락중지 청구권</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>­정보주체는 금융회사에 대하여 상품이나 용역을 소개하거나 구매를 권유할 목적으로 본인에게 연락하는 것을 중지하도록 청구할 수 있습니다.</li>
+                                    </ol>
+                                </li>
+                                <li><span>4)</span>개인신용정보 이용·제공사실 조회 및 통지 요청권</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>­신용정보주체는 최근 3년간 개인신용정보를 이용하거나 제공한 현황을 개별 저축은행으로 통지를 요구하거나 회사 홈페이지(www.smartbank.co.kr)에서 조회할 수 있습니다.</li>
+                                    </ol>
+                                </li>
+                                <li><span>5)</span>개인신용정보의 삭제 요구권</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>­금융거래 등 상거래관계의 설정 및 유지 등에 필수적인 개인신용정보의 경우, 신용정보 주체는 금융거래 등 상거래 관계가 종료되고 5년이 경과한 이후에 금융회사에게 본인의 개인신용정보의 삭제를 요구할 수 있습니다.</li>
+                                    </ol>
+                                </li>
+                                <li><span>6)</span>개인신용정보 삭제 제외 요청</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>신용정보주체는 개인신용정보가 삭제되기 전 당행에 개인신용정보의 삭제를 원치 않는다는 서면 등의 방법으로 명백한 의사를 표시하여 개인신용정보의 삭제 제외를 요청할 수 있습니다.</li>
+                                    </ol>
+                                </li>
+                                <li><span>7)</span>상거래 거절 근거 신용정보의 고지 요구</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>­금융회사가 신용정보회사 및 신용정보집중기관으로부터 제공받은 개인신용정보에 근거하여 상거래관계 설정을 거절하거나 중지한 경우 근거가 된 정보 등의 고지를 요구할 수 있습니다.</li>
+                                    </ol>
+                                </li>
+                                <li><span>8)</span>동화평가 결과에 대한 설명 요구권</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>­신용정보주체는 개인신용평가 및 금융거래 설정 및 유지 여부 등을 위하여 자동화평가를 하는지 여부와 자동화평가 결과 등에 대하여 설명하여 줄 것을 요구할 수 있습니다.</li>
+                                    </ol>
+                                </li>
+                                <li><span>9)</span>개인신용정보의 전송 요구권</li>
+                                <li>
+                                    <ol>
+                                        <li><span>-</span>신용정보주체는 은행이 보유하고 있는 본인에 관한 개인신용정보를 본인신용정보관리회사, 개인신용평가회사, 개인사업자산신용평가회사, 본인 등에게 전송하거나, 전송요구를 철회하여 줄 것을 요구할 수 있습니다.</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                    <li style="font-weight: bold;"><span>2.</span>권리 행사방법</li>
+                    <li>
+                        <ol>
+                            <li><span>-</span>­서면, 전자우편, 모사전송(Fax) 등을 통하여 권리 행사할 수 있으며 당행은 지체 없이 조치하겠습니다.</li>
+                            <li><span>-</span>­신용정보주체가 개인신용정보의 오류 등에 대한 정정 또는 삭제를 요구한 경우에는 당행은 정정 또는 삭제를 완료할 때까지 당해 개인신용정보를 이용하거나 제공하지 않습니다.</li>
+                            <li><span>-</span>­만 14세 미만 아동의 법정대리인은 당행에 그 아동의 개인신용정보에 대하여 열람 등 요구를 할 수 있습니다.</li>
+                        </ol>
+                    </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                    <li><span>3.</span>신용정보주체의 권익침해에 대한 구제방법</li>
+                    <li>개인(신용)정보침해로 인한 신고나 상담이 필요하신 경우 아래의 기관에 문의하시기 바랍니다.</li>
+                    <li>
+                        <ol>
+                            <li><span>-</span>­개인정보분쟁조정위원회 | www.kopico.go.kr | 전화번호 02-1833-6972</li>
+                            <li><span>-</span>­한국인터넷진흥원 개인정보침해신고센터 | privacy.kisa.or.kr | 국번없이 118</li>
+                            <li><span>-</span>­대검찰청 사이버수사과 | www.spo.go.kr | 국번없이 1301</li>
+                            <li><span>-</span>­경찰청 사이버안전지킴이 | www.police.go.kr | 국번없이 182</li>
+                        </ol>
+                    </li>
+                    </ol>
+                </dd>
+			</dl>
+
+			<dl>
+                <dt>■ 신용정보의 해당기간 , 신용정보 파기의 절차 및 방법</dt>
+                <dd>
+                    <ol>
+                        <li><span>1.</span>신용정보 보유 및 이용기간</li>
+                        <li>
+                            <ol>
+                                <li><span>-</span>­금융거래와 관련한 개인(신용)정보는 수집·이용에 관한 동의일로부터 금융거래 종료일 이후 최장 5년까지 위 이용목적을 위하여 보유·이용됩니다. 단, 금융거래 종료일 이후에는 금융사고 조사, 분쟁 해결, 민원처리, 법령상 의무이행 및 당행의 리스크 관리업무만을 위하여 보유·이용됩니다.</li>
+                                <li><span>-</span>­개인(신용)정보의 조회를 목적으로 수집된 개인(신용)정보는 수집·이용에 대한 동의일로부터 고객에 대한 개인(신용)정보 제공·조회 동의의 효력 기간까지 보유·이용됩니다. 단, 개인(신용)정보 제공·조회 동의의 효력 기간 종료 후에는 금융사고 조사, 분쟁 해결, 민원처리 및 법령상 의무이행만을 위하여 보유·이용됩니다.</li>
+                                <li><span>-</span>­상품 및 서비스 홍보 및 판매 권유 등과 관련한 개인(신용)정보는 수집·이용에 관한 동의일로부터 금융거래 종료일 또는 동의 철회 시까지 보유·이용됩니다. 단, 동의 철회일 후에는 제1조의 목적과 관련된 사고 조사, 분쟁 해결, 민원처리, 법령상 의무이행만을 위하여 보유·이용됩니다. </li>
+                                <li><span>-</span>­회원 가입 및 관리 목적으로 수집된 개인(신용)정보는 고객의 회원 가입일로부터 회원 탈퇴일 까지 보유·이용됩니다. 단, 회원 탈퇴일 후에는 제1조의 목적과 관련된 사고 조사, 분쟁 해결, 민원처리, 법령상 의무이행 만을 위하여 보유·이용됩니다.</li>
+                                <li><span>-</span>­온라인 거래 관련한 개인(신용)정보는 전자금융거래법 시행령 제12조에서 정하는 기간까지 보유·이용됩니다.</li>
+                            </ol>
+                        </li>
+                        <li><span>2.</span>신용정보 파기절차 및 방법</li>
+                        <li>
+                            <ol>
+                                <li><span>-</span>­당행은 「신용정보의 이용 및 보호에 관한 법류」 제20조의2에 따라 금융거래 등 상거래 관계가 종료된 날로부터 5년 이내에 개인신용정보를 삭제하고 있으며, 다음의 경우에는 현재 거래중인 개인신용정보와 분리하는 등의 방법으로 관리하고 있습니다.</li>
+                                <li><span>●</span>다른 법률에 따른 의무를 이행하기 위하여 불가피한 경우</li>
+                                <li><span>●</span>개인의 급박한 생명∙신체∙재산의 이익을 위하여 필요하다고 인정되는 경우</li>
+                                <li><span>●</span>그 밖에 예금∙보험금의 지급, 보험사기자의 재가입 방지를 위한 경우 등 개인신용정보를 보존할 필요가 있는 경우로서 신용정보법 시행령 제17조의 2에서 정하는 바에 따른 경우</li>
+                                <li><span>●</span>신용정보를 삭제하는 경우에는 그 삭제된 개인신용정보가 복구 또는 재생되지 아니하도록 조치</li>
+                                <li><span>●</span>전자적 파일 : 현재 기술 수준에서 적절한 비용이 소요되는 방법으로서 복원이 불가능 하도록 영구 삭제</li>
+                                <li><span>●</span>인쇄물, 서면, 그 밖의 기록 매체 : 파쇄 또는 소각</li>
+                            </ol>
+                        </li>
+                        <li><span>3.</span>분리보관 신용정보의 활용 및 열람</li>
+                        <li>
+                            <ol>
+                                <li><span>-</span>­분리보관 중인 개인신용정보는 다음의 경우에만 이용되고, 이용 시에는 목적 달성을 위한 필요 최소한의 범위와 종류만 이용하고 있으며, 신분을 나타내는 증표를 지참하여 개별 저축은행 영업점을 방문 등의 방법으로 개인신용정보의 이용내역을 열람요청하실 수 있습니다. </li>
+                                <li><span>-</span>­본인 요청, 법령상의 의무 준수, 민원·소송·분쟁 해결 및 기타 내부업무 처리 </li>
+                                <li><span>-</span>­다만 개인신용정보 제공을 요청하는 자가 다음 각 호의 어느 하나에 해당한다는 사실을 소명하고 개인신용정보의 제공사실 및 이유 등을 알리는 것의 유예를 서면으로 요청하는 경우 금융위원회가 고시하는 기간 동안 그 제공 사실 및 이유 등을 알리는 것을 유예할 수 있습니다.</li>
+                                <li><span>●</span>사람의 생명이나 신체의 안전을 위협할 우려가 있는 경우</li>
+                                <li><span>●</span>증거 인멸, 증인 위협 등 공정한 사법절차의 진행을 방해할 우려가 명백한 경우</li>
+                                <li><span>●</span>질문·조사 등의 행정절차의 진행을 방해하거나 과도하게 지연시킬 우려가 명백한 경우</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+			</dl>
+
+			<dl>
+			<dt>■ 인터넷 접속파일 등 개인정보를 자동으로 수집하는 장치의 설치·운영 및 그 거부에 관한 사항</dt>
+			<dd>
+				<ol>
+                    <li>
+                        <ol>
+                            <li style="font-weight: bold;"><span>-</span>­당행은 고객께서 홈페이지에 접속하신 상태에서 사용자 인증, 고객특화 서비스 제공 및 사용성 개선을 위하여 ‘쿠키’를 이용하고 있습니다. 쿠키는 이용자 사이트에 대한 기본 설정정보를 보관하기 위해 해당 웹사이트가 사용자의 컴퓨터 브라우저에 전송하는 소량의 정보입니다. 쿠키 이용에 대한 선택권은 고객이 가지고 있습니다. 고객님의 웹 브라우저에서 모든 쿠키를 허용하거나, 쿠키가 저장될 때 마다 확인을 거치거나, 모든 쿠키의 저장을 거부하는 등의 옵션을 선택하실 수 있습니다. 단, 고객이 쿠키의 저장을 거부하는 옵션을 선택하시는 경우에는 서비스 이용에 불편이 야기될 수 있습니다.</li>
+                            <li><span>-</span>­쿠키 설정 거부 방법 </li>
+                            <li><span>●</span>사용하는 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다.</li>
+                            <li><span>●</span>설정 인터넷 익스플로어의 경우(예시) : 웹 브라우저 상단의 도구 > 인터넷 옵션 > 개인정보</li>
+                            <li><span>●</span>안로이드폰 : 설정 > Google > 광고 > 광고 맞춤설정 선택 해제</li>
+                            <li><span>●</span>아이폰 : 설정 > 개인정보보호 > 광고 > 광고 추적 제한</li>
+                        </ol>
+                    </li>
+				</ol>
+			</dd>
+			</dl>
+
+			<dl>
+                <dt>■ 신용정보관리·보호인의 성명 또는 고충사항 처리부서와 연락처 등</dt>
+                <dd class="col-table03">
+                    <table>
+                        <col style="width:30%" /><col style="width:70%" />
+                        <tr>
+                            <th><em>구분</em></th>
+                            <th><em>신용정보관리 &middot; 보호인</em></th>
+                        </tr>
+                        <tr>
+                            <td><em>성명</em></td>
+                            <td><em>강남구</em></td>
+                        </tr>
+                        <tr>
+                            <td><em>부서</em></td>
+                            <td><em>준법감시</em></td>
+                        </tr>
+                        <tr>
+                            <td><em>전화번호</em></td>
+                            <td><em>062-231-2131</em></td>
+                        </tr>
+                    </table>
+                </dd>
+                <dd>
+                    <ol>
+                        <li><span>*</span>신용정보활용체제 버전번호: Ver 2.1</li>
+                        <li><span>*</span>신용정보활용체제 시행일자: 2023.7.1.</li>
+                    </ol>
+                </dd>
+			</dl>
+
+		</div>
+	</dd>
+</dl>
+
+
+<!----   e : 2023-07-09 팝업 --------------->
+
+
+
+
+
+
+</body>
+</html>
