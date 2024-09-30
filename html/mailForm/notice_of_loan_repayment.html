@@ -1,0 +1,283 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta name="format-detection" content="telephone=yes" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta name="format-detection" content="telephone=yes" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/WEB/css/common.css?version=20230704221328" />
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/WEB/css/contents.css?version=20230704221328" />
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/transkey_mobile/transkey.css?version=20230704221328" />
+
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/jquery-1.11.2.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/common_ui_test.js?version=20230704221328" charset="utf-8"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0VJDBTSPP"></script>
+</head>
+<body class="non-header landing-css">
+<style>
+    /* 공통 */
+    .noticeForm .blue { color:blue; }
+    .noticeForm .gray { color:#BBBBBB; }
+    .noticeForm .dot-box { display:inline-block; width:100%; padding:10px; border:1px dotted black; }
+    .noticeForm .secTitBox {margin:0 auto 10px; position:relative; }
+    .noticeForm .secTitBox>p {  display:inline-block; width:100%;  line-height:1.65; text-align:right; font-size:12px; }
+    .noticeForm .persnal-agree>dl:last-child { padding-bottom:10px;}
+    .noticeForm .persnal-agree>dl:last-child { padding-top:0; }
+
+    .noticeForm ol.order > li.bor-none::before { content:none; }
+    .noticeForm ol.order > li { position:relative; border:1px solid #DDDDDD; padding:10px; margin-bottom:30px; }
+    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -27px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
+
+    /* 테이블 제어 css */
+    /***table-St class제어*/
+    /*기본 table*/
+    .noticeForm .table-St { text-align:left; }
+    .noticeForm .table-St > table { width:100%; margin:0 auto; font-size:12px; border:1px solid #DADCE1; border-spacing:0; overflow:hidden; }
+    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; } 
+    .noticeForm .table-St > table th {  text-align: center; font-weight:500; }
+    .noticeForm .table-St > table td >a { font-weight:400; }
+    .noticeForm .table-St > table tr:last-child > th, .table-St > table tr:last-child > td { border-bottom:none; }
+    /*위아래 선있는 table*/
+    .noticeForm .table-St.type01 > table { border:none; border-radius:0; border-top:solid 1px #DADCE1; border-bottom:solid 1px #DADCE1; }
+    /*부모 class 속성*/	
+    .noticeForm  .th-bg th, .noticeForm .td-bg td { background:#F8F8F9; font-weight:500;}
+    .noticeForm  .th-bl th, .noticeForm .td-bl td { border-left:solid 1px #DADCE1; }
+    .noticeForm  .th-br th, .noticeForm .td-br td { border-right:solid 1px #DADCE1; }
+    .noticeForm  .th-bb th, .noticeForm .td-bb td { border-bottom:solid 1px #DADCE1; }
+    .noticeForm  .th-bt th, .noticeForm .td-bt td { border-top:solid 1px #DADCE1; }
+    /*th - td - th - td 이 한 tr에 묶인경우 */
+    .noticeForm  .table-St.type03 td { border-right:solid 1px #DADCE1; }
+    .noticeForm  .table-St.type03 td:nth-of-type(2) { border-right:none;}
+    /*th td 마지막 border삭제  */
+    .noticeForm .table-St.last-Bnon th:last-child, .noticeForm .table-St.last-Bnon td:last-child { border-right:0; }
+    /*th td padding 값*/
+    .noticeForm  .th-pdl10 th, .noticeForm .td-pdl40 td, .noticeForm .pdl10 { padding-left:10px !important; }
+    .noticeForm  .th-pdl40 th, .noticeForm .td-pdl40 td, .noticeForm .pdl40 { padding-left:40px !important; }
+    .noticeForm  .th-pdr40 th, .noticeForm .td-pdr40 td, .noticeForm .pdr40 { padding-right:40px !important; }
+    .noticeForm  .th-pdl60 th, .noticeForm .td-pdl60 td, .noticeForm .pdl60 { padding-left:60px !important; }
+    .noticeForm  .phLR10 th { padding-left:10px!important; padding-right:10px!important; }
+    .noticeForm  .pdLR10 td { padding-left:10px!important; padding-right:10px!important; }
+    /*부모class로 th border-top 삭제*/
+    .noticeForm  .bor-tnon th  { border-top:none;}
+    /*배경색*/
+    .noticeForm .table-St.bgFFF { background-color:#fff !important; }
+    .noticeForm .table-St.bgCCC { background-color:#ccc !important; }
+    .noticeForm .table-St.bgF8 { background-color:#F8F8F8 !important; }
+    .noticeForm .bgF8 { background-color: #F8F8F9; }
+    /***개별 보더속성*/
+    .noticeForm .bor-l { border-left:solid 1px #DADCE1;  }
+    .noticeForm .bor-r { border-right:solid 1px #DADCE1!important;  }
+    .noticeForm .bor-t { border-top:solid 1px #DADCE1; }
+
+    .noticeForm .bor-Anon { border:none; }
+    .noticeForm .bor-Rnon { border-right:none!important;}
+    .noticeForm .bor-Tnon { border-top:none!important;}
+    /*text정렬*/
+    .noticeForm .th-tl th, .noticeForm .td-tl td, .tl { text-align:left; }
+    .noticeForm .th-tr th, .noticeForm .td-tr td, .tr { text-align:right; }
+    .noticeForm .th-tc th, .noticeForm .td-tc td, .tc { text-align:center; }
+    .noticeForm span.tr { display:inline-block; width:100%; }
+    /*text 보더*/
+    .noticeForm .txt-box { border:1px solid #333333; }
+    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 17px; border:1px solid #333333; color:#333333; text-align: center;}
+</style>
+<dl class="popup-layout-full topmodal noticeForm notice01" style="display:block;">
+	<dt>
+		<h5><span>대출금변제촉구장 </span></h5>
+		<p onclick="modalOff();" id="" class="btn-ok"><span>확 인</span></p>
+	</dt>
+	<dd style="overflow:auto;">
+		<div class="persnal-agree">
+            <dl>
+                <dt>채권에 관한 사항 통지</dt>
+                <dd>
+                    <div class="table-St th-bg th-br th-bb td-bb">
+                        <table summary="수신인 안내표">
+                            <caption>수신인 안내표</caption>
+                            <colgroup>
+                                <col width="20%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="col">수&nbsp;신&nbsp;인</th>
+                                    <td class="blue"><span class="blue">홍 길 동</span><span class="">(00.00.00)</span> 귀하</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+                    <p class="dot-box">당사는 귀하를 채무자로 하는 채권에 관한 사항을 아래와 같이 안내하여 드리오니 궁금하신 사항이 있는 경우 담당부서(고객센터 ☎02-1661-0055)로 연락하시면 도움을 드리도록 하겠습니다.</p>
+                    <ol>
+                        <li style="font-weight: bold;"><span>1.</span>채무에 관한 사항</li>
+                    </ol>
+                    <div class="table-St th-bg td-bt th-br td-br tc">
+                        <table summary="채무에 관한 채권자, 상품명, 대출 계좌번호, 대출일자, 만기일자에 대한 안내표">
+                            <caption>채무에 관한 채권자, 상품명, 대출 계좌번호, 대출일자, 만기일자에 대한 안내표</caption>
+                            <colgroup>
+                                <col width="20%">
+                                <col width="*">
+                                <col width="*">
+                                <col width="*">
+                                <col width="*">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">채권자</th>
+                                    <th scope="col">상품명</th>
+                                    <th scope="col">대출<br/>계좌번호</th>
+                                    <th scope="col">대출<br/>일자</th>
+                                    <th scope="col" class="bor-Rnon">만기<br/>일자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="blue">OOO</td>
+                                    <td class="blue">OOOOOO</td>
+                                    <td class="blue">OOO-OOO-OO</td>
+                                    <td class="blue">2000.00.00</td>
+                                    <td class="blue bor-Rnon">2000.00.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+                    <div class="table-St th-bg td-bt th-br td-br last-Bnon">
+                        <table summary="채무에 관한 사항의 대출금액(원),비고 안내표">
+                            <caption>채무에 관한 사항의 대출금액(원),비고 안내표"</caption>
+                            <colgroup>
+                                <col width="*%">
+                                <col width="20%">
+                            </colgroup>
+                            <thead>
+                                <tr class="tc">
+                                    <th scope="col" colspan="4">대출금액(원)</th>
+                                    <th scope="col" rowspan="2">비고</th>
+                                </tr>
+                                <tr>
+                                    <th class="bor-t">원금</th>
+                                    <th class="bor-t">이자</th>
+                                    <th class="bor-t">기타</th>
+                                    <th class="bor-t bor-r">소계</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="blue">000000</td>
+                                    <td class="blue">000000</td>
+                                    <td class="blue">000000</td>
+                                    <td class="blue bor-r">000000</td>
+                                    <td class="bor-t"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ol>
+                        <li><span>※ </span>상기 내용은 <b class="blue">20.  .  .</b> 기준으로 작성되었으므로 이후 변동될 수 있습니다.</li>
+                    </ol>
+                </dd>
+                <br/>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span>2.</span>연체 발생 여부 및 연체금액·기간</li>
+                        <li>
+                            <ol>
+                                <li><span>*</span>연체 발생 여부 : <b class="txt-box">여</b></li>
+                                <li><span>*</span>연체 금액 및 기간</li>
+                            </ol>
+                        </li>
+                    </ol>
+
+                    <div class="table-St th-bg td-bt th-br td-br last-Bnon">
+                        <table summary="연체 발생 여부 및 연체금액·기간의 연체금액(원), 최종이수일, 연체기간(연체 시작일) 안내표">
+                            <caption>연체 발생 여부 및 연체금액·기간의 연체금액(원), 최종이수일, 연체기간(연체 시작일) 안내표"</caption>
+                            <colgroup>
+                                <col width="*%">
+                                <col width="20%">
+                            </colgroup>
+                            <thead>
+                                <tr class="tc">
+                                    <th scope="col" colspan="4">연체금액(원)</th>
+                                    <th scope="col" rowspan="2">최종이수일</th>
+                                    <th scope="col" rowspan="2">연체기간<br/>(연체시작일)</th>
+                                </tr>
+                                <tr>
+                                    <th class="bor-t">원금</th>
+                                    <th class="bor-t">이자</th>
+                                    <th class="bor-t">기타</th>
+                                    <th class="bor-t bor-r">소계</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="blue">000000</td>
+                                    <td class="blue">000000</td>
+                                    <td class="blue">000000</td>
+                                    <td class="blue bor-r">000000</td>
+                                    <td class="blue bor-t">2000.00.00</td>
+                                    <td class="blue bor-t">00일<br/>(20  . . .)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ol>
+                        <li><span>※ </span>상기 내용은 <b class="blue">20.  .  .</b> 기준으로 작성되었으므로 이후 변동될 수 있습니다.</li>
+                    </ol>
+                </dd>
+                <br/>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span>3.</span>문의 방법 안내</li>
+                    </ol>
+                    <div class="table-St th-bg td-bt th-br td-br tc">
+                        <table summary="문의 방법 안내에 대한 담당자, 소속, 전화번호, 사무실 주소 안내표">
+                            <caption>문의 방법 안내에 대한 담당자, 소속, 전화번호, 사무실 주소 안내표</caption>
+                            <colgroup>
+                                <col width="*">
+                                <col width="*">
+                                <col width="*">
+                                <col width="25*">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">담당자</th>
+                                    <th scope="col">소속</th>
+                                    <th scope="col">전화번호</th>
+                                    <th scope="col" class="bor-Rnon">사무실 <br>주소</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="blue">채권담당자</td>
+                                    <td>리테일금융본부</td>
+                                    <td>02-1661-0055</td>
+                                    <td class="bor-Rnon">서울 강남구 테헤란로 626, 5층</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br/>
+                    <span class="tr"><b><span class="blue">00</span>년 <span class="blue">00</span>월 <span class="blue">00</span>일</b></span>
+                    <br/><br/>
+                    <span class="tr">스마트저축은행</span>
+                    <span class="tr">광주광역시 서구 상무대로 799, 1층</span>
+                    <span class="tr">(홈페이지 : <a href="https://www.smartbank.co.kr" title="스마트저축은행 사이트">https://www.smartbank.co.kr</a>,<br/> 대표전화 : 02-1661-0055)</span>
+                </dd>
+			</dl>
+		</div>
+	</dd>
+</dl>
+</body>
+</html>
