@@ -1,0 +1,281 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta name="format-detection" content="telephone=yes" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta name="format-detection" content="telephone=yes" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/WEB/css/common.css?version=20230704221328" />
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/WEB/css/contents.css?version=20230704221328" />
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/transkey_mobile/transkey.css?version=20230704221328" />
+
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/jquery-1.11.2.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/common_ui_test.js?version=20230704221328" charset="utf-8"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0VJDBTSPP"></script>
+</head>
+<body class="non-header landing-css">
+<style>
+    /* 공통 */
+    .noticeForm .blue { color:blue; }
+    .noticeForm .gray { color:#BBBBBB; }
+    .noticeForm .dot-box { display:inline-block; width:100%; padding:10px; border:1px dotted black; }
+    .noticeForm .secTitBox {margin:0 auto 10px; position:relative; }
+    .noticeForm .secTitBox>p {  display:inline-block; width:100%;  line-height:1.65; text-align:right; font-size:12px; }
+    .noticeForm .persnal-agree>dl:last-child { padding-bottom:10px;}
+    .noticeForm .persnal-agree>dl:last-child { padding-top:0; }
+
+    .noticeForm ol.order > li.bor-none::before { content:none; }
+    .noticeForm ol.order > li { position:relative; border:1px solid #DDDDDD; padding:10px; margin-bottom:30px; }
+    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -27px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
+
+    /* 테이블 제어 css */
+    /***table-St class제어*/
+    /*기본 table*/
+    .noticeForm .table-St { text-align:left; }
+    .noticeForm .table-St > table { width:100%; margin:0 auto; font-size:12px; border:1px solid #DADCE1; border-spacing:0; overflow:hidden; }
+    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; } 
+    .noticeForm .table-St > table th {  text-align: center; font-weight:500; }
+    .noticeForm .table-St > table td >a { font-weight:400; }
+    .noticeForm .table-St > table tr:last-child > th, .table-St > table tr:last-child > td { border-bottom:none; }
+    /*위아래 선있는 table*/
+    .noticeForm .table-St.type01 > table { border:none; border-radius:0; border-top:solid 1px #DADCE1; border-bottom:solid 1px #DADCE1; }
+    /*부모 class 속성*/	
+    .noticeForm  .th-bg th, .noticeForm .td-bg td { background:#F8F8F9; font-weight:500;}
+    .noticeForm  .th-bl th, .noticeForm .td-bl td { border-left:solid 1px #DADCE1; }
+    .noticeForm  .th-br th, .noticeForm .td-br td { border-right:solid 1px #DADCE1; }
+    .noticeForm  .th-bb th, .noticeForm .td-bb td { border-bottom:solid 1px #DADCE1; }
+    .noticeForm  .th-bt th, .noticeForm .td-bt td { border-top:solid 1px #DADCE1; }
+    /*th - td - th - td 이 한 tr에 묶인경우 */
+    .noticeForm  .table-St.type03 td { border-right:solid 1px #DADCE1; }
+    .noticeForm  .table-St.type03 td:nth-of-type(2) { border-right:none;}
+    /*th td 마지막 border삭제  */
+    .noticeForm .table-St.last-Bnon th:last-child, .noticeForm .table-St.last-Bnon td:last-child { border-right:0; }
+    /*th td padding 값*/
+    .noticeForm  .th-pdl10 th, .noticeForm .td-pdl40 td, .noticeForm .pdl10 { padding-left:10px !important; }
+    .noticeForm  .th-pdl40 th, .noticeForm .td-pdl40 td, .noticeForm .pdl40 { padding-left:40px !important; }
+    .noticeForm  .th-pdr40 th, .noticeForm .td-pdr40 td, .noticeForm .pdr40 { padding-right:40px !important; }
+    .noticeForm  .th-pdl60 th, .noticeForm .td-pdl60 td, .noticeForm .pdl60 { padding-left:60px !important; }
+    .noticeForm  .phLR10 th { padding-left:10px!important; padding-right:10px!important; }
+    .noticeForm  .pdLR10 td { padding-left:10px!important; padding-right:10px!important; }
+    /*부모class로 th border-top 삭제*/
+    .noticeForm  .bor-tnon th  { border-top:none;}
+    /*배경색*/
+    .noticeForm .table-St.bgFFF { background-color:#fff !important; }
+    .noticeForm .table-St.bgCCC { background-color:#ccc !important; }
+    .noticeForm .table-St.bgF8 { background-color:#F8F8F8 !important; }
+    .noticeForm .bgF8 { background-color: #F8F8F9; }
+    /***개별 보더속성*/
+    .noticeForm .bor-l { border-left:solid 1px #DADCE1;  }
+    .noticeForm .bor-r { border-right:solid 1px #DADCE1!important;  }
+    .noticeForm .bor-t { border-top:solid 1px #DADCE1; }
+
+    .noticeForm .bor-Anon { border:none; }
+    .noticeForm .bor-Rnon { border-right:none!important;}
+    .noticeForm .bor-Tnon { border-top:none!important;}
+    /*text정렬*/
+    .noticeForm .th-tl th, .noticeForm .td-tl td, .tl { text-align:left; }
+    .noticeForm .th-tr th, .noticeForm .td-tr td, .tr { text-align:right; }
+    .noticeForm .th-tc th, .noticeForm .td-tc td, .tc { text-align:center; }
+    .noticeForm span.tr { display:inline-block; width:100%; }
+    /*text 보더*/
+    .noticeForm .txt-box { border:1px solid #333333; }
+    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 17px; border:1px solid #333333; color:#333333; text-align: center;}
+</style>
+<dl class="popup-layout-full topmodal noticeForm notice01" style="display:block;">
+	<dt>
+		<h5><span>채권양도 예정 통지서</span></h5>
+		<p onclick="modalOff();" id="" class="btn-ok"><span>확 인</span></p>
+	</dt>
+	<dd style="overflow:auto;">
+		<div class="persnal-agree">
+			<p> 스마트저축은행이 귀하에 대하여 가지는 아래 표시 채권을 <b><span class="blue">00</span>년 <span class="blue">00</span>월 <span class="blue">00</span>일자로 양수 예정인</b>에 양도할 예정임을 통지합니다. 채권양도에 따라 대상채권의 모든 원금, 이자, 비용 및 이에 수반하는 일체의 권리도 <b class="blue">양수 예정인</b>에게 이전될 예정임을 알려드립니다.</p>
+            <br/> <br/>
+            <p>아울러 『신용정보의 이용 및 보호에 관한 법률』, 『개인정보 보호법』 및 금융위원회 고시 『신용정보업 감독 규정』에 따라 스마트저축은행은 채무자의 개인신용정보를 <b class="blue">양수 예정인</b>에게 이전･제공할 예정이며, <b class="blue">양수 예정인</b>은 같은 법 및 규정에 따라 본 양도예정채권과 관련한 귀하의 개인(신용)정보를 관리ㆍ등록하게 될 예정임을 알려드립니다.</p>
+            <br/> <br/>
+            <p>또한, 귀하께서 개인금융채권을 연체한 경우에는 『개인금융채권의 관리 및 개인금융채무자의 보호에 관한 법률』 제35조에서 정하는 바에 따라 스마트저축은행에게 채무조정을 요청할 수 있습니다(단, 동법 제35조제1항제1호~제6호의 사유에 해당하는 경우에는 채무조정을 요청할 수 없습니다). </p>
+            <br/> <br/>
+            <p>채무조정 요청의 절차·방법은 스마트저축은행의 게시판과 인터넷 홈페이지<a href="https://www.smartbank.co.kr" title="스마트저축은행 사이트"><b>(https://www.smartbank.co.kr)</b></a>에서 확인할 수 있으며, 본 통지서 도달 후 10영업일 내에 채무조정 요청이 없는 경우 아래 표시 채권이 예정대로 양도될 수 있음을 알려드립니다.</p>
+            <dl>
+                <dt>양도예정채권 명세 (  <span class="blue">00. 00. 00.</span> 기준)</dt>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span>1.</span>소멸시효 완성여부: <b class="blue"><b class="txt-box">여</b> / <b class="txt-box">부</b></b></li>
+                        <li class="secTitBox">
+                            <p>(단위 :<span class="blue"></span> 원)</p>
+                        </li>
+                    </ol>
+                    
+                    <div class="table-St th-bg td-bt th-br td-br ">
+                        <table summary="대출과목, 계좌번호, 최초대출원금, 대출원금잔액, 이자, 법적절차비용, 여부 안내표">
+                            <caption>대출과목, 계좌번호, 최초대출원금, 대출원금잔액, 이자, 법적절차비용, 여부 안내표</caption>
+                            <colgroup>
+                                <col width="14%">
+                                <col width="14%">
+                                <col width="14%">
+                                <col width="14%">
+                                <col width="14%">
+                                <col width="14%">
+                                <col width="14%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">대출과목</th>
+                                    <th scope="col">계좌번호</th>
+                                    <th scope="col">최초대출원금</th>
+                                    <th scope="col">대출원금잔액</th>
+                                    <th scope="col">이자</th>
+                                    <th scope="col">법적절차비용</th>
+                                    <th scope="col" class="blue bor-Rnon"><span class="txt-box">여</span> / <span class="txt-box">부</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="blue">대출과목</td>
+                                    <td class="blue">계좌 관리번호</td>
+                                    <td class="blue">최초대출원금</td>
+                                    <td class="blue">원금잔액</td>
+                                    <td class="blue">이자<br/>(지연손해금)</td>
+                                    <td class="blue">가지급금<br/>(체당금)</td>
+                                    <td class="bor-Rnon"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="bor-Rnon"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="bor-Rnon"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="bor-Rnon"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ol>
+                        
+                        <li><span>*</span>이자, 법적절차비용 등 채권액은 변동될 수 있습니다.</ll>
+                        <li><span>**</span>우편물 일괄발송에 따라 회생채무자, 파산채무자 및 면책자에게도 본 통지서가 송달될 수 있으나, 본 통지서는 이미 내려진 회생, 파산 및 면책 관련 결정의 효력에 미치는 영향은 없습니다.</ll>
+                        <li><span>***</span>상기 소멸시효 완성여부는 채권자가 판단한 것으로, 소멸시효 완성여부에 대한 채무자의 판단이 다른 경우에는 증빙을 갖추어 추심을 중단할 것을 요구하는 등 항변할 수 있습니다.</ll>
+                    </ol>
+
+                    <ol>
+                        <li><span>※ </span>관련 상담 문의는 스마트저축은행(02-1661-0055)로 연락주시기 바랍니다.</li>
+                    </ol>
+
+                    <span class="tr"><b><span class="blue">00</span>년 <span class="blue">00</span>월 <span class="blue">00</span>일</b></span>
+                    <br/><br/>
+                    <span class="tr"><b>양도예정인 : </b></span>
+                    <br/>
+                    <span class="tr">㈜스마트저축은행</span>
+                    <span class="tr">광주 서구 상무대로 799, 1층</span>
+                    <span class="tr">대표이사    조성윤</span>
+                </dd>
+			</dl>
+            <dl>
+                <dt>※ 채무조정 지원제도 안내</dt>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span>◾</span>채무조정 요청권</li>
+                        <li>
+                            <ol>
+                                <li><span>•</span>(개요) 「개인금융채권의 관리 및 개인금융채무자의 보호에 관한 법률」(이하 “「개인채무자보호법」”이라 한다)에 따라 채무 연체 발생시 채무자가 금융회사에 직접 채무조정을 요청할 수 있는 권리</li>
+                                <li><span>•</span>(신청방법) 「개인채무자보호법」에 명시된 채무조정 요청권에 대해 상세히 알려드리니, 해당 사항이 있는 고객님께서는 스마트저축은행 (☎02-1661-0055)에 문의하여 주시기 바랍니다.</li>
+                            </ol>
+                        </li>
+                        <li class="tc"><참고 : 채무조정 절차></li>
+                        <li>
+                            <ol class="order">
+                                <li>
+                                    <p><span>1)</span>요청 </p>
+                                    <p>(채무자) 금융회사에 채무조정을 요청합니다. (구비서류 제출) </p>
+                                </li>
+                                <li>
+                                    <p><span>2)</span>심사 및 결과통지 </p>
+                                    <p>(금융회사) 채무조정 심사 후 결과를 통지합니다. (10영업일 이내)</p>
+                                </li>
+                                <li>
+                                    <p><span>3)</span>동의 </p>
+                                    <p>(채무자) 금융회사가 통지한 채무조정 내용에 대해 동의 여부를 결정합니다. (10영업일 이내)</p>
+                                </li>
+                                <li>
+                                    <p><span>4)</span> 채무조정서 작성 </p>
+                                    <p>(금융회사) 채무자가 동의한 채무조정내용에 대해 조정서를 작성합니다. </p>
+                                </li>
+                                <li class="bor-none">
+                                    <p><span>5)</span>합의 </p>
+                                    <p>(채무자) 조정서에 날인하면 채무조정 합의가 성립됩니다.</p>
+                                </li>
+                            </ol>
+                        </li>
+                        <li><span>※ </span>당사 대출 외에 타사 대출금에 대해서도 함께 채무조정을 희망하시는 분은, 신용회복위원회(☎1600-5500)를 통해 상담 받으실 수 있습니다.</li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span>◾</span>용회복위원회 채무조정</li>
+                        <li>
+                            <ol>
+                                <li><span>•</span>(개요) 채무를 정상적으로 상환할 수 없는 과중 채무자를 대상으로 상환기간 연장, 이자율 조정, 채무감면 등을 통해 본인의 상환능력에 맞게 채무를 조정하는 절차</li>
+                                <li><span>•</span>(신청방법) 신용회복위원회(☎1600-5500) 통해 상담 및 신청 가능</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span>◾</span>법원의 개인회생</li>
+                        <li>
+                            <ol>
+                                <li><span>•</span>(개요) 채무를 정상적으로 상환할 수 없는 개인 채무자를 대상으로 채권자 등 이해관계인의 법률 관계를 조정함으로써 채무자의 효율적 회생과 채권자의 이익을 도모하기 위하여 마련된 절차</li>
+                                <li><span>•</span>(신청방법) 대한법률구조공단(☎132) 또는 신용회복위원회(☎1600-5500) 통해 상담 및 신청 가능</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span>◾</span>법원의 개인파산·면책</li>
+                        <li>
+                            <ol>
+                                <li><span>•</span>(개요) 자신의 재산으로 모든 채무를 변제할 수 없는 개인 채무자를 대상으로 법원이 모든 채권자가 평등하게 채권을 변제받도록 하고 채무자에게는 면책 절차를 통하여 남아있는 채무에 대한 변제 책임을 면제하는 절차</li>
+                                <li><span>•</span>(신청방법) 대한법률구조공단(☎132) 또는 신용회복위원회(☎1600-5500) 통해 상담 및 신청 가능</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+            </dl>
+		</div>
+	</dd>
+</dl>
+</body>
+</html>
