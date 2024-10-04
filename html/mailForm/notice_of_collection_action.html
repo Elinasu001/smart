@@ -25,7 +25,7 @@
 </head>
 <body class="non-header landing-css">
 <style>
-    
+
     /* 공통 */
     .noticeForm .blue { color:blue; }
     .noticeForm .gray { color:#BBBBBB; }
@@ -43,9 +43,10 @@
     .noticeForm .persnal-agree>dl>dd ol>li { position: relative; padding-left:18px; margin:8px 0; font-size:12px; color:#333; }
     .noticeForm .persnal-agree>dl>dd ol>li>span { position: absolute; left:0; top:0; color:#999; font-size: 12px; }
     /* 공통 - ol 리스트 */
-    .noticeForm ol.order > li.bor-none::before { content:none; }
-    .noticeForm ol.order > li { position:relative; border:1px solid #DDDDDD; padding:10px; }
-    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -11px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
+    .noticeForm .persnal-agree>dl>dd ol.order>li.bor-none::before { content:none; }
+    .noticeForm .persnal-agree>dl>dd ol.order > li:first-child { margin:0; }
+    .noticeForm .persnal-agree>dl>dd ol.order > li { position:relative; border:1px solid #DDDDDD; padding:10px; margin-top:20px; }
+    .noticeForm .persnal-agree>dl>dd ol.order > li::before { content:'▶'; position:absolute; bottom: -25px; left:50%; transform:  translateY(-50%) rotate(90deg); }
     /* 공통 - ul 리스트 */
     .noticeForm .persnal-agree>dl>dd ul.attach>li { margin:8px 0; text-indent: -50px; padding-left:50px; font-size:12px; color:#333; }
     /* 테이블 제어 css */
