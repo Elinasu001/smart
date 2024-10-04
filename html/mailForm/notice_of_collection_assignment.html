@@ -1,0 +1,539 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta name="format-detection" content="telephone=yes" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta name="format-detection" content="telephone=yes" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/WEB/css/common.css?version=20230704221328" />
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/WEB/css/contents.css?version=20230704221328" />
+<link rel="stylesheet" href="https://smarti.smartbank.co.kr/transkey_mobile/transkey.css?version=20230704221328" />
+
+<script type="text/javascript" src="https://smarti.smartbank.co.kr/WEB/js/jquery-1.11.2.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./LIM9001.view_files/common_ui_test.js?version=20230704221328" charset="utf-8"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0VJDBTSPP"></script>
+</head>
+<body class="non-header landing-css">
+<style>
+    /* 공통 */
+    .noticeForm .blue { color:blue; }
+    .noticeForm .gray { color:#BBBBBB; }
+    .noticeForm .dot-box { display:inline-block; width:100%; padding:10px; border:1px dotted black; }
+    .noticeForm .txt-box { border:1px solid #333333; }
+    .noticeForm .bg-gray { background-color: #eee; }
+    .noticeForm .f-sm { font-size:10px; }
+    .noticeForm .secTitBox {margin:0 auto 10px; position:relative; }
+    .noticeForm .secTitBox>p {  display:inline-block; width:100%;  line-height:1.65; text-align:right; font-size:12px; }
+    .noticeForm .persnal-agree>dl:last-child { padding-bottom:10px;}
+    .noticeForm .persnal-agree>dl:last-child { padding-top:0; }
+
+    .noticeForm ol.order > li.bor-none::before { content:none; }
+    .noticeForm ol.order > li { position:relative; border:1px solid #DDDDDD; padding:10px; }
+    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -27px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
+
+    /* 테이블 제어 css */
+    /***table-St class제어*/
+    /*기본 table*/
+    .noticeForm .table-St { text-align:left; }
+    .noticeForm .table-St > table { width:100%; margin:0 auto; font-size:12px; border:1px solid #DADCE1; border-spacing:0; overflow:hidden; }
+    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; } 
+    .noticeForm .table-St > table th {  text-align: center; font-weight:500; }
+    .noticeForm .table-St > table td >a { font-weight:400; }
+    .noticeForm .table-St > table tr:last-child > th, .table-St > table tr:last-child > td { border-bottom:none; }
+    /*위아래 선있는 table*/
+    .noticeForm .table-St.type01 > table { border:none; border-radius:0; border-top:solid 1px #DADCE1; border-bottom:solid 1px #DADCE1; }
+    /*부모 class 속성*/	
+    .noticeForm  .th-bg th, .noticeForm .td-bg td { background:#F8F8F9; font-weight:500;}
+    .noticeForm  .th-bl th, .noticeForm .td-bl td { border-left:solid 1px #DADCE1; }
+    .noticeForm  .th-br th, .noticeForm .td-br td { border-right:solid 1px #DADCE1; }
+    .noticeForm  .th-bb th, .noticeForm .td-bb td { border-bottom:solid 1px #DADCE1; }
+    .noticeForm  .th-bt th, .noticeForm .td-bt td { border-top:solid 1px #DADCE1; }
+    /*th - td - th - td 이 한 tr에 묶인경우 */
+    .noticeForm  .table-St.type03 td { border-right:solid 1px #DADCE1; }
+    .noticeForm  .table-St.type03 td:nth-of-type(2) { border-right:none;}
+    /*th td 마지막 border삭제  */
+    .noticeForm .table-St.last-Bnon th:last-child, .noticeForm .table-St.last-Bnon td:last-child { border-right:0; }
+    /*th td padding 값*/
+    .noticeForm  .th-pdl10 th, .noticeForm .td-pdl40 td, .noticeForm .pdl10 { padding-left:10px !important; }
+    .noticeForm  .th-pdl40 th, .noticeForm .td-pdl40 td, .noticeForm .pdl40 { padding-left:40px !important; }
+    .noticeForm  .th-pdr40 th, .noticeForm .td-pdr40 td, .noticeForm .pdr40 { padding-right:40px !important; }
+    .noticeForm  .th-pdl60 th, .noticeForm .td-pdl60 td, .noticeForm .pdl60 { padding-left:60px !important; }
+    .noticeForm  .phLR10 th { padding-left:10px!important; padding-right:10px!important; }
+    .noticeForm  .pdLR10 td { padding-left:10px!important; padding-right:10px!important; }
+    /*부모class로 th border-top 삭제*/
+    .noticeForm  .bor-tnon th  { border-top:none;}
+    /*배경색*/
+    .noticeForm .table-St.bgFFF { background-color:#fff !important; }
+    .noticeForm .table-St.bgCCC { background-color:#ccc !important; }
+    .noticeForm .table-St.bgF8 { background-color:#F8F8F8 !important; }
+    .noticeForm .bgF8 { background-color: #F8F8F9; }
+    /***개별 보더속성*/
+    .noticeForm .bor-l { border-left:solid 1px #DADCE1;  }
+    .noticeForm .bor-r { border-right:solid 1px #DADCE1!important;  }
+    .noticeForm .bor-t { border-top:solid 1px #DADCE1; }
+
+    .noticeForm .bor-Anon { border:none; }
+    .noticeForm .bor-Rnon { border-right:none!important;}
+    .noticeForm .bor-Tnon { border-top:none!important;}
+    /*text정렬*/
+    .noticeForm .th-tl th, .noticeForm .td-tl td, .tl { text-align:left; }
+    .noticeForm .th-tr th, .noticeForm .td-tr td, .tr { text-align:right; }
+    .noticeForm .th-tc th, .noticeForm .td-tc td, .tc { text-align:center; }
+    .noticeForm span.tr { display:inline-block; width:100%; }
+    /*숫자 보더*/
+    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 17px; border:1px solid #333333; color:#333333; text-align: center;}
+</style>
+<dl class="popup-layout-full topmodal noticeForm notice01" style="display:block;">
+	<dt>
+		<h5><span>채권추심 위탁 예정 통지서 </span></h5>
+		<p onclick="modalOff();" id="" class="btn-ok"><span>확 인</span></p>
+	</dt>
+	<dd style="overflow:auto;">
+		<div class="persnal-agree">
+            
+            <!--S:채권추심 위탁 예정 통지-->
+            <dl>
+                <dt>채권추심 위탁 예정 통지</dt>
+                <dd>
+                    <p>당사는 귀하의 채무에 대한 추심을 채권추심회사에 위탁할 예정임을 ｢개인금융채권의 관리 및 개인금융채무자의 보호에 관한 법률｣(이하 “｢개인채무자보호법｣”) 제25조에 의거 아래와 같이 통지합니다.</p>
+                    <ol>
+                        <li style="font-weight: bold;"><span>1.</span> 위탁 대상 개인금융채권에 관한 사항</li>
+                    </ol>
+                    <div class="table-St th-bg td-bt th-br td-br last-Bnon">
+                        <table summary="위탁 대상 개인금융채권에 관한 사항의 채권자, 채무금액(원), 최종이수일, 연체기간(연체시작일)에 대한 안내표">
+                            <caption>위탁 대상 개인금융채권에 관한 사항의 채권자, 채무금액(원), 최종이수일, 연체기간(연체시작일)에 대한 안내표</caption>
+                            <colgroup>
+                                <col width="15%">
+                                <col width="*%">
+                                <col width="*%">
+                                <col width="*%">
+                            </colgroup>
+                            <thead>
+                                <tr class="tc">
+                                    <th scope="col" rowspan="2">채권자</th>
+                                    <th scope="col" colspan="4">채무금액(원)</th>
+                                    <th scope="col" rowspan="2">최종이수일</th>
+                                    <th scope="col" rowspan="2">연체기간<br/>(연체시작일)</th>
+                                </tr>
+                                <tr>
+                                    <th class="bor-t">원금</th>
+                                    <th class="bor-t">이자</th>
+                                    <th class="bor-t">기타</th>
+                                    <th class="bor-t bor-r">소계</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="blue">OOO</td>
+                                    <td class="blue">0000000</td>
+                                    <td class="blue">000000</td>
+                                    <td class="blue">000000</td>
+                                    <td class="blue">000000</td>
+                                    <td class="blue bor-r">2000.00.00</td>
+                                    <td class="blue bor-t tc">00일<br/>(20&nbsp;&nbsp;.&nbsp;&nbsp;.&nbsp;&nbsp;.)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ol>
+                        <li><span>※ </span>상기 내용은 <b class="blue">20   &nbsp;&nbsp;&nbsp;&nbsp;.   &nbsp; &nbsp;.   &nbsp; &nbsp;.</b> 기준으로 작성되었으므로 이후 변동될 수 있습니다.</li>
+                    </ol>
+                    <ol>
+                        <li style="font-weight: bold;"><span>2.</span>개인금융채권 위탁 예정일 : <b class="blue">20   &nbsp;&nbsp;&nbsp;&nbsp;.   &nbsp; &nbsp;.   &nbsp; &nbsp;.</b></li>
+                    </ol>
+                    <ol>
+                        <li style="font-weight: bold;"><span>3.</span>수탁 예정인(채권추심회사)</li>
+                    </ol>
+                    <div class="table-St th-bg td-bt th-br td-br tc">
+                        <table summary="수탁 예정인(채권추심회사)의 채권추심회명, 주소, 연락처 안내표">
+                            <caption>수탁 예정인(채권추심회사)의 채권추심회명, 주소, 연락처 안내표</caption>
+                            <colgroup>
+                                <col width="*">
+                                <col width="*">
+                                <col width="*">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">채권추심회사명*</th>
+                                    <th scope="col">주소</th>
+                                    <th scope="col" class="bor-Rnon">연락처</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="blue">OOO</td>
+                                    <td class="blue">OO시 OO구 OO동 OO-OO, OO빌딩 O호</td>
+                                    <td class="blue bor-Rnon">00-0000-0000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ol>
+                        <li><span>* </span>｢신용정보의 이용 및 보호에 관한 법률｣에 따라 채권추심업에 대한 허가를 받은 채권추심업자</li>
+                    </ol>
+                    <ol>
+                        <li style="font-weight: bold;"><span>4.</span>채무조정의 요건과 요청 절차 및 방법 : <붙임1> 참조</li>
+                    </ol>
+                    <ol>
+                        <li style="font-weight: bold;"><span>5.</span>귀하는 상기 채무조정 요건에 따라 채무조정의 요건에 해당하는 경우 채무조정을 요청할 수 있습니다. 귀하의 본 통지서 수령(도달) 후 5영업일 내에 채무조정 요청이 없을 경우 본 통지서 내용에 따라 채권 추심을 위탁합니다.</li>
+                        <li>
+                            <ol>
+                                <li><span>*</span>채무조정 요청 시 채무조정 절차가 끝나기 전까지 채권 추심 위탁이 보류됩니다. 채무조정은 ｢개인채무자보호법｣ 제37조에 따라 (채권금융회사)의 채무조정내부기준에 의해 처리되며, 이 경우 동법 시행령 제39조에 따라 해당 업무를 채권추심회사 또는 신용회복위원회에 위탁할 수 있습니다. </li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <ol>
+                        <li style="font-weight: bold;"><span>6.</span>소멸시효 완성여부 : <b class="txt-box">부</b></li>
+                        <li>
+                            <ol>
+                                <li><span>※</span>상기 소멸시효 완성여부는 채권자가 판단한 것으로, 소멸시효 완성여부에 대한 채무자의 판단이 다른 경우에는 증빙을 갖추어 추심을 중단할 것을 요구하는 등 항변할 수 있습니다.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <ol>
+                        <li style="font-weight: bold;"><span>7.</span>기타 채무자‧채권자의 권리‧의무 및 채무자의 권리구제방법 등 : <붙임2> ~ <붙임4> 참조</li>
+                    </ol>
+                </dd>
+			</dl>
+            <!--E:채권추심 위탁 예정 통지-->
+
+            <!--S:<붙임1>채무조정의 요건, 요청절차 및 방법-->
+            <dl>
+                <dt><붙임1>채무조정의 요건, 요청절차 및 방법</dt>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span class="txt-box">1</span>채무조정의 요건</li>
+                        <li>
+                            <ol>
+                                <li><span>◦</span>채무자는 아래의 경우를 제외하고 원금 3천만원 미만의 개인금융채권을 연체한 경우 채권금융회사 등에 채무조정을 요청할 수 있습니다.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <ol class="dot-box">
+                        <li style="font-weight: bold;"><span>◾</span>채무자가 채무조정을 요청할 수 없는 경우</li>
+                        <li>
+                            <ol>
+                                <li><span>1)</span>「개인채무자보호법」 제40조에 따라 채무조정의 합의가 해제된 후 3개월이 지나지 아니한 경우</li>
+                                <li><span>2)</span>개인금융채권의 존재 여부나 범위에 대하여 소송, 조정, 중재 등이 진행 중인 경우</li>
+                                <li><span>3)</span>「서민의 금융생활 지원에 관한 법률」제72조에 따른 채무조정 절차가 진행 중인 경우</li>
+                                <li><span>4)</span>서민의 금융생활 지원에 관한 법률」제74조 제1항에 따른 채무조정의 합의가 성립된 후 합의의 효력이 상실되지 아니한 경우</li>
+                                <li><span>5)</span>「채무자 회생 및 파산에 관한 법률」에 따른 회생·간이회생·개인회생 또는 파산·면책 절차가 진행 중인 경우</li>
+                                <li><span>6)</span>「채무자 회생 및 파산에 관한 법률」에 따라 회생계획을 인가받은 후 회생절차폐지·간이회생절차폐지 또는 개인회생절차폐지의 결정이 확정되지 아니한 경우</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight: bold;"><span class="txt-box">2</span>채무조정의 요청 절차 및 방법</li>
+                        <li>
+                            <ol>
+                                <li><span>◦</span>채무자는 채무조정을 요청하려는 경우 아래의 서류를 채권금융회사 등에 제출하여야 하며, 채권금융회사 등은 채무조정 요청을 받은 날로부터 10영업일 이내*에 채무조정 여부에 관한 결정 내용을 채무자에게 통지합니다.</li>
+                                <li>
+                                    <ol>
+                                        <li><span>*</span>아래의 서류에 미비한 사항이 있어 수정‧보완하는 기간은 기한 산정에서 제외됩니다.</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <ol class="dot-box">
+                        <li><span>1)</span>채무조정 요청서 </li>
+                        <li><span>2)</span>채무조정안 (작성이 곤란한 경우 제출하지 않을 수 있습니다.)</li>
+                        <li><span>3)</span>개인금융채무자의 변제능력에 관한 자료</li>
+                        <li><span>4)</span>개인(신용)정보 수집·이용·제공·조회 동의서</li>
+                    </ol>
+                    <ol>
+                        <li><span>◦</span>채권금융회사 등이 채무조정안을 제안하거나 채무조정을 결정하여 채무조정안을 통지한 경우 채무자는 채무조정안을 통지받은 날부터 10영업일 이내에 동의여부를 결정하고, 동의하는 경우 조정서를 작성하여 서명날인 또는 기명날인 하여야 합니다.</li>
+                        <li>
+                            <ol>
+                                <li> <span>◦</span>아래의 경우에는 채무조정의 요청이 거절될 수 있습니다.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <ol class="dot-box">
+                        <li><span>1)</span>채무자가 채무조정을 요청할 수 없는 경우(󰊱 채무조정의 요건 참고)에 해당</li>
+                        <li><span>2)</span>채무조정 요청시 제출한 서류에 미비한 사항이 있어 채권금융회사 등이 수정‧보완을 요청하였음에도 3회 이상 따르지 않은 경우</li>
+                        <li><span>3)</span>채권금융회사 등이 채무조정 요청을 거절하거나, 채권금융회사 등이 결정‧제안한 채무조정안에 대해 채무자가 동의하지 않은 등 ｢개인채무자보호법｣ 제39조에 따라 채무조정 절차가 종료된 채권에 대해 채무조정을 다시 요청하는 경우</li>
+                        <li><span>4)</span>소멸시효가 완성된 채무</li>
+                    </ol>
+                    <ol>
+                        <li><span>◦</span>아래의 경우에는 채무조정의 합의가 해제될 수 있습니다.</li>
+                    </ol>
+                    <ol class="dot-box">
+                        <li><span>1)</span>채무자가 3개월 이상 채무조정에 의한 변제계획을 이행하지 아니한 경우 (실업, 3개월 이상 입원치료가 필요한 질병 진단 등 ｢개인채무자보호법｣ 및 하위법령에서 정하는 사정이 있는 경우는 제외되나, 이 경우에도 6개월 이상 채무조정에 의한 변제계획을 이행하지 아니하면 합의 해제 가능)</li>
+                        <li><span>2)</span>채무자가 사망하거나 실종선고를 받은 경우</li>
+                        <li><span>3)</span>채무자가 변제계획을 이행하는 과정에서 허위사실 신고, 재산의 도피‧은닉, 책임재산 감소행위 등을 한 사실이 발견되는 경우</li>
+                        <li><span>4)</span>채무자가 채권금융회사 등에 채무조정 합의의 해제를 요청한 경우</li>
+                        <li><span>5)</span>채무자가 회생계획인가결정, 변제계획인가결정 또는 면책결정을 받은 경우</li>
+                        <li><span>6)</span>채무자가 다른 채무조정 절차를 신청하여 확정된 경우</li>
+                    </ol>
+                </dd>
+            </dl>
+            <!--E:<붙임1>채무조정의 요건, 요청절차 및 방법-->
+
+            <!--S:<붙임2>불법채권추심 대응요령-->
+            <dl>
+                <dt><붙임2> 불법채권추심 대응요령</dt>
+                <dd>
+                    <p>채권추심 과정에서 아래와 같은 사실이 발생하는 경우 담당부서(<b>전화번호 : 02-1661-0055</b>)로 연락하시면 도움을 드리도록 하겠습니다.</p>
+                    <ol>
+                        <li style="font-weight: bold;"><span class="txt-box">1</span>채권추심자의 신분이 의심스러운 경우</li>
+                        <li>
+                            <ol>
+                                <li><span>◦</span>채권추심자가 방문, 전화 등으로 최초 접촉 시 신분 확인이 가능한증표(사원증 또는 신용정보업종사원증)를 제시하여 줄 것을 요구하고, 이를 제시하지 못하거나 사진 미부착․훼손 등 신원이 의심스러운 경우 소속회사나 관련 협회(예:신용정보협회, www.cica.or.kr)에 재직여부 등을 확인하시기 바랍니다.</li>
+                                <li><span>◦</span> 채권추심자는 검찰․법원 등 사법당국을 사칭하거나 법무사, 법원집행관, 법원집행관대리 등 사실과 다른 직함을 사용할 수 없습니다.
+                                    <p class="f-sm">(예시) 채권추심자가 법률담당관, 법원집행관, 소송대리인 등으로 허위 기재한 명함을 사용하거나 그 명의로 독촉장을 발송</p>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight:bold;"><span  class="txt-box">2</span>추심채권이 추심제한 요건에 해당하는 경우</li>
+                        <li>
+                            <ol>
+                                <li><span>◦</span>본인의 채무가 추심제한 요건에 해당하는지 확인하고 추심제한 대상인 경우 채권추심자에게 서면으로 추심중단을 요청(전화요청 시 통화내용 녹음)하고 이를 확인할 수 있는 증빙자료를 제시하여 주시기 바랍니다. 채무자가 채무확인서를 발급하여 줄 것을 채권추심자에게 요청하면 소멸시효 완성여부에 대하여 확인하실 수 있습니다. 채권추심자가 채무확인서를 제시하지 못하는 경우 채권추심을 즉시 중단할 것을 요청할 수 있습니다.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <ol class="txt-box bg-gray">
+                        <li style="font-weight: bold;"><span>◾</span>채권추심 제한대상</li>
+                        <li>
+                            <ol>
+                                <li><span>◦</span>채무조정 절차가 끝나지 않은 개인금융채권(단, 채권금융회사등에 같은 채무에 대한 채무조정을 2회 이상 요청한 경우 제외)</li>
+                                <li><span>◦</span>채무자가 사망하여 채권의 상속여부가 확정되지 않거나, 상속인의 상속포기 사실을 확인하는 경우</li>
+                                <li><span>◦</span>채권의 존재여부나 범위에 대해 소송이 계속 중인 개인금융채권</li>
+                                <li><span>◦</span>세 번이상 양도된 채권(단, 개인금융채권 양도인에게 재양도하는 경우, 자산유동화를 위하여 양도하는 경우, 공공기관 및 공공기관이 출자·출연한 회사에 양도하는 경우 등 제외)</li>
+                                <li><span>◦</span>개인금융채무자가 채무확인서를 요청하였음에도 교부되지 아니한 경우</li>
+                                <li><span>◦</span>채권원인서류가 존재하지 않거나 명의도용, 대출사기에 의한 채권 및 이에 준하는 채권으로서 채권·채무관계가 불명확한 채권</li>
+                                <li><span>◦</span>소멸시효 완성 채권</li>
+                                <li><span>◦</span>채권자변동정보가 종합신용정보집중기관에 제공되지 아니한 개인금융채권</li>
+                                <li><span>◦</span>개인회생절차개시결정 또는 중지·금지명령 사실을 확인하는 경우</li>
+                                <li><span>◦</span>채무조정 신청 사실을 확인하는 경우</li>
+                                <li><span>◦</span>채무조정의 합의가 성립된 후 합의의 효력이 상실되지 아니한 경우</li>
+                                <li><span>◦</span>「국민기초생활보장법」제2조제2호에 따른 수급자 및 「장애인고용촉진 및 직업재활법」제2조제2호에 따른 중증장애인의 개인금융채권</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight:bold;"><span class="txt-box">3</span>가족 등 제3자에게 채무사실을 알리는 경우</li>
+                        <li>
+                            <ol>
+                                <li><span>◦</span>채권추심자는 정당한 사유 없이 가족을 포함한 제3자에게 채무사실을 직접 알리거나 확인시켜주는 행위를 할 수 없습니다.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight:bold;"><span class="txt-box">4</span>가족에게 연락하여 채무변제를 요구하는 경우</li>
+                        <li>
+                            <ol>
+                                <li><span>◦</span>채권추심자는 채무자의 가족․친지에게 연락하여 대위변제하여 줄 것을 요구할 수 없습니다.</li>
+                                <li>
+                                    <span>◦</span>
+                                    또한, 가족 등 제3자가 대위변제 의사를 표시하였다고 하여 채무자의 의사에 반하여 변제를 요구할 수 없습니다.
+                                    <br/>
+                                    <p class="f-sm">(예시)아들을 평생 빚쟁이로 살지 아니하도록 하기 위하여 부모가 대신 상환하도록 대위변제를 강요하는 행위</p>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight:bold;"><span class="txt-box">5</span>채권추심회사 명의로 압류․경매 등 법적조치를 하겠다고 하는 경우</li>
+                        <li>
+                            <ol>
+                                <li><span>◦</span>채권추심회사는 압류․경매 또는 채무불이행정보 등록 등의 조치를 직접 취할 수 없으며 법적절차를 직접 진행하겠다고 채무자에게 안내할 수 없습니다. <br/>다만, 채권자 또는 채권자협의회에 의하여 법적조치가 진행될 수 있다고 안내하는 행위는 가능합니다.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight:bold;"><span class="txt-box">6</span>채권추심자가 채무대납 등을 제의하는 경우</li>
+                        <li>
+                            <ol>
+                                <li>
+                                    <span>◦</span>채권추심자는 채무를 대납하겠다고 제안하거나 대부업자, 사채업자 등을 통하여 자금을 마련하도록 권유할 수 없습니다.
+                                    <br/>
+                                    <p class="f-sm">(예시) 채권추심자가 자신의 자금으로 채무를 변제한 후 채무자에게 이자를 요구하는 행위</p>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight:bold;"><span class="txt-box">7</span>채권자 또는 채권추심회사 명의의 계좌이외의 계좌로 입금을 요구하는 경우</li>
+                        <li>
+                            <ol>
+                                <li><span>◦</span>채권추심자가 현금을 수령하거나 본인의 계좌로 입금을 요구하는 것은 금지되어 있습니다.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li style="font-weight:bold;"><span class="txt-box">8</span>채권추심자가 구두로 채무감면 사실을 안내하는 경우</li>
+                        <li>
+                            <ol>
+                                <li><span>◦</span>채권자가 채무감면을 결정한 경우 채권추심자는 그 사실을 반드시 서면(필요시 DM 발송 가능)으로 사전 교부해야 하므로 채무감면 사실을 서면으로 요청할 수 있습니다. </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+            </dl>
+            <!--E:<붙임2>불법채권추심 대응요령-->
+
+            <!--S:<붙임3>소멸시효 완성채권 추심 관련 금융소비자 유의사항-->
+            <dl>
+                <dt><붙임3> 소멸시효 완성채권 추심 관련 금융소비자 유의사항</dt>
+                <dd>
+                    <ol>
+                        <li><span class="txt-box">1</span>추심착수 예정통지서에 기재된 채권자, 채권추심인 및 채무사실 등이 정확한지 확인하여야 합니다.</li>
+                        <li>
+                            <ol>
+                                <li>
+                                    <span>◦</span>
+                                    필요시 채무확인서 등 관련자료를 요청하여 기초 채무사실을 꼼꼼히 확인하여야 합니다. 
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li><span class="txt-box">2</span>소멸시효는 ｢민법｣ 제162조 및 ｢상법｣ 제64조 등에 따라 채권자가 권리를 행사할 수 있음에도 불구하고 권리를 행사하지 아니한 사실상태가 일정기간 계속되는 경우 그 권리의 소멸을 인정하는 제도입니다.</li>
+                        <li>
+                            <ol>
+                                <li>
+                                    <span>◦</span>
+                                    3년(통신채권 등) 또는 5년(대출채권 등) 이상 채권자로부터 연락(유선, 우편, 소제기 등)을 받지 못하였다면, 소멸시효가 완성되었을 가능성이 크므로 소멸시효 완성 여부를 확인*할 필요가 있습니다.
+                                </li>
+                                <li>
+                                    <ol>
+                                        <li><span>*</span>크레딧포유(한국신용정보원), 나이스지키미(나이스평가정보(주)), 올크레딧(코리아크레딧뷰로(주)), 신용회복위원회에서 조회 가능</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li><span class="txt-box">3</span>소멸시효 완성 사실이 확인되는 경우, 변제할 의사가 없다면 채권자 등에게 구두 또는 서면으로 소멸시효 완성사실을 주장하고 채무상환을 거절할 수 있습니다. </li>
+                        <li>
+                            <ol>
+                                <li>
+                                    <span>◦</span>
+                                    채무자가 채무를 일부 변제하거나, 변제하겠다는 각서 및 확인서 등을 작성하는 경우, 작성일로부터 소멸시효 기간이 재산정될 수 있으므로 유의하여야 합니다.
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li><span class="txt-box">4</span>법원으로부터 지급명령을 받은 경우에도 변제할 의사가 없다면 채권매각통지서를 받은 경우와 마찬가지로 채권자, 채무액은 물론 소멸시효 완성 여부를 꼼꼼히 따져볼 필요가 있습니다.</li>
+                        <li>
+                            <ol>
+                                <li>
+                                    <span>◦</span>
+                                    소멸시효 완성 사실이 확인되는 경우, 변제할 의사가 없다면 지급명령을 받은 날로부터 2주 이내에 지급명령을 한 법원에 이의신청을 하여야 합니다.
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li><span class="txt-box">5</span>채권자, 채권 매입기관 또는 채권추심인 등이 일부만 갚으면 원금을 감면하여 주겠다고 회유하는 경우, 완성된 소멸시효를 부활시키고자 하는 의도가 있을 수 있으므로, 변제할 의사가 없다면 채권자, 채무금액 및 소멸시효 완성여부 등을 신중히 확인할 필요가 있습니다.</li>
+                        <li>
+                            <ol>
+                                <li>
+                                    <span>◦</span>
+                                    소액이라도 변제하는 경우 소멸시효가 부활할 수 있으므로, 소멸시효 완성 사실이 확인되는 경우, 소멸시효 완성을 주장하고 상환하지 아니할 수 있습니다.
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+            </dl>
+            <!--E:<붙임3>소멸시효 완성채권 추심 관련 금융소비자 유의사항-->
+
+            <!--S:<붙임4>채권추심자의 의무와 추심에 관한 개인금융채무자의 권리-->
+            <dl>
+                <dt><붙임4> 채권추심자의 의무와 추심에 관한 개인금융채무자의 권리</dt>
+                <dd>
+                    <ol>
+                        <li><span class="txt-box">1</span>채권추심자는 각 채권별로 7일에 7회를 초과하여 개인금융채권의 추심을 위한 연락*을 해서는 안됩니다. </li>
+                        <li>
+                            <ol>
+                                <li><span>*</span> 약관 또는 법령 또는 가이드라인에 의하여 채무자에게 통지해야 하는 사항을 통지하거나 채무자의 문의에 대한 답변 또는 요청에 따른 통지로 같은 날 이루어진 통지는 추심연락으로 보지 않음</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <ol class="dot-box">
+                        <li style="font-weight: bold;"><span>◾</span> 추심연락횟수에서 제외되는 사항</li>
+                        <li>
+                            <ol>
+                                <li><span>◇</span>채권자, 채무금액, 연체금액 및 연체기간 등 추심대상 채권에 관한 사항의 단순통지로 별도의 상환독촉을 포함하지 않는 경우(단 1일 1회만 제외)</li>
+                                <li><span>◇</span>채권추심자가 개인금융채무자를 방문하였으나 부재중이어서 만나지 못한 경우 등 추심연락이 개인금융채무자에게 도달하지 않은 경우(단, 방문의 경우 7일에 2회만 제외)</li>
+                                <li><span>◇</span>채무자가 전화를 받은 뒤 일방적으로 끊는 등 독촉에 필요한 통화를 마치지 못한 경우로서 같은 날 이루어진 2회 이내의 전화 통화 </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li><span class="txt-box">2</span>채권추심자는 채무자가 아래의 사실에 해당된다고 채무자로부터 확인한 경우 그 확인한 날로부터 7일간 추심연락을 해서는 안됩니다.</li>
+                        <li>
+                            <ol>
+                                <li><span>◦</span>채무자가 「재난 및 안전관리 기본법」제61조에 따른 재난지원 대상에 포함되는 경우</li>
+                                <li><span>◦</span>채무자 또는 그 직계 존·비속, 배우자 또는 그 직계 존·비속이 사고·질병 등으로 수술을 받거나 기타 입원한 경우<br/><p class="f-sm">(단, 동일한 사유로 인한 추심연락 유예는 1회에 한함)</p></li>
+                                <li><span>◦</span>채무자 또는 그 직계 존·비속, 배우자 또는 그 직계 존·비속의 혼인·장례<br/><p class="f-sm">(단, 동일한 사유로 인한 추심연락 유예는 1회에 한함)</p></li>
+                                <li><span>◦</span>천재지변으로 추심연락에 응하는 것이 명백하게 곤란 경우</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </dd>
+                <dd>
+                    <ol>
+                        <li>
+                            <span class="txt-box">3</span>
+                            채무자는 1주 28시간 이하로 추심연락을 하지 않도록 요청할 수 있으며, 특정주소에의 방문, 특정 전화번호로의 전화 또는 문자메시지 전송, 특정 이메일 계정으로의 이메일 전송, 특정 팩스번호로의 전송 등 추심연락 수단 중 3가지 이하의 수단을 정하여 추심연락을 하지 않도록 요청할 수 있습니다.
+                            <br/>
+                            <p class="f-sm">(단, 전화와 방문은 동시에 제한할 수 없음)</p>
+                        </li>
+                    </ol>
+                    <br/>
+                    <ol>
+                        <li><span>※</span>위 내용에 대한 자세한 사항은 홈페이지(<a href="https://www.smartbank.co.kr" title="스마트저축은행 사이트">https://www.smartbank.co.kr</a>)에서 확인할 수 있으며 고객센터(☏02-1661-0055)에서 안내받을 수 있습니다.</li>
+                    </ol>
+                </dd>
+            </dl>
+            <!--E:<붙임4>채권추심자의 의무와 추심에 관한 개인금융채무자의 권리-->
+		</div>
+	</dd>
+</dl>
+</body>
+</html>
