@@ -28,25 +28,35 @@
 </head>
 <body class="non-header landing-css">
 <style>
+
     /* 공통 */
     .noticeForm .blue { color:blue; }
     .noticeForm .gray { color:#BBBBBB; }
     .noticeForm .dot-box { display:inline-block; width:100%; padding:10px; border:1px dotted black; }
+    .noticeForm .txt-box { border:1px solid #333333; }
+    .noticeForm .bg-gray { background-color: #eee; }
+    .noticeForm .f-sm { font-size:10px; }
     .noticeForm .secTitBox {margin:0 auto 10px; position:relative; }
     .noticeForm .secTitBox>p {  display:inline-block; width:100%;  line-height:1.65; text-align:right; font-size:12px; }
+    /* 공통 - 리스트 */
     .noticeForm .persnal-agree>dl:last-child { padding-bottom:10px;}
     .noticeForm .persnal-agree>dl:last-child { padding-top:0; }
-
+    .noticeForm .persnal-agree>dl>dt { padding:10px 0; margin:20px 0 10px; font-size:14px; font-weight: bold; border-bottom:1px #ccc dashed; border-top:1px solid #333; }
+    .noticeForm .persnal-agree>dl>dd { font-size:13px; }
+    .noticeForm .persnal-agree>dl>dd ol>li { position: relative; padding-left:18px; margin:8px 0; font-size:12px; color:#333; }
+    .noticeForm .persnal-agree>dl>dd ol>li>span { position: absolute; left:0; top:0; color:#999; font-size: 12px; }
+    /* 공통 - ol 리스트 */
     .noticeForm ol.order > li.bor-none::before { content:none; }
     .noticeForm ol.order > li { position:relative; border:1px solid #DDDDDD; padding:10px; }
-    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -27px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
-
+    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -11px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
+    /* 공통 - ul 리스트 */
+    .noticeForm .persnal-agree>dl>dd ul.attach>li { margin:8px 0; text-indent: -50px; padding-left:50px; font-size:12px; color:#333; }
     /* 테이블 제어 css */
     /***table-St class제어*/
     /*기본 table*/
     .noticeForm .table-St { text-align:left; }
     .noticeForm .table-St > table { width:100%; margin:0 auto; font-size:12px; border:1px solid #DADCE1; border-spacing:0; overflow:hidden; }
-    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; } 
+    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; }
     .noticeForm .table-St > table th {  text-align: center; font-weight:500; }
     .noticeForm .table-St > table td >a { font-weight:400; }
     .noticeForm .table-St > table tr:last-child > th, .table-St > table tr:last-child > td { border-bottom:none; }
@@ -81,7 +91,6 @@
     .noticeForm .bor-l { border-left:solid 1px #DADCE1;  }
     .noticeForm .bor-r { border-right:solid 1px #DADCE1!important;  }
     .noticeForm .bor-t { border-top:solid 1px #DADCE1; }
-
     .noticeForm .bor-Anon { border:none; }
     .noticeForm .bor-Rnon { border-right:none!important;}
     .noticeForm .bor-Tnon { border-top:none!important;}
@@ -90,9 +99,8 @@
     .noticeForm .th-tr th, .noticeForm .td-tr td, .tr { text-align:right; }
     .noticeForm .th-tc th, .noticeForm .td-tc td, .tc { text-align:center; }
     .noticeForm span.tr { display:inline-block; width:100%; }
-    /*text 보더*/
-    .noticeForm .txt-box { border:1px solid #333333; }
-    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 17px; border:1px solid #333333; color:#333333; text-align: center;}
+    /*숫자 보더*/
+    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 14px; line-height:1; border:1px solid #333333; color:#333333; text-align: center;}
 </style>
 <dl class="popup-layout-full topmodal noticeForm notice01" style="display:block;">
 	<dt>
@@ -101,11 +109,11 @@
 	</dt>
 	<dd style="overflow:auto;">
 		<div class="persnal-agree">
-			<p>항상 스마트저축은행을 이용해주셔서 감사합니다.</p>
-            <p>고객님께서 대출(연대보증 포함)한 아래 여신이 「개인금융채권의 관리 및 개인금융채무자의 보호에 관한 법률」제6조제1항에 의거, 아래와 같이 <b>기한의 이익 상실 사유가 발생</b>하여 당초 상환기일에도 불구하고 <b>기한의 이익이 상실될 예정</b>인 바, 아래와 같이 알려드립니다.</p>
             <dl>
                 <dt>기한의 이익 상실 예정 통지서</dt>
                 <dd>
+                    <p>항상 스마트저축은행을 이용해주셔서 감사합니다.</p>
+                    <p>고객님께서 대출(연대보증 포함)한 아래 여신l이 「개인금융채권의 관리 및 개인금융채무자의 보호에 관한 법률」제6조제1항에 의거, 아래와 같이 <b>기한의 이익 상실 사유가 발생</b>하여 당초 상환기일에도 불구하고 <b>기한의 이익이 상실될 예정</b>인 바, 아래와 같이 알려드립니다.</p>
                     <ol>
                         <li style="font-weight: bold;"><span>1.</span>대상여신</li>
                         <li class="secTitBox">
@@ -187,8 +195,8 @@
                     </ol>
 
                     <div class="table-St th-bg td-bt th-br td-br last-Bnon">
-                        <table summary="항목의 기한의 이익 상실예정일, 기한의 이익 상실예정일, 기한의 이익 상실 효과, 채무조정 요건과 요청 절차 방법과 내용에 대한 안내표">
-                            <caption>항목의 기한의 이익 상실예정일, 기한의 이익 상실예정일, 기한의 이익 상실 효과, 채무조정 요건과 요청 절차 방법과 내용에 대한 안내표 </caption>
+                        <table summary="관련 통지사항의 항목(기한의 이익 상실예정일, 기한의 이익 상실예정일, 기한의 이익 상실 효과, 채무조정 요건과 요청 절차 방법), 내용에 대한 안내표">
+                            <caption>관련 통지사항의 항목(기한의 이익 상실예정일, 기한의 이익 상실예정일, 기한의 이익 상실 효과, 채무조정 요건과 요청 절차 방법), 내용에 대한 안내표</caption>
                             <colgroup>
                                 <col width="30%">
                                 <col width="*">
@@ -230,7 +238,8 @@
                     <ol>
                         <li><span>※ </span>자세한 사항은 스마트저축은행 고객센터(02-1661-0055)로 문의주시길 바랍니다.</li>
                     </ol>
-                    <span class="tr"><b><span class="blue">0000</span>년 <span class="blue">00</span>월 <span class="blue">00</span>일</b></span>
+                    <br/>
+                    <p class="tc"><b><span class="blue">0000</span>년 <span class="blue">00</span>월 <span class="blue">00</span>일</b></b>
                 </dd>
 			</dl>
 		</div>

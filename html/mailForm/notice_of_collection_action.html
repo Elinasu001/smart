@@ -25,25 +25,35 @@
 </head>
 <body class="non-header landing-css">
 <style>
+    
     /* 공통 */
     .noticeForm .blue { color:blue; }
     .noticeForm .gray { color:#BBBBBB; }
     .noticeForm .dot-box { display:inline-block; width:100%; padding:10px; border:1px dotted black; }
+    .noticeForm .txt-box { border:1px solid #333333; }
+    .noticeForm .bg-gray { background-color: #eee; }
+    .noticeForm .f-sm { font-size:10px; }
     .noticeForm .secTitBox {margin:0 auto 10px; position:relative; }
     .noticeForm .secTitBox>p {  display:inline-block; width:100%;  line-height:1.65; text-align:right; font-size:12px; }
+    /* 공통 - 리스트 */
     .noticeForm .persnal-agree>dl:last-child { padding-bottom:10px;}
     .noticeForm .persnal-agree>dl:last-child { padding-top:0; }
-
+    .noticeForm .persnal-agree>dl>dt { padding:10px 0; margin:20px 0 10px; font-size:14px; font-weight: bold; border-bottom:1px #ccc dashed; border-top:1px solid #333; }
+    .noticeForm .persnal-agree>dl>dd { font-size:13px; }
+    .noticeForm .persnal-agree>dl>dd ol>li { position: relative; padding-left:18px; margin:8px 0; font-size:12px; color:#333; }
+    .noticeForm .persnal-agree>dl>dd ol>li>span { position: absolute; left:0; top:0; color:#999; font-size: 12px; }
+    /* 공통 - ol 리스트 */
     .noticeForm ol.order > li.bor-none::before { content:none; }
-    .noticeForm ol.order > li { position:relative; border:1px solid #DDDDDD; padding:10px; margin-bottom:30px; }
-    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -27px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
-
+    .noticeForm ol.order > li { position:relative; border:1px solid #DDDDDD; padding:10px; }
+    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -11px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
+    /* 공통 - ul 리스트 */
+    .noticeForm .persnal-agree>dl>dd ul.attach>li { margin:8px 0; text-indent: -50px; padding-left:50px; font-size:12px; color:#333; }
     /* 테이블 제어 css */
     /***table-St class제어*/
     /*기본 table*/
     .noticeForm .table-St { text-align:left; }
     .noticeForm .table-St > table { width:100%; margin:0 auto; font-size:12px; border:1px solid #DADCE1; border-spacing:0; overflow:hidden; }
-    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; } 
+    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; }
     .noticeForm .table-St > table th {  text-align: center; font-weight:500; }
     .noticeForm .table-St > table td >a { font-weight:400; }
     .noticeForm .table-St > table tr:last-child > th, .table-St > table tr:last-child > td { border-bottom:none; }
@@ -78,7 +88,6 @@
     .noticeForm .bor-l { border-left:solid 1px #DADCE1;  }
     .noticeForm .bor-r { border-right:solid 1px #DADCE1!important;  }
     .noticeForm .bor-t { border-top:solid 1px #DADCE1; }
-
     .noticeForm .bor-Anon { border:none; }
     .noticeForm .bor-Rnon { border-right:none!important;}
     .noticeForm .bor-Tnon { border-top:none!important;}
@@ -87,9 +96,8 @@
     .noticeForm .th-tr th, .noticeForm .td-tr td, .tr { text-align:right; }
     .noticeForm .th-tc th, .noticeForm .td-tc td, .tc { text-align:center; }
     .noticeForm span.tr { display:inline-block; width:100%; }
-    /*text 보더*/
-    .noticeForm .txt-box { border:1px solid #333333; }
-    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 17px; color:#333333; text-align: center;}
+    /*숫자 보더*/
+    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 14px; line-height:1; border:1px solid #333333; color:#333333; text-align: center;}
 </style>
 <dl class="popup-layout-full topmodal noticeForm notice01" style="display:block;">
 	<dt>
@@ -98,12 +106,11 @@
 	</dt>
 	<dd style="overflow:auto;">
 		<div class="persnal-agree">
-			<p>당사는 아래의 채무에 대하여 추심할 예정이오니 궁금하신 사항이 있는 경우 담당부서로 연락주시기 바랍니다. </p>
-
             <!-- S: 추심대상 개인금융채권에 관한 사항 -->
             <dl>
                 <dt>추심대상 개인금융채권에 관한 사항</dt>
                 <dd>
+                    <p class="dot-box">당사는 아래의 채무에 대하여 추심할 예정이오니 궁금하신 사항이 있는 경우 담당부서로 연락주시기 바랍니다. </p>
                     <ol>
                         <li style="font-weight: bold;"><span>1.</span>채무에 대한 사항</li>
                     </ol>
@@ -160,13 +167,13 @@
                                     <td class="bgF8">이자</td>
                                     <td class="bgF8">기타</td>
                                     <td class="bgF8">합계</td>
-                                    <td rowspan="5">00일<br/>(00.00.00.)</td>
+                                    <td rowspan="5" class="blue tc">00일<br/>(00.00.00.)</td>
                                 </tr>
                                 <tr>
-                                    <td>0,000,000</td>
-                                    <td>000000</td>
-                                    <td>000000</td>
-                                    <td class="bor-r">0,000,000</td>
+                                    <td class="blue">0,000,000</td>
+                                    <td class="blue">000000</td>
+                                    <td class="blue">000000</td>
+                                    <td class="blue bor-r">0,000,000</td>
                                 </tr>
                                 <!-- 채무 정보 -->
                                 <tr>
@@ -179,10 +186,10 @@
                                     <td class="bor-r bgF8">합계(총채무액)</td>
                                 </tr>
                                 <tr>
-                                    <td>00,000,000</td>
-                                    <td>000000</td>
-                                    <td>000000</td>
-                                    <td class="bor-r">000000</td>
+                                    <td class="blue">00,000,000</td>
+                                    <td class="blue">000000</td>
+                                    <td class="blue">000000</td>
+                                    <td class="blue bor-r">000000</td>
                                 </tr>
                                 
                             </tbody>
@@ -191,13 +198,11 @@
                     <ol>
                         <li><span>*</span>상기 내용은 00. 00. 00. 기준으로 작성되었으므로 이후 변동될 수 있습니다.</li>
                     </ol>
-                </dd>
-                <dd>
+
                     <ol>
                         <li style="font-weight: bold;"><span>2.</span>추심 착수예정일 : &nbsp;&nbsp;&nbsp;&nbsp;<b><span class="blue">00</span>년 <span class="blue">00</span>월 <span class="blue">00</span>일</b></li>
                     </ol>
-                </dd>
-                <dd>
+
                     <ol>
                         <li style="font-weight: bold;"><span>3.</span>채권 추심자 현황</li>
                     </ol>
@@ -225,8 +230,7 @@
                             </tbody>
                         </table>
                     </div>
-                </dd>
-                <dd>
+
                     <ol>
                         <li style="font-weight: bold;"><span>4.</span>채무의 변제 방법</li>
                     </ol>
@@ -254,8 +258,7 @@
                             </tbody>
                         </table>
                     </div>
-                </dd>
-                <dd>
+
                     <ol>
                         <li style="font-weight: bold;"><span>5.</span>소멸시효 완성여부 : <b class="txt-box">부</b></li>
                         <li>
@@ -264,22 +267,25 @@
                             </ol>
                         </li>
                     </ol>
-                    <span class="tr"><b><span class="blue">0000</span>년 <span class="blue">00</span>월 <span class="blue">00</span>일</b></span>
-                
-                    <ol>
-                        <li><span>·</span><붙임1> 채권추심 관련 지원제도 안내</li>
-                        <li><span>·</span><붙임2> 채권추심업무 처리절차 안내문</li>
-                        <li><span>·</span><붙임3> 불법채권추심 대응요령</li>
-                        <li><span>·</span><붙임4> 소멸시효 완성채권 추심 관련 금융소비자 유의사항</li>
-                        <li><span>·</span><붙임5> 채권추심자의 의무와 추심에 관한 개인금융채무자의 권리</li>
-                    </ol>
+                    <br/> <br/>
+
+                    <p class="tc"><b><span class="blue">0000</span>년 <span class="blue">00</span>월 <span class="blue">00</span>일</b></p>
+                    <br/>
+
+                    <ul class="attach">
+                        <li><붙임1> 채권추심 관련 지원제도 안내</li>
+                        <li><붙임2> 채권추심업무 처리절차 안내문</li>
+                        <li><붙임3> 불법채권추심 대응요령</li>
+                        <li><붙임4> 소멸시효 완성채권 추심 관련 금융소비자 유의사항</li>
+                        <li><붙임5> 채권추심자의 의무와 추심에 관한 개인금융채무자의 권리</li>
+                    </ul>
                 </dd>
             </dl>
             <!-- E: 추심대상 개인금융채권에 관한 사항 -->
 
             <!-- S: 채권추심 관련 지원제도 안내 -->
             <dl>
-                <dt>채권추심 관련 지원제도 안내</dt>
+                <dt><붙임1> 채권추심 관련 지원제도 안내</dt>
                 <dd>
                     <ol>
                         <li style="font-weight: bold;"><span>◾</span>채무자대리</li>
@@ -345,7 +351,7 @@
 
             <!-- S: 채권추심업무 처리절차 안내문 -->
             <dl>
-                <dt>채권추심업무 처리절차 안내문</dt>
+                <dt><붙임2> 채권추심업무 처리절차 안내문</dt>
                 <dd>
                     <p>추심착수 예정통지 이후 다음과 같은 채권추심 행위가 이루어질 수 있음을 알려드리며,<br/><br/> 당사의 채권추심 업무진행과 관련하여 문의사항이 있는 경우 언제든지 당사 담당부서 <b>(전화번호 : 02-1661-0055)</b> 및 담당자에게 연락주시기 바랍니다.</p>
                     <br/><br/>
@@ -366,7 +372,7 @@
 
             <!-- S: 불법채권추심 대응요령 -->
             <dl>
-                <dt>불법채권추심 대응요령</dt>
+                <dt><붙임3> 불법채권추심 대응요령</dt>
                 
                 <dd>
                     <p class="dot-box">채권추심 과정에서 아래와 같은 사실이 발생하는 경우 담당부서(02-1661-0055)로 연락하시면 도움을 드리도록 하겠습니다.</p>
@@ -389,7 +395,7 @@
                             </ol>
                         </li>
                     </ol>
-                    <ol class="dot-box">
+                    <ol class="txt-box bg-gray">
                         <li style="font-weight: bold;"><span>◾</span>채권추심 제한대상</li>
                         <li>
                             <ol>
@@ -421,8 +427,8 @@
                         <li>
                             <ol>
                                 <li><span>◦</span>채권추심자는 채무자의 가족․친지에게 연락하여 대위변제하여 줄 것을 요구할 수 없습니다.</li>
-                                <li><span>◦</span>또한, 가족 등 제3자가 대위변제 의사를 표시하였다고 하여 채무자의 의사에 반하여 변제를 요구할 수 없습니다.<br/><br/>
-                                    (예시)아들을 평생 빚쟁이로 살지 아니하도록 하기 위하여 부모가 대신 상환하도록 대위변제를 강요하는 행위</li>
+                                <li><span>◦</span>또한, 가족 등 제3자가 대위변제 의사를 표시하였다고 하여 채무자의 의사에 반하여 변제를 요구할 수 없습니다.<br/>
+                                    <p class="f-sm">(예시)아들을 평생 빚쟁이로 살지 아니하도록 하기 위하여 부모가 대신 상환하도록 대위변제를 강요하는 행위</p></li>
                             </ol>
                         </li>
                     </ol>
@@ -465,7 +471,7 @@
 
             <!-- S: 소멸시효 완성채권 추심 관련 금융소비자 유의사항 -->
             <dl>
-                <dt>소멸시효 완성채권 추심 관련 금융소비자 유의사항</dt>
+                <dt><붙임4> 소멸시효 완성채권 추심 관련 금융소비자 유의사항</dt>
                 <dd>
                     <ol>
                         <li><span class="txt-box">1</span>추심착수 예정통지서에 기재된 채권자, 채권추심인 및 채무사실 등이 정확한지 확인하여야 합니다.</li>
@@ -518,7 +524,7 @@
 
             <!-- S: 채권추심자의 의무와 추심에 관한 개인금융채무자의 권리 -->
             <dl>
-                <dt>채권추심자의 의무와 추심에 관한 개인금융채무자의 권리</dt>
+                <dt><붙임5> 채권추심자의 의무와 추심에 관한 개인금융채무자의 권리</dt>
                 <dd>
                     <ol>
                         <li><span class="txt-box">1</span> 채권추심자는 각 채권별로 7일에 7회를 초과하여 개인금융채권의 추심을 위한 연락*을 해서는 안됩니다. </li>
@@ -528,7 +534,7 @@
                             </ol>
                         </li>
                     </ol>
-                    <ol class="dot-box">
+                    <ol class="txt-box bg-gray">
                         <li style="font-weight: bold;"><span>◾</span>추심연락횟수에서 제외되는 사항</li>
                         <li>
                             <ol>
@@ -550,9 +556,9 @@
                         </li>
                     </ol>
                     <ol>
-                        <li><span class="txt-box">3</span>채무자는 1주 28시간 이하로 추심연락을 하지 않도록 요청할 수 있으며, 특정주소에의 방문, 특정 전화번호로의 전화 또는 문자메시지 전송, 특정 이메일 계정으로의 이메일 전송, 특정 팩스번호로의 전송 등 추심연락 수단 중 3가지 이하의 수단을 정하여 추심연락을 하지 않도록 요청할 수 있습니다.<br/><br/>(단, 전화와 방문은 동시에 제한할 수 없음)</li>
+                        <li><span class="txt-box">3</span>채무자는 1주 28시간 이하로 추심연락을 하지 않도록 요청할 수 있으며, 특정주소에의 방문, 특정 전화번호로의 전화 또는 문자메시지 전송, 특정 이메일 계정으로의 이메일 전송, 특정 팩스번호로의 전송 등 추심연락 수단 중 3가지 이하의 수단을 정하여 추심연락을 하지 않도록 요청할 수 있습니다.<br/>(단, 전화와 방문은 동시에 제한할 수 없음)</li>
                     </ol>
-                    <br/><br/>
+                    <br/>
                     <ol>
                         <li><span>※</span>위 내용에 대한 자세한 사항은 홈페이지(https://www.smartbank.co.kr)에서 확인할 수 있으며 고객센터(☏02-1661-0055)에서 안내받을 수 있습니다.</li>
                     </ol>

@@ -28,6 +28,7 @@
 </head>
 <body class="non-header landing-css">
 <style>
+
     /* 공통 */
     .noticeForm .blue { color:blue; }
     .noticeForm .gray { color:#BBBBBB; }
@@ -37,19 +38,25 @@
     .noticeForm .f-sm { font-size:10px; }
     .noticeForm .secTitBox {margin:0 auto 10px; position:relative; }
     .noticeForm .secTitBox>p {  display:inline-block; width:100%;  line-height:1.65; text-align:right; font-size:12px; }
+    /* 공통 - 리스트 */
     .noticeForm .persnal-agree>dl:last-child { padding-bottom:10px;}
     .noticeForm .persnal-agree>dl:last-child { padding-top:0; }
-
+    .noticeForm .persnal-agree>dl>dt { padding:10px 0; margin:20px 0 10px; font-size:14px; font-weight: bold; border-bottom:1px #ccc dashed; border-top:1px solid #333; }
+    .noticeForm .persnal-agree>dl>dd { font-size:13px; }
+    .noticeForm .persnal-agree>dl>dd ol>li { position: relative; padding-left:18px; margin:8px 0; font-size:12px; color:#333; }
+    .noticeForm .persnal-agree>dl>dd ol>li>span { position: absolute; left:0; top:0; color:#999; font-size: 12px; }
+    /* 공통 - ol 리스트 */
     .noticeForm ol.order > li.bor-none::before { content:none; }
     .noticeForm ol.order > li { position:relative; border:1px solid #DDDDDD; padding:10px; }
-    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -27px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
-
+    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -11px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
+    /* 공통 - ul 리스트 */
+    .noticeForm .persnal-agree>dl>dd ul.attach>li { margin:8px 0; text-indent: -50px; padding-left:50px; font-size:12px; color:#333; }
     /* 테이블 제어 css */
     /***table-St class제어*/
     /*기본 table*/
     .noticeForm .table-St { text-align:left; }
     .noticeForm .table-St > table { width:100%; margin:0 auto; font-size:12px; border:1px solid #DADCE1; border-spacing:0; overflow:hidden; }
-    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; } 
+    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; }
     .noticeForm .table-St > table th {  text-align: center; font-weight:500; }
     .noticeForm .table-St > table td >a { font-weight:400; }
     .noticeForm .table-St > table tr:last-child > th, .table-St > table tr:last-child > td { border-bottom:none; }
@@ -84,7 +91,6 @@
     .noticeForm .bor-l { border-left:solid 1px #DADCE1;  }
     .noticeForm .bor-r { border-right:solid 1px #DADCE1!important;  }
     .noticeForm .bor-t { border-top:solid 1px #DADCE1; }
-
     .noticeForm .bor-Anon { border:none; }
     .noticeForm .bor-Rnon { border-right:none!important;}
     .noticeForm .bor-Tnon { border-top:none!important;}
@@ -94,7 +100,7 @@
     .noticeForm .th-tc th, .noticeForm .td-tc td, .tc { text-align:center; }
     .noticeForm span.tr { display:inline-block; width:100%; }
     /*숫자 보더*/
-    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 17px; border:1px solid #333333; color:#333333; text-align: center;}
+    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 14px; line-height:1; border:1px solid #333333; color:#333333; text-align: center;}
 </style>
 <dl class="popup-layout-full topmodal noticeForm notice01" style="display:block;">
 	<dt>
@@ -109,6 +115,7 @@
                 <dt>채권추심 위탁 예정 통지</dt>
                 <dd>
                     <p>당사는 귀하의 채무에 대한 추심을 채권추심회사에 위탁할 예정임을 ｢개인금융채권의 관리 및 개인금융채무자의 보호에 관한 법률｣(이하 “｢개인채무자보호법｣”) 제25조에 의거 아래와 같이 통지합니다.</p>
+                    
                     <ol>
                         <li style="font-weight: bold;"><span>1.</span> 위탁 대상 개인금융채권에 관한 사항</li>
                     </ol>
@@ -149,11 +156,13 @@
                         </table>
                     </div>
                     <ol>
-                        <li><span>※ </span>상기 내용은 <b class="blue">20   &nbsp;&nbsp;&nbsp;&nbsp;.   &nbsp; &nbsp;.   &nbsp; &nbsp;.</b> 기준으로 작성되었으므로 이후 변동될 수 있습니다.</li>
+                        <li><span>※ </span>상기 내용은 <b class="blue">20 &nbsp;&nbsp;. &nbsp;&nbsp;. &nbsp;&nbsp;.</b> 기준으로 작성되었으므로 이후 변동될 수 있습니다.</li>
                     </ol>
+                    
                     <ol>
-                        <li style="font-weight: bold;"><span>2.</span>개인금융채권 위탁 예정일 : <b class="blue">20   &nbsp;&nbsp;&nbsp;&nbsp;.   &nbsp; &nbsp;.   &nbsp; &nbsp;.</b></li>
+                        <li style="font-weight: bold;"><span>2.</span>개인금융채권 위탁 예정일 : <b class="blue">20 &nbsp;&nbsp;. &nbsp; &nbsp;. &nbsp;&nbsp;.</b></li>
                     </ol>
+                    
                     <ol>
                         <li style="font-weight: bold;"><span>3.</span>수탁 예정인(채권추심회사)</li>
                     </ol>
@@ -184,9 +193,11 @@
                     <ol>
                         <li><span>* </span>｢신용정보의 이용 및 보호에 관한 법률｣에 따라 채권추심업에 대한 허가를 받은 채권추심업자</li>
                     </ol>
+                    
                     <ol>
                         <li style="font-weight: bold;"><span>4.</span>채무조정의 요건과 요청 절차 및 방법 : <붙임1> 참조</li>
                     </ol>
+                    
                     <ol>
                         <li style="font-weight: bold;"><span>5.</span>귀하는 상기 채무조정 요건에 따라 채무조정의 요건에 해당하는 경우 채무조정을 요청할 수 있습니다. 귀하의 본 통지서 수령(도달) 후 5영업일 내에 채무조정 요청이 없을 경우 본 통지서 내용에 따라 채권 추심을 위탁합니다.</li>
                         <li>
@@ -195,6 +206,7 @@
                             </ol>
                         </li>
                     </ol>
+                    
                     <ol>
                         <li style="font-weight: bold;"><span>6.</span>소멸시효 완성여부 : <b class="txt-box">부</b></li>
                         <li>
@@ -203,6 +215,7 @@
                             </ol>
                         </li>
                     </ol>
+                    
                     <ol>
                         <li style="font-weight: bold;"><span>7.</span>기타 채무자‧채권자의 권리‧의무 및 채무자의 권리구제방법 등 : <붙임2> ~ <붙임4> 참조</li>
                     </ol>
@@ -214,6 +227,7 @@
             <dl>
                 <dt><붙임1>채무조정의 요건, 요청절차 및 방법</dt>
                 <dd>
+                    <!--1.-->
                     <ol>
                         <li style="font-weight: bold;"><span class="txt-box">1</span>채무조정의 요건</li>
                         <li>
@@ -235,8 +249,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+                    <!--2.-->
                     <ol>
                         <li style="font-weight: bold;"><span class="txt-box">2</span>채무조정의 요청 절차 및 방법</li>
                         <li>
@@ -281,6 +294,7 @@
                         <li><span>5)</span>채무자가 회생계획인가결정, 변제계획인가결정 또는 면책결정을 받은 경우</li>
                         <li><span>6)</span>채무자가 다른 채무조정 절차를 신청하여 확정된 경우</li>
                     </ol>
+
                 </dd>
             </dl>
             <!--E:<붙임1>채무조정의 요건, 요청절차 및 방법-->
@@ -289,7 +303,9 @@
             <dl>
                 <dt><붙임2> 불법채권추심 대응요령</dt>
                 <dd>
+
                     <p>채권추심 과정에서 아래와 같은 사실이 발생하는 경우 담당부서(<b>전화번호 : 02-1661-0055</b>)로 연락하시면 도움을 드리도록 하겠습니다.</p>
+                    <!--1.-->
                     <ol>
                         <li style="font-weight: bold;"><span class="txt-box">1</span>채권추심자의 신분이 의심스러운 경우</li>
                         <li>
@@ -301,8 +317,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+                    <!--2.-->
                     <ol>
                         <li style="font-weight:bold;"><span  class="txt-box">2</span>추심채권이 추심제한 요건에 해당하는 경우</li>
                         <li>
@@ -330,8 +345,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+                    <!--3.-->
                     <ol>
                         <li style="font-weight:bold;"><span class="txt-box">3</span>가족 등 제3자에게 채무사실을 알리는 경우</li>
                         <li>
@@ -340,8 +354,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+                    <!--4.-->
                     <ol>
                         <li style="font-weight:bold;"><span class="txt-box">4</span>가족에게 연락하여 채무변제를 요구하는 경우</li>
                         <li>
@@ -356,8 +369,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+                    <!--5.-->
                     <ol>
                         <li style="font-weight:bold;"><span class="txt-box">5</span>채권추심회사 명의로 압류․경매 등 법적조치를 하겠다고 하는 경우</li>
                         <li>
@@ -366,8 +378,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+                    <!--6.-->
                     <ol>
                         <li style="font-weight:bold;"><span class="txt-box">6</span>채권추심자가 채무대납 등을 제의하는 경우</li>
                         <li>
@@ -380,8 +391,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+                    <!--7.-->
                     <ol>
                         <li style="font-weight:bold;"><span class="txt-box">7</span>채권자 또는 채권추심회사 명의의 계좌이외의 계좌로 입금을 요구하는 경우</li>
                         <li>
@@ -390,8 +400,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+                    <!--8.-->
                     <ol>
                         <li style="font-weight:bold;"><span class="txt-box">8</span>채권추심자가 구두로 채무감면 사실을 안내하는 경우</li>
                         <li>
@@ -400,6 +409,7 @@
                             </ol>
                         </li>
                     </ol>
+
                 </dd>
             </dl>
             <!--E:<붙임2>불법채권추심 대응요령-->
@@ -408,6 +418,7 @@
             <dl>
                 <dt><붙임3> 소멸시효 완성채권 추심 관련 금융소비자 유의사항</dt>
                 <dd>
+
                     <ol>
                         <li><span class="txt-box">1</span>추심착수 예정통지서에 기재된 채권자, 채권추심인 및 채무사실 등이 정확한지 확인하여야 합니다.</li>
                         <li>
@@ -419,8 +430,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+
                     <ol>
                         <li><span class="txt-box">2</span>소멸시효는 ｢민법｣ 제162조 및 ｢상법｣ 제64조 등에 따라 채권자가 권리를 행사할 수 있음에도 불구하고 권리를 행사하지 아니한 사실상태가 일정기간 계속되는 경우 그 권리의 소멸을 인정하는 제도입니다.</li>
                         <li>
@@ -437,8 +447,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+
                     <ol>
                         <li><span class="txt-box">3</span>소멸시효 완성 사실이 확인되는 경우, 변제할 의사가 없다면 채권자 등에게 구두 또는 서면으로 소멸시효 완성사실을 주장하고 채무상환을 거절할 수 있습니다. </li>
                         <li>
@@ -450,8 +459,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+
                     <ol>
                         <li><span class="txt-box">4</span>법원으로부터 지급명령을 받은 경우에도 변제할 의사가 없다면 채권매각통지서를 받은 경우와 마찬가지로 채권자, 채무액은 물론 소멸시효 완성 여부를 꼼꼼히 따져볼 필요가 있습니다.</li>
                         <li>
@@ -463,8 +471,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+
                     <ol>
                         <li><span class="txt-box">5</span>채권자, 채권 매입기관 또는 채권추심인 등이 일부만 갚으면 원금을 감면하여 주겠다고 회유하는 경우, 완성된 소멸시효를 부활시키고자 하는 의도가 있을 수 있으므로, 변제할 의사가 없다면 채권자, 채무금액 및 소멸시효 완성여부 등을 신중히 확인할 필요가 있습니다.</li>
                         <li>
@@ -476,6 +483,7 @@
                             </ol>
                         </li>
                     </ol>
+                    
                 </dd>
             </dl>
             <!--E:<붙임3>소멸시효 완성채권 추심 관련 금융소비자 유의사항-->
@@ -484,6 +492,7 @@
             <dl>
                 <dt><붙임4> 채권추심자의 의무와 추심에 관한 개인금융채무자의 권리</dt>
                 <dd>
+
                     <ol>
                         <li><span class="txt-box">1</span>채권추심자는 각 채권별로 7일에 7회를 초과하여 개인금융채권의 추심을 위한 연락*을 해서는 안됩니다. </li>
                         <li>
@@ -502,8 +511,8 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+
+
                     <ol>
                         <li><span class="txt-box">2</span>채권추심자는 채무자가 아래의 사실에 해당된다고 채무자로부터 확인한 경우 그 확인한 날로부터 7일간 추심연락을 해서는 안됩니다.</li>
                         <li>
@@ -515,8 +524,7 @@
                             </ol>
                         </li>
                     </ol>
-                </dd>
-                <dd>
+
                     <ol>
                         <li>
                             <span class="txt-box">3</span>
@@ -529,6 +537,7 @@
                     <ol>
                         <li><span>※</span>위 내용에 대한 자세한 사항은 홈페이지(<a href="https://www.smartbank.co.kr" title="스마트저축은행 사이트">https://www.smartbank.co.kr</a>)에서 확인할 수 있으며 고객센터(☏02-1661-0055)에서 안내받을 수 있습니다.</li>
                     </ol>
+
                 </dd>
             </dl>
             <!--E:<붙임4>채권추심자의 의무와 추심에 관한 개인금융채무자의 권리-->

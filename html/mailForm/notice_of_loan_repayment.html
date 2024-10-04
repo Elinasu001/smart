@@ -28,25 +28,35 @@
 </head>
 <body class="non-header landing-css">
 <style>
+
     /* 공통 */
     .noticeForm .blue { color:blue; }
     .noticeForm .gray { color:#BBBBBB; }
     .noticeForm .dot-box { display:inline-block; width:100%; padding:10px; border:1px dotted black; }
+    .noticeForm .txt-box { border:1px solid #333333; }
+    .noticeForm .bg-gray { background-color: #eee; }
+    .noticeForm .f-sm { font-size:10px; }
     .noticeForm .secTitBox {margin:0 auto 10px; position:relative; }
     .noticeForm .secTitBox>p {  display:inline-block; width:100%;  line-height:1.65; text-align:right; font-size:12px; }
+    /* 공통 - 리스트 */
     .noticeForm .persnal-agree>dl:last-child { padding-bottom:10px;}
     .noticeForm .persnal-agree>dl:last-child { padding-top:0; }
-
+    .noticeForm .persnal-agree>dl>dt { padding:10px 0; margin:20px 0 10px; font-size:14px; font-weight: bold; border-bottom:1px #ccc dashed; border-top:1px solid #333; }
+    .noticeForm .persnal-agree>dl>dd { font-size:13px; }
+    .noticeForm .persnal-agree>dl>dd ol>li { position: relative; padding-left:18px; margin:8px 0; font-size:12px; color:#333; }
+    .noticeForm .persnal-agree>dl>dd ol>li>span { position: absolute; left:0; top:0; color:#999; font-size: 12px; }
+    /* 공통 - ol 리스트 */
     .noticeForm ol.order > li.bor-none::before { content:none; }
     .noticeForm ol.order > li { position:relative; border:1px solid #DDDDDD; padding:10px; }
-    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -27px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
-
+    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -11px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
+    /* 공통 - ul 리스트 */
+    .noticeForm .persnal-agree>dl>dd ul.attach>li { margin:8px 0; text-indent: -50px; padding-left:50px; font-size:12px; color:#333; }
     /* 테이블 제어 css */
     /***table-St class제어*/
     /*기본 table*/
     .noticeForm .table-St { text-align:left; }
     .noticeForm .table-St > table { width:100%; margin:0 auto; font-size:12px; border:1px solid #DADCE1; border-spacing:0; overflow:hidden; }
-    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; } 
+    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; }
     .noticeForm .table-St > table th {  text-align: center; font-weight:500; }
     .noticeForm .table-St > table td >a { font-weight:400; }
     .noticeForm .table-St > table tr:last-child > th, .table-St > table tr:last-child > td { border-bottom:none; }
@@ -81,7 +91,6 @@
     .noticeForm .bor-l { border-left:solid 1px #DADCE1;  }
     .noticeForm .bor-r { border-right:solid 1px #DADCE1!important;  }
     .noticeForm .bor-t { border-top:solid 1px #DADCE1; }
-
     .noticeForm .bor-Anon { border:none; }
     .noticeForm .bor-Rnon { border-right:none!important;}
     .noticeForm .bor-Tnon { border-top:none!important;}
@@ -90,9 +99,8 @@
     .noticeForm .th-tr th, .noticeForm .td-tr td, .tr { text-align:right; }
     .noticeForm .th-tc th, .noticeForm .td-tc td, .tc { text-align:center; }
     .noticeForm span.tr { display:inline-block; width:100%; }
-    /*text 보더*/
-    .noticeForm .txt-box { border:1px solid #333333; }
-    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 17px; border:1px solid #333333; color:#333333; text-align: center;}
+    /*숫자 보더*/
+    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 14px; line-height:1; border:1px solid #333333; color:#333333; text-align: center;}
 </style>
 <dl class="popup-layout-full topmodal noticeForm notice01" style="display:block;">
 	<dt>
@@ -185,7 +193,7 @@
                         </table>
                     </div>
                     <ol>
-                        <li><span>※ </span>상기 내용은 <b class="blue">20.  .  .</b> 기준으로 작성되었으므로 이후 변동될 수 있습니다.</li>
+                        <li><span>※ </span>상기 내용은 <b class="blue">20 &nbsp;&nbsp;.  &nbsp;&nbsp;.  &nbsp;&nbsp;.</b> 기준으로 작성되었으므로 이후 변동될 수 있습니다.</li>
                     </ol>
                 </dd>
                 <br/>
@@ -227,13 +235,13 @@
                                     <td class="blue">000000</td>
                                     <td class="blue bor-r">000000</td>
                                     <td class="blue bor-t">2000.00.00</td>
-                                    <td class="blue bor-t">00일<br/>(20  . . .)</td>
+                                    <td class="blue bor-t tc">00일<br/>(20&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;.)</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <ol>
-                        <li><span>※ </span>상기 내용은 <b class="blue">20.  .  .</b> 기준으로 작성되었으므로 이후 변동될 수 있습니다.</li>
+                        <li><span>※ </span>상기 내용은 <b class="blue">20 &nbsp;&nbsp;. &nbsp;&nbsp;. &nbsp;&nbsp;.</b> 기준으로 작성되었으므로 이후 변동될 수 있습니다.</li>
                     </ol>
                 </dd>
                 <br/>

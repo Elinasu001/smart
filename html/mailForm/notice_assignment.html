@@ -28,25 +28,35 @@
 </head>
 <body class="non-header landing-css">
 <style>
+
     /* 공통 */
     .noticeForm .blue { color:blue; }
     .noticeForm .gray { color:#BBBBBB; }
     .noticeForm .dot-box { display:inline-block; width:100%; padding:10px; border:1px dotted black; }
+    .noticeForm .txt-box { border:1px solid #333333; }
+    .noticeForm .bg-gray { background-color: #eee; }
+    .noticeForm .f-sm { font-size:10px; }
     .noticeForm .secTitBox {margin:0 auto 10px; position:relative; }
     .noticeForm .secTitBox>p {  display:inline-block; width:100%;  line-height:1.65; text-align:right; font-size:12px; }
+    /* 공통 - 리스트 */
     .noticeForm .persnal-agree>dl:last-child { padding-bottom:10px;}
     .noticeForm .persnal-agree>dl:last-child { padding-top:0; }
-
+    .noticeForm .persnal-agree>dl>dt { padding:10px 0; margin:20px 0 10px; font-size:14px; font-weight: bold; border-bottom:1px #ccc dashed; border-top:1px solid #333; }
+    .noticeForm .persnal-agree>dl>dd { font-size:13px; }
+    .noticeForm .persnal-agree>dl>dd ol>li { position: relative; padding-left:18px; margin:8px 0; font-size:12px; color:#333; }
+    .noticeForm .persnal-agree>dl>dd ol>li>span { position: absolute; left:0; top:0; color:#999; font-size: 12px; }
+    /* 공통 - ol 리스트 */
     .noticeForm ol.order > li.bor-none::before { content:none; }
     .noticeForm ol.order > li { position:relative; border:1px solid #DDDDDD; padding:10px; }
-    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -27px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
-
+    .noticeForm ol.order > li::before { content:'▶'; position:absolute; bottom: -11px; left:50%; transform: translateY(-50%); transform: rotate(90deg); }
+    /* 공통 - ul 리스트 */
+    .noticeForm .persnal-agree>dl>dd ul.attach>li { margin:8px 0; text-indent: -50px; padding-left:50px; font-size:12px; color:#333; }
     /* 테이블 제어 css */
     /***table-St class제어*/
     /*기본 table*/
     .noticeForm .table-St { text-align:left; }
     .noticeForm .table-St > table { width:100%; margin:0 auto; font-size:12px; border:1px solid #DADCE1; border-spacing:0; overflow:hidden; }
-    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; } 
+    .noticeForm .table-St > table th, .table-St > table td { padding:10px; position:relative; color:#000; font-weight:400; }
     .noticeForm .table-St > table th {  text-align: center; font-weight:500; }
     .noticeForm .table-St > table td >a { font-weight:400; }
     .noticeForm .table-St > table tr:last-child > th, .table-St > table tr:last-child > td { border-bottom:none; }
@@ -81,7 +91,6 @@
     .noticeForm .bor-l { border-left:solid 1px #DADCE1;  }
     .noticeForm .bor-r { border-right:solid 1px #DADCE1!important;  }
     .noticeForm .bor-t { border-top:solid 1px #DADCE1; }
-
     .noticeForm .bor-Anon { border:none; }
     .noticeForm .bor-Rnon { border-right:none!important;}
     .noticeForm .bor-Tnon { border-top:none!important;}
@@ -90,9 +99,8 @@
     .noticeForm .th-tr th, .noticeForm .td-tr td, .tr { text-align:right; }
     .noticeForm .th-tc th, .noticeForm .td-tc td, .tc { text-align:center; }
     .noticeForm span.tr { display:inline-block; width:100%; }
-    /*text 보더*/
-    .noticeForm .txt-box { border:1px solid #333333; }
-    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 17px; border:1px solid #333333; color:#333333; text-align: center;}
+    /*숫자 보더*/
+    .noticeForm .persnal-agree>dl>dd ol>li>span.txt-box { width:12px; height: 14px; line-height:1; border:1px solid #333333; color:#333333; text-align: center;}
 </style>
 <dl class="popup-layout-full topmodal noticeForm notice01" style="display:block;">
 	<dt>
@@ -101,104 +109,133 @@
 	</dt>
 	<dd style="overflow:auto;">
 		<div class="persnal-agree">
-			<p> 스마트저축은행이 귀하에 대하여 가지는 아래 표시 채권을 <b><span class="blue">00</span>년 <span class="blue">00</span>월 <span class="blue">00</span>일자로 양수 예정인</b>에 양도할 예정임을 통지합니다. 채권양도에 따라 대상채권의 모든 원금, 이자, 비용 및 이에 수반하는 일체의 권리도 <b class="blue">양수 예정인</b>에게 이전될 예정임을 알려드립니다.</p>
-            <br/> <br/>
-            <p>아울러 『신용정보의 이용 및 보호에 관한 법률』, 『개인정보 보호법』 및 금융위원회 고시 『신용정보업 감독 규정』에 따라 스마트저축은행은 채무자의 개인신용정보를 <b class="blue">양수 예정인</b>에게 이전･제공할 예정이며, <b class="blue">양수 예정인</b>은 같은 법 및 규정에 따라 본 양도예정채권과 관련한 귀하의 개인(신용)정보를 관리ㆍ등록하게 될 예정임을 알려드립니다.</p>
-            <br/> <br/>
-            <p>또한, 귀하께서 개인금융채권을 연체한 경우에는 『개인금융채권의 관리 및 개인금융채무자의 보호에 관한 법률』 제35조에서 정하는 바에 따라 스마트저축은행에게 채무조정을 요청할 수 있습니다(단, 동법 제35조제1항제1호~제6호의 사유에 해당하는 경우에는 채무조정을 요청할 수 없습니다). </p>
-            <br/> <br/>
-            <p>채무조정 요청의 절차·방법은 스마트저축은행의 게시판과 인터넷 홈페이지<a href="https://www.smartbank.co.kr" title="스마트저축은행 사이트"><b>(https://www.smartbank.co.kr)</b></a>에서 확인할 수 있으며, 본 통지서 도달 후 10영업일 내에 채무조정 요청이 없는 경우 아래 표시 채권이 예정대로 양도될 수 있음을 알려드립니다.</p>
+			
             <dl>
-                <dt>양도예정채권 명세 (  <span class="blue">00. 00. 00.</span> 기준)</dt>
+                <dt>채권양도 예정 통지서</dt>
                 <dd>
-                    <ol>
-                        <li style="font-weight: bold;"><span>1.</span>소멸시효 완성여부: <b class="blue"><b class="txt-box">여</b> / <b class="txt-box">부</b></b></li>
-                        <li class="secTitBox">
-                            <p>(단위 :<span class="blue"></span> 원)</p>
-                        </li>
-                    </ol>
-                    
-                    <div class="table-St th-bg td-bt th-br td-br ">
-                        <table summary="소멸시효 완여부의 대출과목, 계좌번호, 최초대출원금, 대출원금잔액, 이자, 법적절차비용, 여부 안내표">
-                            <caption>소멸시효 완여부의 대출과목, 계좌번호, 최초대출원금, 대출원금잔액, 이자, 법적절차비용, 여부 안내표</caption>
+                    <div class="table-St th-bg th-br th-bb td-bb">
+                        <table summary="수신인, 주소 안내표">
+                            <caption>수신인, 주소 안내표</caption>
                             <colgroup>
-                                <col width="14%">
-                                <col width="14%">
-                                <col width="14%">
-                                <col width="14%">
-                                <col width="14%">
-                                <col width="14%">
-                                <col width="14%">
+                                <col width="10%">
+                                <col width="*%">
                             </colgroup>
-                            <thead>
-                                <tr>
-                                    <th scope="col">대출과목</th>
-                                    <th scope="col">계좌번호</th>
-                                    <th scope="col">최초대출원금</th>
-                                    <th scope="col">대출원금잔액</th>
-                                    <th scope="col">이자</th>
-                                    <th scope="col">법적절차비용</th>
-                                    <th scope="col" class="blue bor-Rnon"><span class="txt-box">여</span> / <span class="txt-box">부</span></th>
-                                </tr>
-                            </thead>
                             <tbody>
                                 <tr>
-                                    <td class="blue">대출과목</td>
-                                    <td class="blue">계좌 관리번호</td>
-                                    <td class="blue">최초대출원금</td>
-                                    <td class="blue">원금잔액</td>
-                                    <td class="blue">이자<br/>(지연손해금)</td>
-                                    <td class="blue">가지급금<br/>(체당금)</td>
-                                    <td class="bor-Rnon"></td>
+                                    <th scope="col">수&nbsp;신&nbsp;인</th>
+                                    <td><span class="blue">홍 길 동(00.00.00) </span>귀하</td>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="bor-Rnon"></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="bor-Rnon"></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="bor-Rnon"></td>
+                                    <th scope="col">주&nbsp;&nbsp;소</th>
+                                    <td><span class="blue">(우편번호) 주소 동, 부속 주소</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <ol>
-                        
-                        <li><span>*</span>이자, 법적절차비용 등 채권액은 변동될 수 있습니다.</ll>
-                        <li><span>**</span>우편물 일괄발송에 따라 회생채무자, 파산채무자 및 면책자에게도 본 통지서가 송달될 수 있으나, 본 통지서는 이미 내려진 회생, 파산 및 면책 관련 결정의 효력에 미치는 영향은 없습니다.</ll>
-                        <li><span>***</span>상기 소멸시효 완성여부는 채권자가 판단한 것으로, 소멸시효 완성여부에 대한 채무자의 판단이 다른 경우에는 증빙을 갖추어 추심을 중단할 것을 요구하는 등 항변할 수 있습니다.</ll>
-                    </ol>
-
-                    <ol>
-                        <li><span>※ </span>관련 상담 문의는 스마트저축은행(02-1661-0055)로 연락주시기 바랍니다.</li>
-                    </ol>
-
-                    <span class="tr"><b><span class="blue">00</span>년 <span class="blue">00</span>월 <span class="blue">00</span>일</b></span>
-                    <br/><br/>
-                    <span class="tr"><b>양도예정인 : </b></span>
                     <br/>
-                    <span class="tr">㈜스마트저축은행</span>
-                    <span class="tr">광주 서구 상무대로 799, 1층</span>
-                    <span class="tr">대표이사    조성윤</span>
+                    <div class="dot-box">
+                        <br/>
+                        <p> 스마트저축은행이 귀하에 대하여 가지는 아래 표시 채권을 <b><span class="blue">00</span>년 <span class="blue">00</span>월 <span class="blue">00</span>일자로 양수 예정인</b>에 양도할 예정임을 통지합니다. 채권양도에 따라 대상채권의 모든 원금, 이자, 비용 및 이에 수반하는 일체의 권리도 <b class="blue">양수 예정인</b>에게 이전될 예정임을 알려드립니다.</p>
+                        <br/> <br/>
+                        <p>아울러 『신용정보의 이용 및 보호에 관한 법률』, 『개인정보 보호법』 및 금융위원회 고시 『신용정보업 감독 규정』에 따라 스마트저축은행은 채무자의 개인신용정보를 <b class="blue">양수 예정인</b>에게 이전･제공할 예정이며, <b class="blue">양수 예정인</b>은 같은 법 및 규정에 따라 본 양도예정채권과 관련한 귀하의 개인(신용)정보를 관리ㆍ등록하게 될 예정임을 알려드립니다.</p>
+                        <br/> <br/>
+                        <p>또한, 귀하께서 개인금융채권을 연체한 경우에는 『개인금융채권의 관리 및 개인금융채무자의 보호에 관한 법률』 제35조에서 정하는 바에 따라 스마트저축은행에게 채무조정을 요청할 수 있습니다(단, 동법 제35조제1항제1호~제6호의 사유에 해당하는 경우에는 채무조정을 요청할 수 없습니다). </p>
+                        <br/> <br/>
+                        <p>채무조정 요청의 절차·방법은 스마트저축은행의 게시판과 인터넷 홈페이지<a href="https://www.smartbank.co.kr" title="스마트저축은행 사이트">(https://www.smartbank.co.kr)</a>에서 확인할 수 있으며, 본 통지서 도달 후 10영업일 내에 채무조정 요청이 없는 경우 아래 표시 채권이 예정대로 양도될 수 있음을 알려드립니다.</p>
+                        <br/> <br/>
+                        <p class="tc" style="font-weight: bold;">양도예정채권 명세 (  <span class="blue">00. 00. 00.</span> 기준)</p>
+                        <br/> 
+                        <ol>
+                            <li style="font-weight: bold;"><span>1.</span>소멸시효 완성여부: <b class="blue"><b class="txt-box">여</b> / <b class="txt-box">부</b></b></li>
+                            <li class="secTitBox">
+                                <p>(단위 :<span class="blue"></span> 원)</p>
+                            </li>
+                        </ol>
+                        
+                        <div class="table-St th-bg td-bt th-br td-br ">
+                            <table summary="소멸시효 완여부의 대출과목, 계좌번호, 최초대출원금, 대출원금잔액, 이자, 법적절차비용, 여부 안내표">
+                                <caption>소멸시효 완여부의 대출과목, 계좌번호, 최초대출원금, 대출원금잔액, 이자, 법적절차비용, 여부 안내표</caption>
+                                <colgroup>
+                                    <col width="14%">
+                                    <col width="14%">
+                                    <col width="14%">
+                                    <col width="14%">
+                                    <col width="14%">
+                                    <col width="14%">
+                                    <col width="14%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">대출과목</th>
+                                        <th scope="col">계좌번호</th>
+                                        <th scope="col">최초대출원금</th>
+                                        <th scope="col">대출원금잔액</th>
+                                        <th scope="col">이자</th>
+                                        <th scope="col">법적절차비용</th>
+                                        <th scope="col" class="blue bor-Rnon"><span class="txt-box">여</span> / <span class="txt-box">부</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="blue">대출과목</td>
+                                        <td class="blue">계좌 관리번호</td>
+                                        <td class="blue">최초대출원금</td>
+                                        <td class="blue">원금잔액</td>
+                                        <td class="blue">이자<br/>(지연손해금)</td>
+                                        <td class="blue">가지급금<br/>(체당금)</td>
+                                        <td class="bor-Rnon"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="bor-Rnon"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="bor-Rnon"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="bor-Rnon"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <ol>
+                            
+                            <li><span>*</span>이자, 법적절차비용 등 채권액은 변동될 수 있습니다.</ll>
+                            <li><span>**</span>우편물 일괄발송에 따라 회생채무자, 파산채무자 및 면책자에게도 본 통지서가 송달될 수 있으나, 본 통지서는 이미 내려진 회생, 파산 및 면책 관련 결정의 효력에 미치는 영향은 없습니다.</ll>
+                            <li><span>***</span>상기 소멸시효 완성여부는 채권자가 판단한 것으로, 소멸시효 완성여부에 대한 채무자의 판단이 다른 경우에는 증빙을 갖추어 추심을 중단할 것을 요구하는 등 항변할 수 있습니다.</ll>
+                        </ol>
+                    </div>
+                    <br/><br/>
+                    <p class="tc dot-box">관련 상담 문의는 스마트저축은행(02-1661-0055)로 연락주시기 바랍니다.</p>
+                    <br/><br/>
+                    <p class="tc"><b><span class="blue">00</span>년 <span class="blue">00</span>월 <span class="blue">00</span>일</b></p>
+                    <br/><br/>
+                    <div class="tr">
+                        <span ><b>양도예정인 : </b></span>
+                        <br/>
+                        <span >㈜스마트저축은행</span>
+                        <br/>
+                        <span >광주 서구 상무대로 799, 1층</span>
+                        <br/>
+                        <span >대표이사    조성윤</span>
+                    </div>
                 </dd>
 			</dl>
             <dl>
