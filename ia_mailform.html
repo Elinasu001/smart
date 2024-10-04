@@ -1,0 +1,148 @@
+<html lang="en"><head></head>
+	<title>스마트저축은행 유지보수</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="./public/css/reset.css">
+	<!-- <script type="text/javascript" src="./public/js/jquery.min.js"></script> -->
+</head>
+<body style="padding:20px;">
+
+<script>
+$(document).ready(function(){
+
+	$("td a").click(function(){
+		var LinkPage = $(this).text();
+		$(this).attr("href",LinkPage);
+	});
+
+	var totalpage = $('table tr td:last-child').length;
+	var Okpage = $('.OK').length;
+	var Nonpage = $('.Non').length;
+
+	$('.Totalpg').text(totalpage - Nonpage + 'Page');
+	$('.Okpg').text(Okpage + 'Page');
+});
+</script>
+
+<style>
+.Table-Type-01 tr td, .Table-Type-01 tr th, .Table-Type-01 a, .Table-Type-01 a:link, .Table-Type-01 tr td span { font-size:14px!important; }
+.Del td,
+.Del td a:link,
+.Del td a:visited { color:#ccc; }
+.Del td:nth-last-child(8) { color:#333; }
+</style>
+
+<h1 style="font-size:30px!important; font-weight:bold;">스마트저축은행 유지보수</h1>
+<table class="Table-Type-01" style="margin-top:50px;">
+	<colgroup>
+        <col style="width:10%;">
+        <col style="width:10%;">
+        <col style="width:10%;">
+        <col style="width:20%;">
+        <col style="width:5%;">
+        <col style="width:8%;">
+        <col style="width:8%;">
+        <col style="width:*%;">
+    </colgroup>
+	<tbody>
+        <tr>
+            <th>1depth</th>
+            <th>2depth</th>
+            <th>URL</th>
+            <th>mailForm</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Memo</th>
+        </tr>
+        <tr class="Border-bottom">
+            <td>우편물양식</td>
+            <td><span>기한의 이익 상실 예정 통지서 1p.</span></td>
+            <td><a href="./html/mailForm/notice_due_loss.html" target="_blank">notice_due_loss.html</a></td>
+            <td class="OK"><p>O</p></td>
+            <td><p>-</p></td>
+            <td><p>-</p></td>
+            <td><span></span></td>
+        </tr>
+        <tr class="Border-bottom">
+            <td>우편물양식</td>
+            <td><span>채권양도 예정 통지서 2p. ~ 3p.</span></td>
+            <td><a href="./html/mailForm/notice_assignment.html" target="_blank">notice_assignment.html</a></td>
+            <td class="OK"><p>O</p></td>
+            <td><p>-</p></td>
+            <td><p>-</p></td>
+            <td><span></span></td>
+        </tr>
+        <tr class="Border-bottom">
+            <td>우편물양식</td>
+            <td><span>추심 착수 통지서  4p. ~ 10p.</span></td>
+            <td><a href="./html/mailForm/notice_of_collection_action.html" target="_blank">notice_of_collection_action.html</a></td>
+            <td class="OK"><p>O</p></td>
+            <td><p>-</p></td>
+            <td><p>-</p></td>
+            <td><span></span></td>
+        </tr>
+        <tr class="Border-bottom">
+            <td>우편물양식</td>
+            <td><span>대출금변제촉구장 11p.</span></td>
+            <td><a href="./html/mailForm/notice_of_loan_repayment.html" target="_blank">notice_of_loan_repayment.html</a></td>
+            <td class="OK"><p>O</p></td>
+            <td><p>-</p></td>
+            <td><p>-</p></td>
+            <td><span></span></td>
+        </tr>
+        <tr class="Border-bottom">
+            <td>우편물양식</td>
+            <td><span>채권추심 위탁 예정 통지서 12p. ~ 18p.</span></td>
+            <td><a href="./html/mailForm/notice_of_collection_assignment.html" target="_blank">notice_of_collection_assignment.html</a></td>
+            <td class="OK"><p>O</p></td>
+            <td><p>-</p></td>
+            <td><p>-</p></td>
+            <td><span></span></td>
+        </tr>
+</tbody>
+</table>
+<style>
+/* ia */
+.Table-Type-01 { width:100%; border-spacing:0; /*border-collapse:collapse;*/ font-size:11px; color:#333; border:1px #333 solid; font-weight:normal; }
+.Table-Type-01 tr {  }
+.Table-Type-01 tr th { border-bottom:1px #eee solid; border-right:1px #eee solid; padding:10px 0px; background:linear-gradient(to top, #f1f1f1, #fff 100%); text-align:center; white-space:nowrap; font-size:11px; }
+
+.Table-Type-01 tr th:last-child,
+.Table-Type-01 tr td:last-child { border-right:0px; }
+
+.Table-Type-01 tr:last-child td { border-bottom:0; }
+
+.Table-Type-01 tr td { border-right:1px #eee solid;  border-top:1px #eee dashed; position:relative; line-height:28px; height:38px; font-size:11px; }
+
+.Table-Type-01 tr td p { display:block; text-align:center; width:100%!important; position:absolute; top:center; left:0px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; line-height:28px; transform:translate(0%,-50%); box-sizing:border-box; padding:0 10px; font-size:11px; }
+
+/* 2022.02.21 메모보기위해서 수정 jh
+.Table-Type-01 tr td span { display:block; text-align:left; width:100%!important; position:absolute; top:center; left:0px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; line-height:28px; transform:translate(0%,-50%); box-sizing:border-box; padding:0 10px; font-size:11px; }
+*/
+.Table-Type-01 tr td span {  text-align:left; width:100%!important;  top:center; left:0px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; line-height:28px; transform:translate(0%,-50%); box-sizing:border-box; padding:0 10px; font-size:11px; }
+
+.Table-Type-01 a,
+.Table-Type-01 a:link { font-size:11px; text-decoration:none; color:#333; padding:0 10px; display:inline-block; }
+
+.Table-Type-01 tr .Align-L { text-align:left!important; }
+.Table-Type-01 tr .Align-R { text-align:right!important; }
+
+.Table-Type-01 tr:hover td { background:#f9f9f9; }
+.Top-Line>td { border-top:1px #ccc solid!important; }
+
+.Border-bottom>td { border-top:1px #999 solid!important; }
+.Border-bottom>td:first-child { text-align:center; }
+
+.Table-Type-01 caption { position:absolute; top:-20px; visibility:unset; display:block; font-size:14px; font-weight:bold; }
+.Border-bottom.bdTG>td:nth-last-child(1), .Border-bottom.bdTG>td:nth-last-child(2), 
+.Border-bottom.bdTG>td:nth-last-child(3), .Border-bottom.bdTG>td:nth-last-child(4), 
+.Border-bottom.bdTG>td:nth-last-child(5), .Border-bottom.bdTG>td:nth-last-child(6)  { border-top:1px #eee solid!important; }
+
+.red td, .red span, .red a, .red p { color:#fe312d; }
+.blue td, .blue span, .blue a, .blue p { color:#04adee;}
+
+</style>
+
+
+
+</body></html>
